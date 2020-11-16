@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_dashboard"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.jcodonuts.app.ui.mainHome.HomeFragment"
+        android:label="HomeFragment" >
+<!--        <action-->
+<!--            android:id="@+id/action_to_articleFragment"-->
+<!--            app:destination="@id/main" />-->
+    </fragment>
+
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.jcodonuts.app.ui.mainCart.CartFragment"
+        android:label="CartFragment" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/notification"
+        android:name="com.jcodonuts.app.ui.mainNotification.NotificationFragment"
+        android:label="NotificationFragment" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.jcodonuts.app.ui.mainProfile.ProfileFragment"
+        android:label="ProfileFragment" >
+
+    </fragment>
+
+</navigation>

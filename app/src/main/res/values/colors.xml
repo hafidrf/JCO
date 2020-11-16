@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F25A17</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#F25A17</color>
+    <color name="c_white">#FFF</color>
+    <color name="c_white_op80">#80FFFFFF</color>
+
+    <color name="c_bg_offline">#E6E6E6</color>
+    <color name="c_black">#000000</color>
+    <color name="c_black_op30">#4D000000</color>
+    <color name="c_black_op10">#1A000000</color>
+    <color name="c_black_op80">#CC000000</color>
+
+    <color name="c_grey_disable">#C5C5C5</color>
+    <color name="c_grey_bottom_nav">#8E8E8E</color>
+
+</resources>

@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Jco</string>
+    <string name="news_app">J.co</string>
+    <string name="transition_splash">transition_splash</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="oops">Oops..!</string>
+    <string name="retry">Retry</string>
+
+    <string name="empty_message">Oops…\nlooks like the one you\'re looking for doesn\'t exist</string>
+    <string name="detail_article">Detail Article</string>
+    <string name="delivery_app">Delivery App</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_notification">Notification</string>
+    <string name="menu_profile">Profile</string>
+</resources>
