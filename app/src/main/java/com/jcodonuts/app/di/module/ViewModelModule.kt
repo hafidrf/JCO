@@ -2,11 +2,12 @@ package com.jcodonuts.app.di.module
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.jcodonuts.app.di.module.factory.ViewModelFactory
 import com.jcodonuts.app.di.scope.ApplicationScope
 import com.jcodonuts.app.di.scope.ViewModelKey
-import com.jcodonuts.app.di.module.factory.ViewModelFactory
-import com.jcodonuts.app.ui.detail.DetailViewModel
 import com.jcodonuts.app.ui.article.ArticleViewModel
+import com.jcodonuts.app.ui.detail.DetailViewModel
+import com.jcodonuts.app.ui.login.LoginViewModel
 import com.jcodonuts.app.ui.main.MainViewModel
 import com.jcodonuts.app.ui.mainCart.CartViewModel
 import com.jcodonuts.app.ui.mainHome.HomeViewModel
@@ -53,6 +54,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel::class)
     internal abstract fun providesProfileViewModel(viewModel: ProfileViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LoginViewModel::class)
+    internal abstract fun providesLoginViewModel(viewModel: LoginViewModel) : ViewModel
 
     @Binds
     @IntoMap

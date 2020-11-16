@@ -2,10 +2,11 @@ package com.jcodonuts.app.di.module
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
-import com.jcodonuts.app.di.scope.FragmentKey
 import com.jcodonuts.app.di.module.factory.InjectingFragmentFactory
-import com.jcodonuts.app.ui.detail.DetailFragment
+import com.jcodonuts.app.di.scope.FragmentKey
 import com.jcodonuts.app.ui.article.ArticleFragment
+import com.jcodonuts.app.ui.detail.DetailFragment
+import com.jcodonuts.app.ui.login.LoginFragment
 import com.jcodonuts.app.ui.main.MainFragment
 import com.jcodonuts.app.ui.mainCart.CartFragment
 import com.jcodonuts.app.ui.mainHome.HomeFragment
@@ -53,6 +54,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(ArticleFragment::class)
     abstract fun bindArticleFragment(articleFragment: ArticleFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(LoginFragment::class)
+    abstract fun bindLoginFragment(fragment: LoginFragment): Fragment
 
     @Binds
     @IntoMap

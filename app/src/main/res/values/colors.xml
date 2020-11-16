@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#F25A17</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimaryDark">#F25A17</color>
     <color name="colorAccent">#F25A17</color>
     <color name="c_white">#FFF</color>
     <color name="c_white_op80">#80FFFFFF</color>
@@ -14,5 +14,8 @@
 
     <color name="c_grey_disable">#C5C5C5</color>
     <color name="c_grey_bottom_nav">#8E8E8E</color>
+
+    <color name="c_link">#601C07</color>
+    <color name="c_text_secondary">#8E8E8E</color>
 
 </resources>

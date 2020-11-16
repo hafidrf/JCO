@@ -1,7 +1,6 @@
 package com.jcodonuts.app.utils
 
 import android.webkit.WebView
-import android.webkit.WebViewClient
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide

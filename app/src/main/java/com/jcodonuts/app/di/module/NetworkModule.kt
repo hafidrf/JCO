@@ -1,11 +1,11 @@
 package com.jcodonuts.app.di.module
 
 import android.app.Application
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.jcodonuts.app.BuildConfig
 import com.jcodonuts.app.data.remote.api.NewsApi
 import com.jcodonuts.app.di.scope.ApplicationScope
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache

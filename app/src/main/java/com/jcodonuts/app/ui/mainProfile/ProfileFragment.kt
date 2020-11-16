@@ -2,7 +2,6 @@ package com.jcodonuts.app.ui.mainProfile
 
 import android.os.Bundle
 import com.jcodonuts.app.R
-import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.databinding.FragmentMainProfileBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import javax.inject.Inject

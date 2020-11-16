@@ -1,10 +1,8 @@
 package com.jcodonuts.app.ui.main
 
 import android.os.Bundle
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.setupWithNavController
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainBinding
 import com.jcodonuts.app.ui.base.BaseFragment
