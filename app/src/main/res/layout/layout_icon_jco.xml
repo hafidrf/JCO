@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+    <ImageView
+        android:layout_width="108dp"
+        android:layout_height="108dp"
+        android:src="@drawable/img_splash"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="@string/news_app"
+        android:textSize="30sp"
+        android:textColor="@color/c_black"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:gravity="center"
+        android:text="@string/delivery_app"
+        android:textSize="16sp"
+        android:textColor="@color/c_grey_disable"/>
+
+</LinearLayout>

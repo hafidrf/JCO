@@ -34,6 +34,15 @@
     </fragment>
 
     <fragment
+        android:id="@+id/forgotPassFragment"
+        android:name="com.jcodonuts.app.ui.forgot_password.ForgotPasswordFragment"
+        android:label="ForgotFragment" >
+        <deepLink
+            android:id="@+id/linkForgot"
+            app:uri="@string/linkForgot" />
+    </fragment>
+
+    <fragment
         android:id="@+id/articleFragment"
         android:name="com.jcodonuts.app.ui.article.ArticleFragment"
         android:label="ArticleFragment">

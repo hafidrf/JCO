@@ -1,5 +1,6 @@
 <resources>
     <string name="linkLogin">jcodonuts://com.jcodonuts.app/login</string>
+    <string name="linkForgot">jcodonuts://com.jcodonuts.app/forgot</string>
 
     <string name="app_name">Jco</string>
     <string name="news_app">J.co</string>
@@ -27,4 +28,9 @@
     <string name="forgot_password">Forgot Password?</string>
     <string name="dont_have_an_account">Don\'t have an account?</string>
     <string name="lets_create">Let\'s Create</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="forgot_pass_desc">Enter your phone number associated with your account and we will send you an OTP code to reset your password.</string>
+    <string name="send">Send</string>
+    <string name="didnt_receiver_the_otp">Didn\'t receiver the OTP?</string>
+    <string name="reset_password">Reset Password</string>
 </resources>

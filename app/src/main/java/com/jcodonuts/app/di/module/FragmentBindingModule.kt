@@ -6,6 +6,7 @@ import com.jcodonuts.app.di.module.factory.InjectingFragmentFactory
 import com.jcodonuts.app.di.scope.FragmentKey
 import com.jcodonuts.app.ui.article.ArticleFragment
 import com.jcodonuts.app.ui.detail.DetailFragment
+import com.jcodonuts.app.ui.forgot_password.ForgotPasswordFragment
 import com.jcodonuts.app.ui.login.LoginFragment
 import com.jcodonuts.app.ui.main.MainFragment
 import com.jcodonuts.app.ui.mainCart.CartFragment
@@ -59,6 +60,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(LoginFragment::class)
     abstract fun bindLoginFragment(fragment: LoginFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(ForgotPasswordFragment::class)
+    abstract fun bindForgotPasswordFragment(fragment: ForgotPasswordFragment): Fragment
 
     @Binds
     @IntoMap

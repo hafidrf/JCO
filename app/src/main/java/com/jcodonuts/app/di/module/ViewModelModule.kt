@@ -7,6 +7,7 @@ import com.jcodonuts.app.di.scope.ApplicationScope
 import com.jcodonuts.app.di.scope.ViewModelKey
 import com.jcodonuts.app.ui.article.ArticleViewModel
 import com.jcodonuts.app.ui.detail.DetailViewModel
+import com.jcodonuts.app.ui.forgot_password.ForgotPasswordViewModel
 import com.jcodonuts.app.ui.login.LoginViewModel
 import com.jcodonuts.app.ui.main.MainViewModel
 import com.jcodonuts.app.ui.mainCart.CartViewModel
@@ -59,6 +60,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(LoginViewModel::class)
     internal abstract fun providesLoginViewModel(viewModel: LoginViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ForgotPasswordViewModel::class)
+    internal abstract fun providesForgotViewModel(viewModel: ForgotPasswordViewModel) : ViewModel
 
     @Binds
     @IntoMap
