@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import com.jcodonuts.app.R
 import dagger.android.support.DaggerAppCompatActivity
 import javax.inject.Inject
 

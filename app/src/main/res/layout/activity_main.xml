@@ -7,7 +7,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.MainActivity">
+        tools:context=".ui.MainActivity"
+        android:fitsSystemWindows="true">
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/nav_host_fragment"
@@ -15,7 +16,8 @@
             android:layout_height="match_parent"
             android:name="com.jcodonuts.app.ui.base.InjectingNavHostFragment"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/main"/>
+            app:navGraph="@navigation/main"
+            android:fitsSystemWindows="true"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

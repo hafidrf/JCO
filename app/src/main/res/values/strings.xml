@@ -44,4 +44,8 @@
     <string name="resend_otp">Resend OTP</string>
     <string name="verification">Verification</string>
     <string name="full_name">Full name</string>
+    <string name="saldo">Saldo</string>
+    <string name="barcode">Barcode</string>
+    <string name="qr_code">Qr Code</string>
+    <string name="jpoints">JPoints</string>
 </resources>

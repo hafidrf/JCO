@@ -2,6 +2,7 @@ package com.jcodonuts.app.ui.mainHome
 
 import android.net.Uri
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.navigation.Navigation
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
@@ -20,6 +21,8 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
         binding.btnLogin.setOnClickListener {
 
