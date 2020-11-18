@@ -37,4 +37,5 @@
     <string name="create">Create</string>
     <string name="create_new_password">Create new password</string>
     <string name="confirm_password">Confirm password</string>
+    <string name="save">Save</string>
 </resources>

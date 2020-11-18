@@ -52,10 +52,16 @@ class ForgotPasswordFragment @Inject constructor() : BaseFragment<FragmentForgot
             })
         }
 
-//        binding.dlg.dlgButton.setOnClickListener {
-//            binding.dlg.visibility = View.GONE
-//            binding.lytOTP.visibility = View.GONE
-//            binding.lytCreatePassword.visibility = View.VISIBLE
-//        }
+        binding.btnSavePassword.setOnClickListener {
+            val dlg = DialogJco(requireContext())
+            dlg.showPopup(
+                "Your new password has been saved",
+                "Please login to place an order",
+                "Login",
+                View.OnClickListener{
+                    dlg.dismissPopup()
+                    onBackPress()
+                })
+        }
     }
 }
