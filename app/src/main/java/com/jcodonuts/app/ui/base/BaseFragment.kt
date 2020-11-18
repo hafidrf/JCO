@@ -1,10 +1,12 @@
 package com.jcodonuts.app.ui.base
 
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
@@ -13,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.jcodonuts.app.R
 import javax.inject.Inject
 
 abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {

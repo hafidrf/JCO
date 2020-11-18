@@ -1,6 +1,7 @@
 package com.jcodonuts.app.ui.login
 
 import android.os.Bundle
+import android.util.Log
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentLoginBinding
 import com.jcodonuts.app.databinding.FragmentMainCartBinding
@@ -8,6 +9,7 @@ import com.jcodonuts.app.ui.base.BaseFragment
 import javax.inject.Inject
 
 class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
+    private val TAG = "LoginFragment"
 
     override fun getViewModelClass(): Class<LoginViewModel> {
         return LoginViewModel::class.java
@@ -19,6 +21,8 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-
+        binding.btnForgotPassword.setOnClickListener {
+            Log.d(TAG, "tralalala: ");
+        }
     }
 }

@@ -33,4 +33,8 @@
     <string name="send">Send</string>
     <string name="didnt_receiver_the_otp">Didn\'t receiver the OTP?</string>
     <string name="reset_password">Reset Password</string>
+    <string name="password">Password</string>
+    <string name="create">Create</string>
+    <string name="create_new_password">Create new password</string>
+    <string name="confirm_password">Confirm password</string>
 </resources>

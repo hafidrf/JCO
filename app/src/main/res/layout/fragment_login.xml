@@ -25,48 +25,48 @@
                 android:layout_marginTop="32dp"/>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPhoneNo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp">
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edtPhoneNo"
-                    android:hint="@string/phone_number"
+                android:layout_marginTop="16dp"
+                android:hint="@string/phone_number"
+                style="@style/BaseEditText">
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:maxLength="12"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
             <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/edtPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                android:layout_marginTop="8dp">
-                <androidx.appcompat.widget.AppCompatEditText
-                    android:id="@+id/edtPassword"
-                    android:hint="@string/phone_number"
+                app:endIconMode="password_toggle"
+                android:layout_marginTop="8dp"
+                android:hint="@string/password"
+                style="@style/BaseEditText">
+                <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLogin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login"
-                android:layout_marginTop="32dp"
-                style="@style/Widget.AppCompat.Button.Colored"/>
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btnLogin"
+               android:text="Login"
+               style="@style/MyButton"
+               android:layout_marginTop="40dp"/>
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btnForgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
                 android:text="@string/forgot_password"
-                android:background="?attr/selectableItemBackground"
-                android:textColor="@color/c_link"
-                android:padding="4dp"
-                android:layout_marginTop="24dp"/>
+                android:layout_marginTop="24dp"
+                style="@style/TextViewLink"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -80,14 +80,12 @@
                     android:textSize="16sp"
                     android:text="@string/dont_have_an_account"
                     android:textColor="@color/c_text_secondary"/>
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
                     android:text="@string/lets_create"
-                    android:background="?attr/selectableItemBackground"
-                    android:textColor="@color/c_link"
-                    android:padding="4dp"/>
+                    style="@style/TextViewLink"/>
             </LinearLayout>
 
         </LinearLayout>

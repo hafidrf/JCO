@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/bg_dlg_container"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="158dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_dlg_img">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_dialog_metal"
+            android:adjustViewBounds="true"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/dlgTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:textSize="20sp"
+        android:textColor="@color/c_black"
+        tools:text="Your password has been reset successfully"
+        android:lineSpacingExtra="10dp"/>
+
+    <TextView
+        android:id="@+id/dlgDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="32dp"
+        android:textSize="16sp"
+        android:textColor="@color/c_text_secondary"
+        tools:text="please create a new password, to enter your account."
+        android:lineSpacingExtra="10dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/dlgButton"
+        android:layout_marginTop="32dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        style="@style/MyButton"
+        tools:text="@string/create"/>
+
+</LinearLayout>
