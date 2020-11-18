@@ -13,6 +13,7 @@ import com.jcodonuts.app.ui.mainCart.CartFragment
 import com.jcodonuts.app.ui.mainHome.HomeFragment
 import com.jcodonuts.app.ui.mainNotification.NotificationFragment
 import com.jcodonuts.app.ui.mainProfile.ProfileFragment
+import com.jcodonuts.app.ui.register.RegisterFragment
 import com.jcodonuts.app.ui.splash.SplashFragment
 import dagger.Binds
 import dagger.Module
@@ -65,6 +66,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(ForgotPasswordFragment::class)
     abstract fun bindForgotPasswordFragment(fragment: ForgotPasswordFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(RegisterFragment::class)
+    abstract fun bindRegisterFragment(fragment: RegisterFragment): Fragment
 
     @Binds
     @IntoMap

@@ -1,6 +1,7 @@
 <resources>
     <string name="linkLogin">jcodonuts://com.jcodonuts.app/login</string>
     <string name="linkForgot">jcodonuts://com.jcodonuts.app/forgot</string>
+    <string name="linkRegister">jcodonuts://com.jcodonuts.app/register</string>
 
     <string name="app_name">Jco</string>
     <string name="news_app">J.co</string>
@@ -38,4 +39,9 @@
     <string name="create_new_password">Create new password</string>
     <string name="confirm_password">Confirm password</string>
     <string name="save">Save</string>
+    <string name="input_your_number">Input your number</string>
+    <string name="next">Next</string>
+    <string name="resend_otp">Resend OTP</string>
+    <string name="verification">Verification</string>
+    <string name="full_name">Full name</string>
 </resources>

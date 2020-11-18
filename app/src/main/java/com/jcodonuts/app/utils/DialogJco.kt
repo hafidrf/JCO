@@ -29,7 +29,7 @@ class DialogJco(context: Context) : Dialog(context) {
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog?.setCancelable(false)
         dialog?.setContentView(dialogview)
-//        dialog?.window!!.attributes.windowAnimations = R.style.DialogTransition
+//        dialog?.window!!.attributes.windowAnimations = R.style.Theme_MaterialComponents_BottomSheetDialog
         dialog?.show()
 
     }

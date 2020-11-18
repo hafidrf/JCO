@@ -43,6 +43,15 @@
     </fragment>
 
     <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.jcodonuts.app.ui.register.RegisterFragment"
+        android:label="RegisterFragment" >
+        <deepLink
+            android:id="@+id/linkRegister"
+            app:uri="@string/linkRegister" />
+    </fragment>
+
+    <fragment
         android:id="@+id/articleFragment"
         android:name="com.jcodonuts.app.ui.article.ArticleFragment"
         android:label="ArticleFragment">

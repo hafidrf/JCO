@@ -14,6 +14,7 @@ import com.jcodonuts.app.ui.mainCart.CartViewModel
 import com.jcodonuts.app.ui.mainHome.HomeViewModel
 import com.jcodonuts.app.ui.mainNotification.NotificationViewModel
 import com.jcodonuts.app.ui.mainProfile.ProfileViewModel
+import com.jcodonuts.app.ui.register.RegisterViewModel
 import com.jcodonuts.app.ui.splash.SplashViewModel
 import dagger.Binds
 import dagger.Module
@@ -65,6 +66,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ForgotPasswordViewModel::class)
     internal abstract fun providesForgotViewModel(viewModel: ForgotPasswordViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(RegisterViewModel::class)
+    internal abstract fun providesRegisterViewModel(viewModel: RegisterViewModel) : ViewModel
 
     @Binds
     @IntoMap

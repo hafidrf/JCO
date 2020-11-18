@@ -33,5 +33,11 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
             Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
                 .navigate(uri)
         }
+        binding.btnRegister.setOnClickListener {
+
+            val uri = Uri.parse(getString(R.string.linkRegister))
+            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                .navigate(uri)
+        }
     }
 }
