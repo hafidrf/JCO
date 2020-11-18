@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
+import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
@@ -47,6 +48,7 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), getStatusBarColor())
         Log.d(TAG, "onCreate: ");
 
         mViewModel = ViewModelProvider(this, viewModelFactory).get(getViewModelClass())
@@ -99,5 +101,9 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
             startPostponedEnterTransition()
             true
         }
+    }
+
+    open fun getStatusBarColor():Int{
+        return android.R.color.transparent
     }
 }

@@ -2,7 +2,10 @@ package com.jcodonuts.app.ui.mainHome
 
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.WindowManager
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
@@ -11,6 +14,7 @@ import com.jcodonuts.app.ui.base.BaseFragment
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
+    private val TAG = "HomeFragment"
 
     override fun getViewModelClass(): Class<HomeViewModel> {
         return HomeViewModel::class.java
@@ -20,27 +24,40 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         return R.layout.fragment_main_home
     }
 
+    override fun getStatusBarColor(): Int {
+        return R.color.colorAccent
+    }
+
     override fun onViewReady(savedInstance: Bundle?) {
-        requireActivity().window.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
-            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
 
-        binding.btnLogin.setOnClickListener {
+        val controller = HomeController()
+        binding.homeRecyclerview.setController(controller)
 
-            val uri = Uri.parse(getString(R.string.linkLogin))
-            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-                .navigate(uri)
+        if(!isFragmentFromPaused){
+            viewModel.loadPromo()
         }
-        binding.btnForgot.setOnClickListener {
 
-            val uri = Uri.parse(getString(R.string.linkForgot))
-            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-                .navigate(uri)
-        }
-        binding.btnRegister.setOnClickListener {
+        viewModel.promos.observe(this, Observer {
+            controller.setData(it)
+        })
 
-            val uri = Uri.parse(getString(R.string.linkRegister))
-            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-                .navigate(uri)
-        }
+//        binding.btnLogin.setOnClickListener {
+//
+//            val uri = Uri.parse(getString(R.string.linkLogin))
+//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+//                .navigate(uri)
+//        }
+//        binding.btnForgot.setOnClickListener {
+//
+//            val uri = Uri.parse(getString(R.string.linkForgot))
+//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+//                .navigate(uri)
+//        }
+//        binding.btnRegister.setOnClickListener {
+//
+//            val uri = Uri.parse(getString(R.string.linkRegister))
+//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+//                .navigate(uri)
+//        }
     }
 }

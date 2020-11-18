@@ -1,10 +1,9 @@
 package com.jcodonuts.app.di.module
 
+import android.app.Application
+import com.jcodonuts.app.App
 import com.jcodonuts.app.data.remote.api.NewsApi
-import com.jcodonuts.app.data.repository.MenuRepository
-import com.jcodonuts.app.data.repository.MenuRepositoryImpl
-import com.jcodonuts.app.data.repository.NewsRepository
-import com.jcodonuts.app.data.repository.NewsRepositoryImpl
+import com.jcodonuts.app.data.repository.*
 import com.jcodonuts.app.di.scope.ApplicationScope
 import dagger.Module
 import dagger.Provides
@@ -22,5 +21,11 @@ class RepositoryModule {
     @ApplicationScope
     fun provideNewsRepository(service:NewsApi): NewsRepository {
         return NewsRepositoryImpl(service)
+    }
+
+    @Provides
+    @ApplicationScope
+    fun provideHomeRepository(service:NewsApi, application: Application): HomeRepository {
+        return HomeRepositoryImpl(service, application)
     }
 }

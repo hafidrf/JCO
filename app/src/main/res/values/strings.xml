@@ -48,4 +48,6 @@
     <string name="barcode">Barcode</string>
     <string name="qr_code">Qr Code</string>
     <string name="jpoints">JPoints</string>
+    <string name="pick_up_from">Pick up from</string>
+    <string name="food_drink_or_anything">Food, drink or anything</string>
 </resources>

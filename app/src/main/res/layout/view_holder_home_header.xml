@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userName"
+            type="String" />
+    </data>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -10,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
-            android:paddingTop="46dp"
             android:background="#F25A17">
 
             <ImageView
@@ -53,7 +59,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
-                    android:text="Farriza Ahmad"
+                    android:text="@{userName}"
+                    tools:text="Farizza Ahmad"
                     android:textColor="@color/c_white"/>
 
                 <LinearLayout
@@ -145,8 +152,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginLeft="16dp"
                     android:src="@drawable/img_header_line"/>
 
                 <LinearLayout

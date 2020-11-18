@@ -124,6 +124,7 @@ dependencies {
     //recyclerview epoxy
     implementation 'com.airbnb.android:epoxy:4.1.0'
     kapt 'com.airbnb.android:epoxy-processor:4.1.0'
+    implementation 'com.airbnb.android:epoxy-databinding:4.1.0'
 
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
 }
