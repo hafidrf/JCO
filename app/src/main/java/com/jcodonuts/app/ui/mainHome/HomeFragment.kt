@@ -32,6 +32,7 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
     override fun onViewReady(savedInstance: Bundle?) {
 
         val controller = HomeController(viewModel)
+        controller.spanCount=2
         Carousel.setDefaultGlobalSnapHelperFactory(null)
         binding.homeRecyclerview.setController(controller)
 

@@ -21,6 +21,7 @@ class HomeViewModel @Inject constructor(
     val menuSelected = MutableLiveData<Int>()
 
     private val _menus = mutableListOf<Menu>()
+    private val _menuItems = mutableListOf<HomeMenuItem>()
 
     @SuppressLint("CheckResult")
     fun loadPromo(){
@@ -37,6 +38,9 @@ class HomeViewModel @Inject constructor(
                 getMenus()
                 temp.add(HomeMenus(_menus))
 
+                getMenuItems()
+                temp.add(HomeMenuItems(_menuItems))
+
                 datas.postValue(temp)
             }, {
 
@@ -51,6 +55,19 @@ class HomeViewModel @Inject constructor(
         _menus.add(Menu("Cookies & Nuts", R.drawable.img_jco_menu_cookies, false))
         _menus.add(Menu("Hampers", R.drawable.img_jco_menu_hampers, false))
         _menus.add(Menu("Others", R.drawable.img_jco_menu_other, false))
+    }
+
+    private fun getMenuItems(){
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, true))
     }
 
     override fun onSearchClick() {

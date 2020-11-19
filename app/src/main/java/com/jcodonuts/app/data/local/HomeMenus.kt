@@ -1,7 +1,7 @@
 package com.jcodonuts.app.data.local
 
 data class HomeMenus(
-    val carousels: List<Menu>
+    val homeMenus: List<Menu>
 ):BaseCell()
 
 data class Menu(

@@ -16,12 +16,6 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
             requestModelBuild()
         }
 
-    var dataHomeMenu: List<Menu> = emptyList()
-        set(value) {
-            field = value
-            requestModelBuild()
-        }
-
     var menuSelected = R.drawable.img_jco_menu_all
         set(value) {
             field = value
@@ -37,6 +31,7 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader(cellData)
                 is HomeMenus -> addHomeMenu(cellData, listener)
+                is HomeMenuItems -> addHomeMenuItem(cellData, listener)
             }
         }
     }
@@ -45,25 +40,28 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
         homeHeader {
             id("header")
             userName("Test My Name")
-
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
     private fun addHomeSearchSection(cellData: HomeSearchSection){
         homeSearch {
             id("search")
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
     private fun addHomePromoHeader(cellData: HomePromoHeader){
         homeCarouselHeader {
             id("carousel-header")
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
     private fun addHomeMenuHeader(cellData: HomeMenuHeader){
         homeMenuHeader {
             id("menu_header")
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
@@ -77,11 +75,12 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
             id("promo")
             padding(Carousel.Padding.dp(16, 4, 16, 16, 8))
             models(models)
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
     private fun addHomeMenu(cellData: HomeMenus, listener: HomeControllerListener) {
-        val models = cellData.carousels.map {
+        val models = cellData.homeMenus.map {
             HomeMenuBindingModel_()
                     .id(it.img.toString())
                     .data(it)
@@ -93,6 +92,16 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
             id("menuHeader")
             padding(Carousel.Padding.dp(16, 4, 16, 16, 8))
             models(models)
+            spanSizeOverride { _, _, _ -> 2 }
+        }
+    }
+
+    private fun addHomeMenuItem(cellData: HomeMenuItems, listener: HomeControllerListener) {
+        cellData.homeMenuItems.map{
+            homeMenuItem {
+                id(it.hashCode().toString())
+                data(it)
+            }
         }
     }
 }

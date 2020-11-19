@@ -5,40 +5,79 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="android.view.View"/>
         <variable
             name="data"
-            type="com.jcodonuts.app.data.local.Menu" />
+            type="com.jcodonuts.app.data.local.HomeMenuItem" />
     </data>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="8dp">
 
-        <LinearLayout
-            android:layout_width="38dp"
-            android:layout_height="38dp"
-            android:background="@drawable/bg_home_menu_img"
-            android:orientation="vertical"
-            android:padding="8dp"
-            android:layout_marginRight="12dp"
-            selected="@{data.selected}"
-            android:gravity="center">
-            <ImageView
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                tools:src="@drawable/img_qrcode"
                 android:adjustViewBounds="true"
-                src="@{data.img}"
-                tools:src="@drawable/img_jco_menu_beverage"/>
-        </LinearLayout>
+                imgUrl="@{data.imgURL}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/promo"
+                android:textColor="@color/c_white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:textSize="12sp"
+                android:background="@drawable/bg_tag_promo"
+                android:layout_margin="10dp"
+                android:layout_gravity="top|right"
+                android:visibility="@{data.promo?View.VISIBLE:View.GONE}"/>
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/home_menu_color"
-            android:text="@{data.title}"
-            selected="@{data.selected}"
-            tools:text="Donnuts"/>
+            android:textColor="@color/c_black"
+            android:textSize="16sp"
+            tools:text="Donnuts"
+            android:text="@{data.name}"
+            android:layout_marginTop="6dp"/>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_text_secondary"
+                android:textSize="12sp"
+                android:text="*Mulai dari"
+                android:layout_marginRight="8dp"
+                android:visibility="@{data.startFrom?View.VISIBLE:View.GONE}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="12sp"
+                tools:text="Rp. 60.000"
+                android:text="@{data.price}"/>
+        </LinearLayout>
 
     </LinearLayout>
 
