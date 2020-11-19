@@ -1,6 +1,9 @@
 package com.jcodonuts.app.utils
 
 import android.webkit.WebView
+import android.widget.ImageView
+import android.widget.LinearLayout
+import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -23,6 +26,21 @@ fun AppCompatImageView.bindImgUrl(url:String?){
 @BindingAdapter("imgSVG")
 fun AppCompatImageView.bindImgSVG(url:String){
     SvgLoader.fetchSvg(context, url, this);
+}
+
+@BindingAdapter("src")
+fun ImageView.bindSrc(img:Int){
+    this.setImageResource(img)
+}
+
+@BindingAdapter("selected")
+fun LinearLayout.bindSelected(selected:Boolean){
+    this.isSelected = selected
+}
+
+@BindingAdapter("selected")
+fun TextView.bindSelected(selected:Boolean){
+    this.isSelected = selected
 }
 
 @BindingAdapter("loadWeb")

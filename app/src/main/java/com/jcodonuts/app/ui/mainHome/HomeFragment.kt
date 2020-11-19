@@ -7,6 +7,7 @@ import android.view.WindowManager
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
+import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.ui.MainActivity
@@ -30,16 +31,22 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
 
     override fun onViewReady(savedInstance: Bundle?) {
 
-        val controller = HomeController()
+        val controller = HomeController(viewModel)
+        Carousel.setDefaultGlobalSnapHelperFactory(null)
         binding.homeRecyclerview.setController(controller)
 
         if(!isFragmentFromPaused){
             viewModel.loadPromo()
         }
 
-        viewModel.promos.observe(this, Observer {
-            controller.setData(it)
+        viewModel.datas.observe(this, Observer {
+            controller.data = it
         })
+
+        viewModel.menuSelected.observe(this, {
+            controller.menuSelected = it
+        })
+
 
 //        binding.btnLogin.setOnClickListener {
 //
