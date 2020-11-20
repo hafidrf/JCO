@@ -10,6 +10,7 @@ import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.ui.MainActivity
 import com.jcodonuts.app.ui.base.BaseFragment
+import com.jcodonuts.app.ui.main.base.MainFragment
 import com.jcodonuts.app.utils.DialogCannotOrder
 import javax.inject.Inject
 
@@ -75,5 +76,9 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
 //            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
 //                .navigate(uri)
 //        }
+    }
+
+    override fun onBackPress() {
+        requireActivity().finish()
     }
 }
