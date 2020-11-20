@@ -13,7 +13,7 @@
             type="Boolean" />
         <variable
             name="onClickListener"
-            type="com.jcodonuts.app.ui.mainHome.HomeControllerListener" />
+            type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
     </data>
 
     <FrameLayout

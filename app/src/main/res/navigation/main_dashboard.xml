@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home"
-        android:name="com.jcodonuts.app.ui.mainHome.HomeFragment"
+        android:name="com.jcodonuts.app.ui.main.home.HomeFragment"
         android:label="HomeFragment" >
 <!--        <action-->
 <!--            android:id="@+id/action_to_articleFragment"-->
@@ -16,21 +16,21 @@
 
     <fragment
         android:id="@+id/cart"
-        android:name="com.jcodonuts.app.ui.mainCart.CartFragment"
+        android:name="com.jcodonuts.app.ui.main.cart.CartFragment"
         android:label="CartFragment" >
 
     </fragment>
 
     <fragment
         android:id="@+id/notification"
-        android:name="com.jcodonuts.app.ui.mainNotification.NotificationFragment"
+        android:name="com.jcodonuts.app.ui.main.notification.NotificationFragment"
         android:label="NotificationFragment" >
 
     </fragment>
 
     <fragment
         android:id="@+id/profile"
-        android:name="com.jcodonuts.app.ui.mainProfile.ProfileFragment"
+        android:name="com.jcodonuts.app.ui.main.profile.ProfileFragment"
         android:label="ProfileFragment" >
 
     </fragment>

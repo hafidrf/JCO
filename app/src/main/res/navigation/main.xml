@@ -19,14 +19,14 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.jcodonuts.app.ui.main.MainFragment"
+        android:name="com.jcodonuts.app.ui.main.base.MainFragment"
         android:label="MainFragment" >
 
     </fragment>
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.jcodonuts.app.ui.login.LoginFragment"
+        android:name="com.jcodonuts.app.ui.auth.login.LoginFragment"
         android:label="LoginFragment" >
         <deepLink
             android:id="@+id/linkLogin"
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/forgotPassFragment"
-        android:name="com.jcodonuts.app.ui.forgot_password.ForgotPasswordFragment"
+        android:name="com.jcodonuts.app.ui.auth.forgot_password.ForgotPasswordFragment"
         android:label="ForgotFragment" >
         <deepLink
             android:id="@+id/linkForgot"
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.jcodonuts.app.ui.register.RegisterFragment"
+        android:name="com.jcodonuts.app.ui.auth.register.RegisterFragment"
         android:label="RegisterFragment" >
         <deepLink
             android:id="@+id/linkRegister"
@@ -53,7 +53,7 @@
 
     <fragment
         android:id="@+id/articleFragment"
-        android:name="com.jcodonuts.app.ui.article.ArticleFragment"
+        android:name="com.jcodonuts.app.ui.zzexample.article.ArticleFragment"
         android:label="ArticleFragment">
         <action
             android:id="@+id/action_mainFragment_to_detailFragment"
@@ -65,7 +65,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.jcodonuts.app.ui.detail.DetailFragment"
+        android:name="com.jcodonuts.app.ui.zzexample.detail.DetailFragment"
         android:label="detail_fragment"
         tools:layout="@layout/fragment_detail" >
         <argument

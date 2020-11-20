@@ -11,7 +11,7 @@
             type="com.jcodonuts.app.data.local.HomeMenuItem" />
         <variable
             name="onClickListener"
-            type="com.jcodonuts.app.ui.mainHome.HomeControllerListener" />
+            type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
         <variable
             name="left"
             type="Boolean" />

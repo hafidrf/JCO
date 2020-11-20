@@ -11,7 +11,7 @@
 
         <variable
             name="viewModel"
-            type="com.jcodonuts.app.ui.detail.DetailViewModel" />
+            type="com.jcodonuts.app.ui.zzexample.detail.DetailViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
