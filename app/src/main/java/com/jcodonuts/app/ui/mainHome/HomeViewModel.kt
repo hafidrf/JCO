@@ -9,6 +9,7 @@ import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider
+import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
@@ -19,6 +20,10 @@ class HomeViewModel @Inject constructor(
 
     val datas = MutableLiveData<MutableList<BaseCell>>()
     val menuSelected = MutableLiveData<Int>()
+
+    private val _showDialogCannotOrder = MutableLiveData<SingleEvents<String>>()
+    val showDialogCannotOrder : LiveData<SingleEvents<String>>
+        get() = _showDialogCannotOrder
 
     private val _menus = mutableListOf<Menu>()
     private val _menuItems = mutableListOf<HomeMenuItem>()
@@ -89,7 +94,6 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuItemClick(menuItem: HomeMenuItem) {
-        Log.d(TAG, "$menuItem")
-
+        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
     }
 }

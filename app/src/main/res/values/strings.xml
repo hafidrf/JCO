@@ -51,4 +51,7 @@
     <string name="pick_up_from">Pick up from</string>
     <string name="food_drink_or_anything">Food, drink or anything</string>
     <string name="promo">Promo</string>
+    <string name="you_cannot_place_an_order">You cannot place an order</string>
+    <string name="if_you_want_to_place_an_order_you_must_login_or_create_an_account_first">If you want to place an order you must login or create an account first</string>
+    <string name="register">Register</string>
 </resources>

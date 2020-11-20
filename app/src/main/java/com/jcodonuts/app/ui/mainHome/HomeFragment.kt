@@ -3,8 +3,6 @@ package com.jcodonuts.app.ui.mainHome
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.WindowManager
-import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import com.airbnb.epoxy.Carousel
@@ -12,6 +10,7 @@ import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.ui.MainActivity
 import com.jcodonuts.app.ui.base.BaseFragment
+import com.jcodonuts.app.utils.DialogCannotOrder
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
@@ -48,22 +47,31 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
             controller.menuSelected = it
         })
 
+        viewModel.showDialogCannotOrder.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                Log.d(TAG, "showDialogCannotOrder: ")
 
-//        binding.btnLogin.setOnClickListener {
-//
-//            val uri = Uri.parse(getString(R.string.linkLogin))
-//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-//                .navigate(uri)
-//        }
+                val dlg = DialogCannotOrder()
+                dlg.showDialog(requireActivity().supportFragmentManager, "HomeFragment", object : DialogCannotOrder.OnDialogClickListener {
+                    override fun onLoginClick() {
+                        dlg.dissmissDialog()
+                        val uri = Uri.parse(getString(R.string.linkLogin))
+                        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                                .navigate(uri)
+                    }
+
+                    override fun onRegisterClick() {
+                        dlg.dissmissDialog()
+                        val uri = Uri.parse(getString(R.string.linkRegister))
+                        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                                .navigate(uri)
+                    }
+                })
+            }
+        })
+
 //        binding.btnForgot.setOnClickListener {
-//
 //            val uri = Uri.parse(getString(R.string.linkForgot))
-//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-//                .navigate(uri)
-//        }
-//        binding.btnRegister.setOnClickListener {
-//
-//            val uri = Uri.parse(getString(R.string.linkRegister))
 //            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
 //                .navigate(uri)
 //        }
