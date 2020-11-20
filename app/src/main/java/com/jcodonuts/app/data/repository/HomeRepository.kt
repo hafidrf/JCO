@@ -3,6 +3,7 @@ package com.jcodonuts.app.data.repository
 import android.app.Application
 import android.content.res.AssetManager
 import com.google.gson.Gson
+import com.jcodonuts.app.data.local.HomeMenuItems
 import com.jcodonuts.app.data.local.HomePromos
 import com.jcodonuts.app.data.remote.api.NewsApi
 import io.reactivex.Single
@@ -10,6 +11,7 @@ import javax.inject.Inject
 
 interface HomeRepository {
     fun getPromo(): Single<HomePromos>
+    fun getMenuItems(): Single<HomeMenuItems>
 }
 
 class HomeRepositoryImpl @Inject constructor(
@@ -22,6 +24,15 @@ class HomeRepositoryImpl @Inject constructor(
             Single.fromCallable {
                 val jsonString = application.baseContext.assets.readFile("homePromo.json")
                 Gson().fromJson(jsonString, HomePromos::class.java)
+            }
+        }
+    }
+
+    override fun getMenuItems(): Single<HomeMenuItems> {
+        return composeSingle {
+            Single.fromCallable {
+                val jsonString = application.baseContext.assets.readFile("donut.json")
+                Gson().fromJson(jsonString, HomeMenuItems::class.java)
             }
         }
     }

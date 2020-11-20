@@ -34,13 +34,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <androidx.appcompat.widget.AppCompatImageView
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/parentImg"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:src="@drawable/img_qrcode"
-                    android:adjustViewBounds="true"
-                    imgUrl="@{data.imgURL}"
-                    roundCorner="@{16}"/>
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        app:layout_constraintStart_toStartOf="@id/parentImg"
+                        app:layout_constraintTop_toTopOf="@id/parentImg"
+                        app:layout_constraintDimensionRatio="1:1"
+                        tools:src="@drawable/img_qrcode"
+                        android:adjustViewBounds="true"
+                        android:layout_gravity="center"
+                        imgUrl="@{data.imgURL}"
+                        roundCorner="@{16}"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -66,7 +75,8 @@
                 android:textSize="16sp"
                 tools:text="Donnuts"
                 android:text="@{data.name}"
-                android:layout_marginTop="6dp"/>
+                android:layout_marginTop="6dp"
+                android:singleLine="true"/>
 
 
             <LinearLayout
