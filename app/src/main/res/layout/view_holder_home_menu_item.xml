@@ -9,76 +9,98 @@
         <variable
             name="data"
             type="com.jcodonuts.app.data.local.HomeMenuItem" />
+        <variable
+            name="onClickListener"
+            type="com.jcodonuts.app.ui.mainHome.HomeControllerListener" />
+        <variable
+            name="left"
+            type="Boolean" />
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="8dp">
+        android:paddingBottom="16dp"
+        android:paddingStart="@{left? @dimen/home_menu_padding_16 : @dimen/home_menu_padding_8}"
+        android:paddingEnd="@{left? @dimen/home_menu_padding_8 : @dimen/home_menu_padding_16}">
 
-        <FrameLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <androidx.appcompat.widget.AppCompatImageView
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:src="@drawable/img_qrcode"
+                    android:adjustViewBounds="true"
+                    imgUrl="@{data.imgURL}"
+                    roundCorner="@{16}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promo"
+                    android:textColor="@color/c_white"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:textSize="12sp"
+                    android:background="@drawable/bg_tag_promo"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="top|right"
+                    android:visibility="@{data.promo?View.VISIBLE:View.GONE}"/>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                tools:text="Donnuts"
+                android:text="@{data.name}"
+                android:layout_marginTop="6dp"/>
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:src="@drawable/img_qrcode"
-                android:adjustViewBounds="true"
-                imgUrl="@{data.imgURL}"/>
+                android:orientation="horizontal"
+                android:layout_marginTop="6dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/promo"
-                android:textColor="@color/c_white"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp"
-                android:paddingTop="4dp"
-                android:paddingBottom="4dp"
-                android:textSize="12sp"
-                android:background="@drawable/bg_tag_promo"
-                android:layout_margin="10dp"
-                android:layout_gravity="top|right"
-                android:visibility="@{data.promo?View.VISIBLE:View.GONE}"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_text_secondary"
+                    android:textSize="12sp"
+                    android:text="*Mulai dari"
+                    android:layout_marginRight="8dp"
+                    android:visibility="@{data.startFrom?View.VISIBLE:View.GONE}"/>
 
-        </FrameLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_link"
+                    android:textSize="12sp"
+                    tools:text="Rp. 60.000"
+                    android:text="@{data.price}"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/c_black"
-            android:textSize="16sp"
-            tools:text="Donnuts"
-            android:text="@{data.name}"
-            android:layout_marginTop="6dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
-
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="6dp">
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{()->onClickListener.onMenuItemClick(data)}"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/c_text_secondary"
-                android:textSize="12sp"
-                android:text="*Mulai dari"
-                android:layout_marginRight="8dp"
-                android:visibility="@{data.startFrom?View.VISIBLE:View.GONE}"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/c_link"
-                android:textSize="12sp"
-                tools:text="Rp. 60.000"
-                android:text="@{data.price}"/>
-        </LinearLayout>
-
-    </LinearLayout>
+    </FrameLayout>
 
 </layout>

@@ -97,10 +97,12 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
     }
 
     private fun addHomeMenuItem(cellData: HomeMenuItems, listener: HomeControllerListener) {
-        cellData.homeMenuItems.map{
+        cellData.homeMenuItems.forEachIndexed { index, it ->
             homeMenuItem {
                 id(it.hashCode().toString())
                 data(it)
+                onClickListener(listener)
+                left(index%2==0)
             }
         }
     }

@@ -1,5 +1,7 @@
 package com.jcodonuts.app.utils
 
+import android.content.res.Resources
+import android.util.Log
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -7,17 +9,29 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 import com.jcodonuts.app.R
 
 
-@BindingAdapter("imgUrl")
-fun AppCompatImageView.bindImgUrl(url:String?){
-    if(url!=null){
-        Glide.with(context)
-            .load(url)
-            .placeholder(R.drawable.img_placeholder_news)
-            .error(R.drawable.img_placeholder_news)
-            .into(this)
+@BindingAdapter(value=["imgUrl", "roundCorner"], requireAll = false)
+fun AppCompatImageView.setImgUrl(imgUrl:String?, roundCorner:Int=0){
+    Log.d("AppCompatImageView", roundCorner.toString()+" gagagaga")
+    if(imgUrl!=null){
+        if(roundCorner>0){
+            Glide.with(context)
+                    .load(imgUrl)
+                    .placeholder(R.drawable.img_placeholder_news)
+                    .error(R.drawable.img_placeholder_news)
+                    .transform(RoundedCorners(dpToPx(roundCorner)))
+                    .into(this)
+        }else{
+            Glide.with(context)
+                    .load(imgUrl)
+                    .placeholder(R.drawable.img_placeholder_news)
+                    .error(R.drawable.img_placeholder_news)
+                    .into(this)
+        }
     }else{
         setImageResource(R.drawable.img_placeholder_news)
     }
@@ -25,7 +39,7 @@ fun AppCompatImageView.bindImgUrl(url:String?){
 
 @BindingAdapter("imgSVG")
 fun AppCompatImageView.bindImgSVG(url:String){
-    SvgLoader.fetchSvg(context, url, this);
+    SvgLoader.fetchSvg(context, url, this)
 }
 
 @BindingAdapter("src")
@@ -52,3 +66,7 @@ fun WebView.loadWeb(url:String){
 //fun WebView.setWebViewClient(client: WebViewClient?) {
 //    this.webViewClient = client
 //}
+
+fun dpToPx(dp:Int):Int{
+    return (dp * Resources.getSystem().displayMetrics.density).toInt()
+}

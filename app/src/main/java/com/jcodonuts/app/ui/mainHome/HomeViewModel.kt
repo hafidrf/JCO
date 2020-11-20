@@ -58,10 +58,10 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getMenuItems(){
-        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
-        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
-        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", true, true))
-        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/fife/ABSRlIrWo4KsPoFQyRziTNzi5ixTvaBUZvOr9Yj05G6Wy5XkuUoETa8egDaDeEKsK5h3fmPM6Wzd6v2wP7QSLV7kv3cNQaQF0djuO6v8KrezBC50bU7APxoizJhwfHIm4inDBAJwfQNUzIk4_PSVSIPzXDvzgptZCIQqy6rgPILGDVNKdcuZQrXy1FkAkWfbj6bUv4Em_hRPvhlPVkzyJHVG7ufrB4pIJuwHme7xGrCHHEqYf0xycMeg0Iu_5QVgAdbFyb8TRQ49g5bSmSDnLB1yiPkUZZ01iXwneVOdIYbeh1mNT75NGwCb0QRplVmEkbeh2j862J4AglzPPAPBfK7LGNzRKZ95OSvw5KLlZv7FJWmwZ6roLAngkMBxnG-KWTS11QGa8TG7n5b6UCANgMPwQPbcZwC6J_qb7ZaxouTNFDz6UrZbc3ffFtnkI9x1OP5Cbhqu4RceqW_EmTqERqUCTUBO3d16mh-RhyORRYtIOPUfiwwBifePmrzWN46tKDrVEbeKs5caO06MDK8duL1LooI-U-jJT4Q43GWh6g34XxpED81s6BrV_5EsiRVuhoTJfKM0c0FV_8ryyY4StDRTT982a_rGKl0nZvGTdS4qqVJVNZVPvK6pS_PYtOkhL6P7jxbPKGCHYCrRu5RCttUUA9v6_wahyuURtXv-l0Zuz6VH7Iu3wmKXRssAu86QscUfhNZaw7-s-ZYO0oeM7kTiqgQv_Hj6W2CxWzI=w1920-h399-ft", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/fife/ABSRlIrWo4KsPoFQyRziTNzi5ixTvaBUZvOr9Yj05G6Wy5XkuUoETa8egDaDeEKsK5h3fmPM6Wzd6v2wP7QSLV7kv3cNQaQF0djuO6v8KrezBC50bU7APxoizJhwfHIm4inDBAJwfQNUzIk4_PSVSIPzXDvzgptZCIQqy6rgPILGDVNKdcuZQrXy1FkAkWfbj6bUv4Em_hRPvhlPVkzyJHVG7ufrB4pIJuwHme7xGrCHHEqYf0xycMeg0Iu_5QVgAdbFyb8TRQ49g5bSmSDnLB1yiPkUZZ01iXwneVOdIYbeh1mNT75NGwCb0QRplVmEkbeh2j862J4AglzPPAPBfK7LGNzRKZ95OSvw5KLlZv7FJWmwZ6roLAngkMBxnG-KWTS11QGa8TG7n5b6UCANgMPwQPbcZwC6J_qb7ZaxouTNFDz6UrZbc3ffFtnkI9x1OP5Cbhqu4RceqW_EmTqERqUCTUBO3d16mh-RhyORRYtIOPUfiwwBifePmrzWN46tKDrVEbeKs5caO06MDK8duL1LooI-U-jJT4Q43GWh6g34XxpED81s6BrV_5EsiRVuhoTJfKM0c0FV_8ryyY4StDRTT982a_rGKl0nZvGTdS4qqVJVNZVPvK6pS_PYtOkhL6P7jxbPKGCHYCrRu5RCttUUA9v6_wahyuURtXv-l0Zuz6VH7Iu3wmKXRssAu86QscUfhNZaw7-s-ZYO0oeM7kTiqgQv_Hj6W2CxWzI=w1920-h399-ft", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/fife/ABSRlIrWo4KsPoFQyRziTNzi5ixTvaBUZvOr9Yj05G6Wy5XkuUoETa8egDaDeEKsK5h3fmPM6Wzd6v2wP7QSLV7kv3cNQaQF0djuO6v8KrezBC50bU7APxoizJhwfHIm4inDBAJwfQNUzIk4_PSVSIPzXDvzgptZCIQqy6rgPILGDVNKdcuZQrXy1FkAkWfbj6bUv4Em_hRPvhlPVkzyJHVG7ufrB4pIJuwHme7xGrCHHEqYf0xycMeg0Iu_5QVgAdbFyb8TRQ49g5bSmSDnLB1yiPkUZZ01iXwneVOdIYbeh1mNT75NGwCb0QRplVmEkbeh2j862J4AglzPPAPBfK7LGNzRKZ95OSvw5KLlZv7FJWmwZ6roLAngkMBxnG-KWTS11QGa8TG7n5b6UCANgMPwQPbcZwC6J_qb7ZaxouTNFDz6UrZbc3ffFtnkI9x1OP5Cbhqu4RceqW_EmTqERqUCTUBO3d16mh-RhyORRYtIOPUfiwwBifePmrzWN46tKDrVEbeKs5caO06MDK8duL1LooI-U-jJT4Q43GWh6g34XxpED81s6BrV_5EsiRVuhoTJfKM0c0FV_8ryyY4StDRTT982a_rGKl0nZvGTdS4qqVJVNZVPvK6pS_PYtOkhL6P7jxbPKGCHYCrRu5RCttUUA9v6_wahyuURtXv-l0Zuz6VH7Iu3wmKXRssAu86QscUfhNZaw7-s-ZYO0oeM7kTiqgQv_Hj6W2CxWzI=w1920-h399-ft", "Rp. 5,000", true, true))
+        _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/fife/ABSRlIrWo4KsPoFQyRziTNzi5ixTvaBUZvOr9Yj05G6Wy5XkuUoETa8egDaDeEKsK5h3fmPM6Wzd6v2wP7QSLV7kv3cNQaQF0djuO6v8KrezBC50bU7APxoizJhwfHIm4inDBAJwfQNUzIk4_PSVSIPzXDvzgptZCIQqy6rgPILGDVNKdcuZQrXy1FkAkWfbj6bUv4Em_hRPvhlPVkzyJHVG7ufrB4pIJuwHme7xGrCHHEqYf0xycMeg0Iu_5QVgAdbFyb8TRQ49g5bSmSDnLB1yiPkUZZ01iXwneVOdIYbeh1mNT75NGwCb0QRplVmEkbeh2j862J4AglzPPAPBfK7LGNzRKZ95OSvw5KLlZv7FJWmwZ6roLAngkMBxnG-KWTS11QGa8TG7n5b6UCANgMPwQPbcZwC6J_qb7ZaxouTNFDz6UrZbc3ffFtnkI9x1OP5Cbhqu4RceqW_EmTqERqUCTUBO3d16mh-RhyORRYtIOPUfiwwBifePmrzWN46tKDrVEbeKs5caO06MDK8duL1LooI-U-jJT4Q43GWh6g34XxpED81s6BrV_5EsiRVuhoTJfKM0c0FV_8ryyY4StDRTT982a_rGKl0nZvGTdS4qqVJVNZVPvK6pS_PYtOkhL6P7jxbPKGCHYCrRu5RCttUUA9v6_wahyuURtXv-l0Zuz6VH7Iu3wmKXRssAu86QscUfhNZaw7-s-ZYO0oeM7kTiqgQv_Hj6W2CxWzI=w1920-h399-ft", "Rp. 5,000", false, false))
         _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
         _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
         _menuItems.add(HomeMenuItem("Donuts","https://lh3.googleusercontent.com/u/0/d/1-o6w4zl7xXAMxOwkIvg-41dr3eh9dEBP=w400-h380-p-k-nu-iv1", "Rp. 5,000", false, false))
@@ -86,5 +86,10 @@ class HomeViewModel @Inject constructor(
         if(menu.img!=menuSelected.value){
             menuSelected.postValue(menu.img)
         }
+    }
+
+    override fun onMenuItemClick(menuItem: HomeMenuItem) {
+        Log.d(TAG, "$menuItem")
+
     }
 }
