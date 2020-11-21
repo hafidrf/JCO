@@ -17,6 +17,6 @@
         android:fontFamily="sans-serif-medium"
         tools:text="08 October 2020"
         android:text="@{data.title}"
-        android:paddingTop="16dp"/>
+        android:paddingTop="4dp"/>
 
 </layout>

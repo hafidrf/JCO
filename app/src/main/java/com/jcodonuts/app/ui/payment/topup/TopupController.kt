@@ -56,6 +56,9 @@ class TopupController() : AsyncEpoxyController() {
                 }
             }
         }
+        topupDivider {
+            id("divider-${cellData.id}")
+        }
     }
 
     private fun addTopupSectionHeader(cellData: TopupSectionHeader){

@@ -18,6 +18,6 @@
         tools:text="Top Up"
         android:text="@{data.title}"
         android:paddingBottom="16dp"
-        android:paddingTop="16dp"/>
+        android:paddingTop="10dp"/>
 
 </layout>
