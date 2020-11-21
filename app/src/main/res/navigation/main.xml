@@ -60,6 +60,18 @@
             app:uri="@string/linkLinkaja" />
     </fragment>
 
+    <fragment
+        android:id="@+id/topupFragment"
+        android:name="com.jcodonuts.app.ui.payment.topup.TopupFragment"
+        android:label="TopupFragment" >
+        <deepLink
+            android:id="@+id/linkTopup"
+            app:uri="@string/linkTopup" />
+    </fragment>
+
+
+
+
 
 
 

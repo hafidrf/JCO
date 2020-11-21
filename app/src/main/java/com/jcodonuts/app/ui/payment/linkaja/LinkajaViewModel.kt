@@ -13,6 +13,10 @@ class LinkajaViewModel @Inject constructor(): BaseViewModel(), LinkajaController
     val datas : LiveData<List<BaseCell>>
         get() = _datas
 
+    private val _topupTypeClick = MutableLiveData<SingleEvents<LinkajaTopupType>>()
+    val topupTypeClick : LiveData<SingleEvents<LinkajaTopupType>>
+        get() = _topupTypeClick
+
     fun loadData(){
         val temp = _datas.value?.toMutableList() ?: mutableListOf()
         temp.add(LinkajaCard("08534567865", "Rp. 100.000"))
@@ -42,7 +46,7 @@ class LinkajaViewModel @Inject constructor(): BaseViewModel(), LinkajaController
     }
 
     override fun onTypeClick(linkajaTopupType: LinkajaTopupType) {
-
+        _topupTypeClick.postValue(SingleEvents(linkajaTopupType))
     }
 
 }

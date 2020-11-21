@@ -37,5 +37,11 @@ class LinkajaFragment @Inject constructor() : BaseFragment<FragmentPaymentLinkaj
         viewModel.datas.observe(this, {
             controller.data = it
         })
+
+        viewModel.topupTypeClick.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkTopup)
+            }
+        })
     }
 }

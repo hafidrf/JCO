@@ -9,4 +9,5 @@
 
     <dimen name="home_menu_padding_8">8dp</dimen>
     <dimen name="home_menu_padding_16">16dp</dimen>
+    <dimen name="round_4">4dp</dimen>
 </resources>

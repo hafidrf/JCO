@@ -28,4 +28,10 @@ class RepositoryModule {
     fun provideHomeRepository(service:NewsApi, application: Application): HomeRepository {
         return HomeRepositoryImpl(service, application)
     }
+
+    @Provides
+    @ApplicationScope
+    fun provideTopupRepository(application: Application): PaymentRepository {
+        return PaymentRepositoryImpl(application)
+    }
 }

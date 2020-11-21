@@ -1,0 +1,237 @@
+[
+  {
+    "id": 1,
+    "title": "BRI-1",
+    "iconURL": "https://imga.androidappsapk.co/uGyf__KzefsdsdlRZY1MfLx5frFGZ6uB9q9PWLS8c7a95aEuOLfiIuh5qEowtH0asA=s300",
+    "isExpand": false,
+    "topupInstuction": {
+      "title": "Instructions"
+    },
+    "topupInstructionItems": [
+      {
+        "title": "Enter the BRImo Application",
+        "position": "start"
+      },
+      {
+        "title": "Login BRImo",
+        "position": "middle"
+      },
+      {
+        "title": "Select Men Top Up ‘LinkAja’",
+        "position": "middle"
+      },
+      {
+        "title": "Enter the Mobile Number",
+        "position": "middle"
+      },
+      {
+        "title": "Select the type of source of funds",
+        "position": "middle"
+      },
+      {
+        "title": "Enter LinkAja Top Up Nominal and Transaction Description (Optional)",
+        "position": "middle"
+      },
+      {
+        "title": "Confirm Transaction",
+        "position": "middle"
+      },
+      {
+        "title": "Enter Internet Banking Password",
+        "position": "middle"
+      },
+      {
+        "title": "Transaction is successful",
+        "position": "end"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BRI-2",
+    "iconURL": "https://imga.androidappsapk.co/uGyf__KzefsdsdlRZY1MfLx5frFGZ6uB9q9PWLS8c7a95aEuOLfiIuh5qEowtH0asA=s300",
+    "isExpand": false,
+    "topupInstuction": {
+      "title": "Instructions"
+    },
+    "topupInstructionItems": [
+      {
+        "title": "Enter the BRImo Application",
+        "position": "start"
+      },
+      {
+        "title": "Login BRImo",
+        "position": "middle"
+      },
+      {
+        "title": "Select Men Top Up ‘LinkAja’",
+        "position": "middle"
+      },
+      {
+        "title": "Enter the Mobile Number",
+        "position": "middle"
+      },
+      {
+        "title": "Select the type of source of funds",
+        "position": "middle"
+      },
+      {
+        "title": "Enter LinkAja Top Up Nominal and Transaction Description (Optional)",
+        "position": "middle"
+      },
+      {
+        "title": "Confirm Transaction",
+        "position": "middle"
+      },
+      {
+        "title": "Enter Internet Banking Password",
+        "position": "middle"
+      },
+      {
+        "title": "Transaction is successful",
+        "position": "end"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "BRI-3",
+    "iconURL": "https://imga.androidappsapk.co/uGyf__KzefsdsdlRZY1MfLx5frFGZ6uB9q9PWLS8c7a95aEuOLfiIuh5qEowtH0asA=s300",
+    "isExpand": false,
+    "topupInstuction": {
+      "title": "Instructions"
+    },
+    "topupInstructionItems": [
+      {
+        "title": "Enter the BRImo Application",
+        "position": "start"
+      },
+      {
+        "title": "Login BRImo",
+        "position": "middle"
+      },
+      {
+        "title": "Select Men Top Up ‘LinkAja’",
+        "position": "middle"
+      },
+      {
+        "title": "Enter the Mobile Number",
+        "position": "middle"
+      },
+      {
+        "title": "Select the type of source of funds",
+        "position": "middle"
+      },
+      {
+        "title": "Enter LinkAja Top Up Nominal and Transaction Description (Optional)",
+        "position": "middle"
+      },
+      {
+        "title": "Confirm Transaction",
+        "position": "middle"
+      },
+      {
+        "title": "Enter Internet Banking Password",
+        "position": "middle"
+      },
+      {
+        "title": "Transaction is successful",
+        "position": "end"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "BRI-4",
+    "iconURL": "https://imga.androidappsapk.co/uGyf__KzefsdsdlRZY1MfLx5frFGZ6uB9q9PWLS8c7a95aEuOLfiIuh5qEowtH0asA=s300",
+    "isExpand": false,
+    "topupInstuction": {
+      "title": "Instructions"
+    },
+    "topupInstructionItems": [
+      {
+        "title": "Enter the BRImo Application",
+        "position": "start"
+      },
+      {
+        "title": "Login BRImo",
+        "position": "middle"
+      },
+      {
+        "title": "Select Men Top Up ‘LinkAja’",
+        "position": "middle"
+      },
+      {
+        "title": "Enter the Mobile Number",
+        "position": "middle"
+      },
+      {
+        "title": "Select the type of source of funds",
+        "position": "middle"
+      },
+      {
+        "title": "Enter LinkAja Top Up Nominal and Transaction Description (Optional)",
+        "position": "middle"
+      },
+      {
+        "title": "Confirm Transaction",
+        "position": "middle"
+      },
+      {
+        "title": "Enter Internet Banking Password",
+        "position": "middle"
+      },
+      {
+        "title": "Transaction is successful",
+        "position": "end"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "BRI-5",
+    "iconURL": "https://imga.androidappsapk.co/uGyf__KzefsdsdlRZY1MfLx5frFGZ6uB9q9PWLS8c7a95aEuOLfiIuh5qEowtH0asA=s300",
+    "isExpand": false,
+    "topupInstuction": {
+      "title": "Instructions"
+    },
+    "topupInstructionItems": [
+      {
+        "title": "Enter the BRImo Application",
+        "position": "start"
+      },
+      {
+        "title": "Login BRImo",
+        "position": "middle"
+      },
+      {
+        "title": "Select Men Top Up ‘LinkAja’",
+        "position": "middle"
+      },
+      {
+        "title": "Enter the Mobile Number",
+        "position": "middle"
+      },
+      {
+        "title": "Select the type of source of funds",
+        "position": "middle"
+      },
+      {
+        "title": "Enter LinkAja Top Up Nominal and Transaction Description (Optional)",
+        "position": "middle"
+      },
+      {
+        "title": "Confirm Transaction",
+        "position": "middle"
+      },
+      {
+        "title": "Enter Internet Banking Password",
+        "position": "middle"
+      },
+      {
+        "title": "Transaction is successful",
+        "position": "end"
+      }
+    ]
+  }
+]

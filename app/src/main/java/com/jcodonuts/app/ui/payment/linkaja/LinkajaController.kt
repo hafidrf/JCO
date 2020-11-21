@@ -18,7 +18,7 @@ class LinkajaController(private val listener: LinkajaControllerListener) : Async
             when(cellData) {
                 is Divider16 -> addDivider16(cellData)
                 is LinkajaCard -> addLinkajaCard(cellData)
-                is LinkajaTopupType -> addLinkajaPaymentType(cellData)
+                is LinkajaTopupType -> addLinkajaPaymentType(cellData, listener)
                 is LinkajaSectionHeader -> addLinkajaSectionHeader(cellData)
                 is LinkajaTransaction -> addLinkajaTransaction(cellData)
                 is LinkajaTransactionDate -> addLinkajaTransactionDate(cellData)
@@ -39,10 +39,11 @@ class LinkajaController(private val listener: LinkajaControllerListener) : Async
         }
     }
 
-    private fun addLinkajaPaymentType(cellData: LinkajaTopupType){
+    private fun addLinkajaPaymentType(cellData: LinkajaTopupType, listener: LinkajaControllerListener){
         linkajaTopupType {
             id(cellData.hashCode())
             data(cellData)
+            onItemClick(listener)
         }
     }
 

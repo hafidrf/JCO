@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.TopupSectionHeader" />
+    </data>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/c_black"
+        android:textSize="20sp"
+        android:fontFamily="sans-serif-medium"
+        tools:text="Top Up"
+        android:text="@{data.title}"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"/>
+
+</layout>

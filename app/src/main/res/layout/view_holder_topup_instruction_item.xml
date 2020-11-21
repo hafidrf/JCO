@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.TopupInstructionItem" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:background="@drawable/dot_step"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="21dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/c_text_secondary"
+                    android:visibility="@{data.position.equals(`middle`)?View.VISIBLE:View.GONE}"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/c_text_secondary"
+                    android:visibility="@{data.position.equals(`start`)?View.VISIBLE:View.GONE}"/>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="3dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@color/c_text_secondary"
+                    android:visibility="@{data.position.equals(`end`)?View.VISIBLE:View.GONE}"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_black"
+                    android:textSize="14sp"
+                    android:paddingBottom="16dp"
+                    android:paddingTop="16dp"
+                    tools:text="Select a debit account, enter the top up destination number and nominal"
+                    android:text="@{data.title}"/>
+            </LinearLayout>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+
+</layout>
