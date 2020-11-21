@@ -10,7 +10,6 @@ import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.ui.MainActivity
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.main.base.MainFragment
 import com.jcodonuts.app.utils.DialogCannotOrder
 import javax.inject.Inject
 
@@ -30,6 +29,7 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        Log.d(TAG, ":onViewReady ");
 
         val controller = HomeController(viewModel)
         controller.spanCount=2
@@ -50,24 +50,25 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
 
         viewModel.showDialogCannotOrder.observe(this, {
             it.getContentIfNotHandled()?.let {
-                Log.d(TAG, "showDialogCannotOrder: ")
 
                 val dlg = DialogCannotOrder()
                 dlg.showDialog(requireActivity().supportFragmentManager, "HomeFragment", object : DialogCannotOrder.OnDialogClickListener {
                     override fun onLoginClick() {
                         dlg.dissmissDialog()
-                        val uri = Uri.parse(getString(R.string.linkLogin))
-                        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-                                .navigate(uri)
+                        navigateTo(R.string.linkLogin)
                     }
 
                     override fun onRegisterClick() {
                         dlg.dissmissDialog()
-                        val uri = Uri.parse(getString(R.string.linkRegister))
-                        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-                                .navigate(uri)
+                        navigateTo(R.string.linkRegister)
                     }
                 })
+            }
+        })
+
+        viewModel.showLinkaja.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkLinkaja)
             }
         })
 

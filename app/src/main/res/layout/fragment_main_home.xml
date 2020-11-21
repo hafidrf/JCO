@@ -12,37 +12,4 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/item_article" />
-
-<!--    <androidx.core.widget.NestedScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
-<!--        <LinearLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:orientation="vertical"-->
-<!--            android:gravity="center">-->
-
-<!--            <include layout="@layout/view_holder_home_header"/>-->
-<!--            <include layout="@layout/view_holder_home_search"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btnLogin"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Login"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btnForgot"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Forgot"/>-->
-
-<!--            <Button-->
-<!--                android:id="@+id/btnRegister"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="Register"/>-->
-
-<!--        </LinearLayout>-->
-<!--    </androidx.core.widget.NestedScrollView>-->
 </layout>

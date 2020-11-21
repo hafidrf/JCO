@@ -21,6 +21,10 @@ class RegisterFragment @Inject constructor() : BaseFragment<FragmentRegisterBind
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        binding.btnBack.setOnClickListener {
+            onBackPress()
+        }
+
         binding.btnNext.setOnClickListener {
             binding.lytInputPhone.visibility = View.GONE
             binding.lytOTP.visibility = View.VISIBLE

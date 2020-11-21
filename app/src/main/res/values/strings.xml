@@ -2,6 +2,7 @@
     <string name="linkLogin">jcodonuts://com.jcodonuts.app/login</string>
     <string name="linkForgot">jcodonuts://com.jcodonuts.app/forgot</string>
     <string name="linkRegister">jcodonuts://com.jcodonuts.app/register</string>
+    <string name="linkLinkaja">jcodonuts://com.jcodonuts.app/linkaja</string>
 
     <string name="app_name">Jco</string>
     <string name="news_app">J.co</string>

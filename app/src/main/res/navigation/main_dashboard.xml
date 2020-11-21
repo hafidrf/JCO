@@ -9,9 +9,6 @@
         android:id="@+id/home"
         android:name="com.jcodonuts.app.ui.main.home.HomeFragment"
         android:label="HomeFragment" >
-<!--        <action-->
-<!--            android:id="@+id/action_to_articleFragment"-->
-<!--            app:destination="@id/main" />-->
     </fragment>
 
     <fragment
@@ -34,5 +31,6 @@
         android:label="ProfileFragment" >
 
     </fragment>
+
 
 </navigation>

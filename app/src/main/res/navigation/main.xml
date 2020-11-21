@@ -52,6 +52,20 @@
     </fragment>
 
     <fragment
+        android:id="@+id/linkajaFragment"
+        android:name="com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment"
+        android:label="LinkajaFragment" >
+        <deepLink
+            android:id="@+id/linkLinkaja"
+            app:uri="@string/linkLinkaja" />
+    </fragment>
+
+
+
+
+
+
+    <fragment
         android:id="@+id/articleFragment"
         android:name="com.jcodonuts.app.ui.zzexample.article.ArticleFragment"
         android:label="ArticleFragment">
@@ -72,6 +86,5 @@
             android:name="urlWeb"
             app:argType="java.lang.String" />
     </fragment>
-<!--    <include app:graph="@navigation/main_dashboard" />-->
 
 </navigation>

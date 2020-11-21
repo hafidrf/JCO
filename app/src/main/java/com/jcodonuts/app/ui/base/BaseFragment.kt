@@ -1,6 +1,7 @@
 package com.jcodonuts.app.ui.base
 
 import android.app.Dialog
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,8 +16,11 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
+import com.jcodonuts.app.ui.MainActivity
+import java.net.URI
 import javax.inject.Inject
 
 abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
@@ -42,14 +46,11 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        Log.d(TAG, "onActivityCreated: ");
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), getStatusBarColor())
-        Log.d(TAG, "onCreate: ");
 
         mViewModel = ViewModelProvider(this, viewModelFactory).get(getViewModelClass())
     }
@@ -59,7 +60,6 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        Log.d(TAG, "onCreateView: ");
         mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
         mViewDataBinding.lifecycleOwner = this
         mViewDataBinding.executePendingBindings()
@@ -82,7 +82,7 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
     }
 
     open fun onBackPress(){
-        findNavController().popBackStack()
+        findNavController().navigateUp()
     }
 
     override fun onResume() {
@@ -105,5 +105,11 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
 
     open fun getStatusBarColor():Int{
         return android.R.color.transparent
+    }
+
+    open fun navigateTo(link:Int){
+        val uri = Uri.parse(getString(link))
+        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                .navigate(uri)
     }
 }

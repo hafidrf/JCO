@@ -24,7 +24,7 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
     override fun buildModels() {
         data.forEach { cellData ->
             when(cellData) {
-                is HomeHeadSection -> addHomeHeadSection(cellData)
+                is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(cellData)
                 is HomePromoHeader -> addHomePromoHeader(cellData)
                 is HomePromos -> addHomePromos(cellData)
@@ -35,11 +35,12 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
         }
     }
 
-    private fun addHomeHeadSection(cellData: HomeHeadSection){
+    private fun addHomeHeadSection(cellData: HomeHeadSection, listener: HomeControllerListener){
         homeHeader {
             id("header")
-            userName("Test My Name")
             spanSizeOverride { _, _, _ -> 2 }
+            onClickListener(listener)
+            data(cellData)
         }
     }
 

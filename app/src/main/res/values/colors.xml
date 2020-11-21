@@ -17,5 +17,6 @@
 
     <color name="c_link">#601C07</color>
     <color name="c_text_secondary">#8E8E8E</color>
+    <color name="c_divider">#c5c5c5</color>
 
 </resources>

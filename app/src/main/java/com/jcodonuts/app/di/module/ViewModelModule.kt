@@ -15,6 +15,7 @@ import com.jcodonuts.app.ui.main.home.HomeViewModel
 import com.jcodonuts.app.ui.main.notification.NotificationViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
+import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.splash.SplashViewModel
 import dagger.Binds
 import dagger.Module
@@ -71,6 +72,18 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(RegisterViewModel::class)
     internal abstract fun providesRegisterViewModel(viewModel: RegisterViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LinkajaViewModel::class)
+    internal abstract fun providesLinkajaViewModel(viewModel: LinkajaViewModel) : ViewModel
+
+
+
+
+
+
+
 
     @Binds
     @IntoMap

@@ -5,8 +5,11 @@
 
     <data>
         <variable
-            name="userName"
-            type="String" />
+            name="data"
+            type="com.jcodonuts.app.data.local.HomeHeadSection" />
+        <variable
+            name="onClickListener"
+            type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
     </data>
 
     <FrameLayout
@@ -59,7 +62,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
-                    android:text="@{userName}"
+                    android:text="@{data.title}"
                     tools:text="Farizza Ahmad"
                     android:textColor="@color/c_white"/>
 
@@ -117,7 +120,9 @@
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="@{()->onClickListener.onLinkajaClick()}">
 
                     <ImageView
                         android:layout_width="40dp"

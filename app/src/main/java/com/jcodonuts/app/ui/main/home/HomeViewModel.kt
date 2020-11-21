@@ -24,6 +24,10 @@ class HomeViewModel @Inject constructor(
     val showDialogCannotOrder : LiveData<SingleEvents<String>>
         get() = _showDialogCannotOrder
 
+    private val _showLinkaja = MutableLiveData<SingleEvents<String>>()
+    val showLinkaja : LiveData<SingleEvents<String>>
+        get() = _showLinkaja
+
     private val _menus = mutableListOf<Menu>()
 
     @SuppressLint("CheckResult")
@@ -71,6 +75,10 @@ class HomeViewModel @Inject constructor(
         _menus.add(Menu("Cookies & Nuts", R.drawable.img_jco_menu_cookies, false))
         _menus.add(Menu("Hampers", R.drawable.img_jco_menu_hampers, false))
         _menus.add(Menu("Others", R.drawable.img_jco_menu_other, false))
+    }
+
+    override fun onLinkajaClick() {
+        _showLinkaja.value = SingleEvents("linkaja")
     }
 
     override fun onSearchClick() {

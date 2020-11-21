@@ -14,6 +14,7 @@ import com.jcodonuts.app.ui.main.home.HomeFragment
 import com.jcodonuts.app.ui.main.notification.NotificationFragment
 import com.jcodonuts.app.ui.main.profile.ProfileFragment
 import com.jcodonuts.app.ui.auth.register.RegisterFragment
+import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.splash.SplashFragment
 import dagger.Binds
 import dagger.Module
@@ -54,11 +55,6 @@ abstract class FragmentBindingModule {
 
     @Binds
     @IntoMap
-    @FragmentKey(ArticleFragment::class)
-    abstract fun bindArticleFragment(articleFragment: ArticleFragment): Fragment
-
-    @Binds
-    @IntoMap
     @FragmentKey(LoginFragment::class)
     abstract fun bindLoginFragment(fragment: LoginFragment): Fragment
 
@@ -71,6 +67,24 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(RegisterFragment::class)
     abstract fun bindRegisterFragment(fragment: RegisterFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(LinkajaFragment::class)
+    abstract fun bindLinkajaFragment(fragment: LinkajaFragment): Fragment
+
+
+
+
+
+
+
+
+
+    @Binds
+    @IntoMap
+    @FragmentKey(ArticleFragment::class)
+    abstract fun bindArticleFragment(articleFragment: ArticleFragment): Fragment
 
     @Binds
     @IntoMap
