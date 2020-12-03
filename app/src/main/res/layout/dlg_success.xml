@@ -9,17 +9,12 @@
     android:background="@drawable/bg_dlg_container"
     android:padding="16dp">
 
-    <LinearLayout
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="158dp"
-        android:orientation="vertical"
-        android:background="@drawable/bg_dlg_img">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/img_dialog_metal"
-            android:adjustViewBounds="true"/>
-    </LinearLayout>
+        android:layout_height="116dp"
+        android:src="@drawable/img_dlg_check_green"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="16dp"/>
 
     <TextView
         android:id="@+id/dlgTitle"

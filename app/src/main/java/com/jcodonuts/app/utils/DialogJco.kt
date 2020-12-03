@@ -5,6 +5,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.Window
+import android.widget.LinearLayout
 import com.jcodonuts.app.R
 import kotlinx.android.synthetic.main.dlg_success.view.*
 
@@ -26,6 +27,7 @@ class DialogJco(context: Context) : Dialog(context) {
         //initializing dialog screen
 
         dialog?.window!!.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog?.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT )
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog?.setCancelable(false)
         dialog?.setContentView(dialogview)
