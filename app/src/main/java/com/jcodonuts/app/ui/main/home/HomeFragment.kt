@@ -24,10 +24,6 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         return R.layout.fragment_main_home
     }
 
-    override fun getStatusBarColor(): Int {
-        return R.color.colorAccent
-    }
-
     override fun onViewReady(savedInstance: Bundle?) {
         Log.d(TAG, ":onViewReady ");
 

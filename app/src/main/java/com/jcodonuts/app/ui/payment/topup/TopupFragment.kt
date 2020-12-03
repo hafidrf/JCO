@@ -16,10 +16,6 @@ class TopupFragment @Inject constructor() : BaseFragment<FragmentPaymentTopupBin
         return R.layout.fragment_payment_topup
     }
 
-    override fun getStatusBarColor(): Int {
-        return R.color.colorAccent
-    }
-
     override fun onViewReady(savedInstance: Bundle?) {
         binding.topBar.btnBack.setOnClickListener {
             onBackPress()

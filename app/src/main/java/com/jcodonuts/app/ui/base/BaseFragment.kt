@@ -50,7 +50,6 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity().window.statusBarColor = ContextCompat.getColor(requireContext(), getStatusBarColor())
 
         mViewModel = ViewModelProvider(this, viewModelFactory).get(getViewModelClass())
     }
@@ -101,10 +100,6 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
             startPostponedEnterTransition()
             true
         }
-    }
-
-    open fun getStatusBarColor():Int{
-        return android.R.color.transparent
     }
 
     open fun navigateTo(link:Int){

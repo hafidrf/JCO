@@ -13,7 +13,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
+        android:background="@color/colorAccent"
+        android:paddingTop="30dp">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="50dp"

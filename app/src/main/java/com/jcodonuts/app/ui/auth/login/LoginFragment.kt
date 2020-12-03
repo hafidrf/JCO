@@ -21,7 +21,11 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
 
     override fun onViewReady(savedInstance: Bundle?) {
         binding.btnForgotPassword.setOnClickListener {
-            Log.d(TAG, "tralalala: ");
+            navigateTo(R.string.linkForgot)
+        }
+
+        binding.btnRegister.setOnClickListener {
+            navigateTo(R.string.linkRegister)
         }
     }
 }

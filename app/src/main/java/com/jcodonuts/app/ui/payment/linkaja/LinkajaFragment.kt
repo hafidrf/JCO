@@ -18,10 +18,6 @@ class LinkajaFragment @Inject constructor() : BaseFragment<FragmentPaymentLinkaj
         return R.layout.fragment_payment_linkaja
     }
 
-    override fun getStatusBarColor(): Int {
-        return R.color.colorAccent
-    }
-
     override fun onViewReady(savedInstance: Bundle?) {
         binding.topBar.btnBack.setOnClickListener {
             onBackPress()

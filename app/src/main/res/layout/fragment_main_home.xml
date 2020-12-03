@@ -3,13 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <com.airbnb.epoxy.EpoxyRecyclerView
-        android:id="@+id/homeRecyclerview"
+    <com.jcodonuts.app.utils.MyLinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clipToPadding="false"
-        android:clipChildren="false"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:spanCount="2"
-        tools:listitem="@layout/item_article" />
+        android:orientation="vertical"
+        android:fitsSystemWindows="true">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/colorAccent"/>
+        <com.airbnb.epoxy.EpoxyRecyclerView
+            android:id="@+id/homeRecyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_article"/>
+    </com.jcodonuts.app.utils.MyLinearLayout>
 </layout>
