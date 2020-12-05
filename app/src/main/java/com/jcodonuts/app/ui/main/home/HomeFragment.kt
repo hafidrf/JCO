@@ -1,14 +1,11 @@
 package com.jcodonuts.app.ui.main.home
 
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
 import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
-import com.jcodonuts.app.ui.MainActivity
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogCannotOrder
 import javax.inject.Inject
@@ -65,6 +62,12 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         viewModel.showLinkaja.observe(this, {
             it.getContentIfNotHandled()?.let {
                 navigateTo(R.string.linkLinkaja)
+            }
+        })
+
+        viewModel.openProductDetail.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkProductDetail)
             }
         })
 

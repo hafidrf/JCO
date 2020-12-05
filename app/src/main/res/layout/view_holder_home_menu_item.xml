@@ -44,7 +44,7 @@
                         app:layout_constraintStart_toStartOf="@id/parentImg"
                         app:layout_constraintTop_toTopOf="@id/parentImg"
                         app:layout_constraintDimensionRatio="1:1"
-                        tools:src="@drawable/img_qrcode"
+                        tools:src="@drawable/img_placeholder_donut"
                         android:adjustViewBounds="true"
                         android:layout_gravity="center"
                         imgUrl="@{data.imgURL}"

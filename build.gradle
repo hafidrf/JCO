@@ -24,7 +24,7 @@ buildscript {
         guavaVersion = '24.1-jre'
 
         //Navigation Dependencies
-        navigationVersion = '2.3.1'
+        navigationVersion = '2.3.2'
 
         // MVVM and LiveData Dependencies
         archLifecycleVersion = '2.2.0'

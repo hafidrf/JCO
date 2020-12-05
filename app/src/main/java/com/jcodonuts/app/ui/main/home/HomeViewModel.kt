@@ -28,6 +28,10 @@ class HomeViewModel @Inject constructor(
     val showLinkaja : LiveData<SingleEvents<String>>
         get() = _showLinkaja
 
+    private val _openProductDetail = MutableLiveData<SingleEvents<String>>()
+    val openProductDetail : LiveData<SingleEvents<String>>
+        get() = _openProductDetail
+
     private val _menus = mutableListOf<Menu>()
 
     @SuppressLint("CheckResult")
@@ -100,6 +104,7 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuItemClick(menuItem: HomeMenuItem) {
-        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
+//        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
+        _openProductDetail.value = SingleEvents(menuItem.toString())
     }
 }

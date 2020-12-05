@@ -1,0 +1,130 @@
+{
+  "content": {
+    "type": "Donuts",
+    "colorType": "#FAC1A8",
+    "colorTypeText": "#F25A17",
+    "productName": "Donuts 2 dzn",
+    "price": "Rp. 125,000",
+    "quantity": 1,
+    "quantityInPcs": 0,
+    "totalPerPack": 12,
+    "maxDesc": "* Maximum purchase of 2 packages",
+    "desc": "Mix or selected your Donut"
+  },
+  "donuts": [
+    {
+      "name": "Mr.Green Tea",
+      "imgURL": "https://drive.google.com/uc?id=1Y3rye8y4Vy-S_RPZqAwgK_Oa8lnAbEFr",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Jacky Chunk",
+      "imgURL": "https://drive.google.com/uc?id=1jCmpe6OahvpU5eOYfsw68k1EG_34O6wX",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Heaven Berry",
+      "imgURL": "https://drive.google.com/uc?id=1tHhnPtKY3RHHovzZ2uP-pMj76wFyrsrd",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Glazzy",
+      "imgURL": "https://drive.google.com/uc?id=10uUma0gwsJDkJdumh5tLsK5HHt9KXOL0",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Don Mochino",
+      "imgURL": "https://drive.google.com/uc?id=1A_CMszjKB3Eajt9FL7wG59eudb16UQ4A",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Copa Banana_NEW",
+      "imgURL": "https://drive.google.com/uc?id=1aFl3OKYrGTPYhqeR1yQ8M2TrdR0q7Usj",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Blueberry More",
+      "imgURL": "https://drive.google.com/uc?id=1-ZPOSAM_L9M5x237ZdGqYZlVdxJQ6PO4",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Black Jack ",
+      "imgURL": "https://drive.google.com/uc?id=14Tha6zxwb5RxEd3jryQByw83fFH43_Jk",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Alcapone",
+      "imgURL": "https://drive.google.com/uc?id=1qewSp2oYozRXH00tZSVfKoQrMFRWYtmc",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Avocado DiCaprio",
+      "imgURL": "https://drive.google.com/uc?id=1TONgbYcpni4BjDRbghlemTgdE3hiA4i0",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Choco Caviar Chocolate",
+      "imgURL": "https://drive.google.com/uc?id=1Ztu4dDKqbzAyeDGYnEuw70EEh_s4io8v",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Coco Loco",
+      "imgURL": "https://drive.google.com/uc?id=1yS1W43lv0VrxpO2OrIPNUFgQ_Y_n3Ebh",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Crunchy2 ",
+      "imgURL": "https://drive.google.com/uc?id=1VkRdWnb860enz1-d55YGs2FEB7XGtXzq",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Forest Glam",
+      "imgURL": "https://drive.google.com/uc?id=1OaWDR-EF4UKa3IZhMidIK84O-YX1XWQG",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Meisisipi",
+      "imgURL": "https://drive.google.com/uc?id=1KK1p3yRRW-f4tuPACXVAojIbALzIULDw",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Oreology",
+      "imgURL": "https://drive.google.com/uc?id=1jULDp8Re8zL7DYsjZIFlogNYo9Pwloz5",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Tiramisu",
+      "imgURL": "https://drive.google.com/uc?id=1hAEkwT4HW-rfsOffy8jP0WLZO9dkCKVG",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Why Nut",
+      "imgURL": "https://drive.google.com/uc?id=1f-SLSjlEMoZY8bOWcidTUfXZRoQ5sHDZ",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    },
+    {
+      "name": "Snow White ",
+      "imgURL": "https://drive.google.com/uc?id=1_lyRT93qdjBFXt-SyxHJjS2R8mtg5xy4",
+      "price": "Rp. 5,000",
+      "quantity": 0
+    }
+  ]
+}

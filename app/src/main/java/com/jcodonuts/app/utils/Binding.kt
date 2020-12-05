@@ -1,7 +1,6 @@
 package com.jcodonuts.app.utils
 
 import android.content.res.Resources
-import android.util.Log
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -9,10 +8,8 @@ import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
 import com.jcodonuts.app.R
 
 
@@ -22,19 +19,19 @@ fun AppCompatImageView.setImgUrl(imgUrl:String?, roundCorner:Int=0){
         if(roundCorner>0){
             Glide.with(context)
                     .load(imgUrl)
-                    .placeholder(R.drawable.img_placeholder_news)
-                    .error(R.drawable.img_placeholder_news)
+                    .placeholder(R.drawable.img_placeholder_donut)
+                    .error(R.drawable.img_placeholder_donut)
                     .transform(CenterInside(), RoundedCorners(dpToPx(roundCorner)))
                     .into(this)
         }else{
             Glide.with(context)
                     .load(imgUrl)
-                    .placeholder(R.drawable.img_placeholder_news)
-                    .error(R.drawable.img_placeholder_news)
+                    .placeholder(R.drawable.img_placeholder_donut)
+                    .error(R.drawable.img_placeholder_donut)
                     .into(this)
         }
     }else{
-        setImageResource(R.drawable.img_placeholder_news)
+        setImageResource(R.drawable.img_placeholder_donut)
     }
 }
 

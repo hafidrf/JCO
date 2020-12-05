@@ -69,6 +69,15 @@
             app:uri="@string/linkTopup" />
     </fragment>
 
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.jcodonuts.app.ui.product_detail.ProductDetailFragment"
+        android:label="ProductDetailFragment" >
+        <deepLink
+            android:id="@+id/linkProductDetail"
+            app:uri="@string/linkProductDetail" />
+    </fragment>
+
 
 
 

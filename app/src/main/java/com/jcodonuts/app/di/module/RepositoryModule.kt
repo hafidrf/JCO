@@ -34,4 +34,10 @@ class RepositoryModule {
     fun provideTopupRepository(application: Application): PaymentRepository {
         return PaymentRepositoryImpl(application)
     }
+
+    @Provides
+    @ApplicationScope
+    fun provideProductRepository(application: Application): ProductRepository {
+        return ProductRepositoryImpl(application)
+    }
 }

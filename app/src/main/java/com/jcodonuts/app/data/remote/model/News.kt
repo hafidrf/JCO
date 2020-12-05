@@ -1,5 +1,6 @@
 package com.jcodonuts.app.data.remote.model
 
+import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.base.BaseModel
 
 data class News(
@@ -16,4 +17,8 @@ data class Article(
     val title: String,
     val url: String,
     val urlToImage: String
-) : BaseModel
+) : BaseModel {
+    override fun layoutId(): Int {
+        return R.layout.item_article
+    }
+}
