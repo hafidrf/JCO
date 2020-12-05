@@ -166,7 +166,9 @@
                     android:layout_weight="1"
                     android:orientation="horizontal"
                     android:gravity="center_vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:onClick="@{()->onClickListener.onQrCodeClick()}">
 
                     <ImageView
                         android:layout_width="40dp"

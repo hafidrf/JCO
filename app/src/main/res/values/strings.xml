@@ -61,4 +61,6 @@
     <string name="register">Register</string>
     <string name="add_to_cart">Add to cart</string>
     <string name="donuts">Donuts</string>
+    <string name="show_the_barcode_to_be_scanned_by_the_cashier">Show the barcode to be scanned by the cashier</string>
+    <string name="scan_code_to_pay">Scan code to pay</string>
 </resources>

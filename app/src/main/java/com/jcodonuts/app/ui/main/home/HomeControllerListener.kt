@@ -6,6 +6,7 @@ import com.jcodonuts.app.data.local.PromoBanner
 
 interface HomeControllerListener {
     fun onLinkajaClick()
+    fun onQrCodeClick()
     fun onSearchClick()
     fun onBannerPromoClick(promoBanner: PromoBanner)
     fun onPromoSeeAllClick()

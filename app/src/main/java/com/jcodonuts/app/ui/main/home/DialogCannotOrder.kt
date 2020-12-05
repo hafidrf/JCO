@@ -1,11 +1,9 @@
-package com.jcodonuts.app.utils
+package com.jcodonuts.app.ui.main.home
 
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.button.MaterialButton
 import com.jcodonuts.app.R
 import kotlinx.android.synthetic.main.dlg_cannot_place_order.view.*
 

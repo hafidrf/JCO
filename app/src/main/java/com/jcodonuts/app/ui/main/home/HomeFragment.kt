@@ -7,7 +7,6 @@ import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.utils.DialogCannotOrder
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
@@ -71,11 +70,12 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
             }
         })
 
-//        binding.btnForgot.setOnClickListener {
-//            val uri = Uri.parse(getString(R.string.linkForgot))
-//            Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
-//                .navigate(uri)
-//        }
+        viewModel.showQRcode.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                val dlg = DialogQrCode()
+                dlg.showDialog(requireActivity().supportFragmentManager)
+            }
+        })
     }
 
     override fun onBackPress() {

@@ -28,6 +28,10 @@ class HomeViewModel @Inject constructor(
     val showLinkaja : LiveData<SingleEvents<String>>
         get() = _showLinkaja
 
+    private val _showQRcode = MutableLiveData<SingleEvents<String>>()
+    val showQRcode : LiveData<SingleEvents<String>>
+        get() = _showQRcode
+
     private val _openProductDetail = MutableLiveData<SingleEvents<String>>()
     val openProductDetail : LiveData<SingleEvents<String>>
         get() = _openProductDetail
@@ -85,6 +89,10 @@ class HomeViewModel @Inject constructor(
         _showLinkaja.value = SingleEvents("linkaja")
     }
 
+    override fun onQrCodeClick() {
+        _showQRcode.value = SingleEvents("qrcode")
+    }
+
     override fun onSearchClick() {
 
     }
@@ -104,7 +112,7 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuItemClick(menuItem: HomeMenuItem) {
-//        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
-        _openProductDetail.value = SingleEvents(menuItem.toString())
+        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
+//        _openProductDetail.value = SingleEvents(menuItem.toString())
     }
 }

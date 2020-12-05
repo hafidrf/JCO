@@ -150,7 +150,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
                 tools:text="0 of 12 items selected"
-                android:text="@{data.quantityInPcs+` of `+(data.quantity*12)+` items selected`}"
+                android:text="@{data.quantityInPcs+` of `+(data.quantity*data.totalPerPack)+` items selected`}"
                 android:textColor="@color/c_text_secondary"/>
 
         </LinearLayout>

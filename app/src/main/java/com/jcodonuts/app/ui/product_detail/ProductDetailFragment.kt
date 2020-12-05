@@ -49,5 +49,11 @@ class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProduct
                 adapter.notifyItemChanged(position)
             }
         })
+
+        viewModel.notifyContentUpdate.observe(this, {
+            it.getContentIfNotHandled()?.let { position ->
+                adapter.notifyItemChanged(position)
+            }
+        })
     }
 }

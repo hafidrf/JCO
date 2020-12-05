@@ -22,6 +22,10 @@ class ProductDetailViewModel @Inject constructor(
     val datas : LiveData<MutableList<BaseModel>>
         get() = _datas
 
+    private val _notifyContentUpdate = MutableLiveData<SingleEvents<Int>>()
+    val notifyContentUpdate : LiveData<SingleEvents<Int>>
+        get() = _notifyContentUpdate
+
     private val _notifyItemUpdate = MutableLiveData<SingleEvents<Int>>()
     val notifyItemUpdate : LiveData<SingleEvents<Int>>
         get() = _notifyItemUpdate
@@ -36,9 +40,6 @@ class ProductDetailViewModel @Inject constructor(
                     val temp = _datas.value?.toMutableList() ?: mutableListOf()
                     temp.add(data.content)
                     temp.addAll(data.donuts)
-                    temp.add(Divider16(""))
-                    temp.add(Divider16(""))
-                    Log.d("setRecyclerViewItems", "UPDATE LIST "+temp.size.toString())
                     _datas.postValue(temp)
                 },{
 
@@ -46,73 +47,48 @@ class ProductDetailViewModel @Inject constructor(
                 )
     }
 
-//    override fun onDonutMinusClick(donut: ProductDetailDonut) {
-////        if(donut.quantity>0){
-////            donut.quantity--
-////            val temp = _datas.value?.toMutableList() ?: mutableListOf()
-////            val pos = temp.indexOf(donut)
-////            pos?.let { temp.set(it, donut) }
-////            _datas.postValue(_datas.value)
-////        }
-//    }
-//
-//    override fun onDonutPlusClick(donut: ProductDetailDonut) {
-////        val content = (_datas.value?.get(0)?.data as ProductDetailContent)
-////        val maxDonut = content.quantity*12
-////        val qtyInPcs = content.quantityInPcs
-////        if(qtyInPcs<maxDonut){
-//            donut.quantity++
-//            val temp = _datas.value?.toMutableList() ?: mutableListOf()
-//            val pos = temp.indexOf(donut)
-//            pos?.let { temp.set(it, donut) }
-//            _datas.postValue(temp)
-////        }
-//    }
-//
-//    override fun onMinusClick(content: ProductDetailContent) {
-////        if(content.quantity>0){
-////            content.quantity--
-////            val temp = _datas.value?.toMutableList() ?: mutableListOf()
-////            val pos = temp.indexOf(content)
-////            pos?.let { temp.set(it, content) }
-////            temp[pos] = content
-////            temp.forEach {
-////                if(it.data[0] is ProductDetailDonut){
-////                    (it.data[0] as ProductDetailDonut).quantity=0
-////                }
-////            }
-////            _datas.postValue(_datas.value)
-////
-////        }
-//    }
-//
-//    override fun onPlusClick(content: ProductDetailContent) {
-////        content.quantity++
-////        val temp = _datas.value?.toMutableList() ?: mutableListOf()
-////        val pos = temp.indexOf(content)
-////        pos?.let { temp.set(it, content) }
-////        _datas.postValue(_datas.value)
-//    }
-
     override fun onPlusClick(position: Int) {
-
+        _datas.value?.let {
+            val content = (it[position] as ProductDetailContent)
+            content.quantity++
+            _notifyContentUpdate.postValue(SingleEvents(position))
+        }
     }
 
     override fun onMinusClick(position: Int) {
-
+        _datas.value?.let {
+            val content = (it[position] as ProductDetailContent)
+            if(content.quantity>0){
+                content.quantity--
+                _notifyContentUpdate.postValue(SingleEvents(position))
+            }
+        }
     }
 
     override fun onDonutPlusClick(position: Int) {
-        (_datas.value?.get(position) as ProductDetailDonut).quantity++
+        _datas.value?.let {
+            val content = (it[0] as ProductDetailContent)
+            val max = content.quantity*content.totalPerPack
+            if(content.quantityInPcs<max){
+                (it[position] as ProductDetailDonut).quantity++
+                _notifyItemUpdate.postValue(SingleEvents(position))
 
-        _notifyItemUpdate.postValue(SingleEvents(position))
+                content.quantityInPcs++
+                _notifyContentUpdate.postValue(SingleEvents(0))
+            }
+        }
     }
 
     override fun onDonutMinusClick(position: Int) {
-        if((_datas.value?.get(position) as ProductDetailDonut).quantity>0){
-            (_datas.value?.get(position) as ProductDetailDonut).quantity--
+        _datas.value?.let {
+            if((it[position] as ProductDetailDonut).quantity>0){
 
-            _notifyItemUpdate.postValue(SingleEvents(position))
+                (it[position] as ProductDetailDonut).quantity--
+                _notifyItemUpdate.postValue(SingleEvents(position))
+
+                (it[0] as ProductDetailContent).quantityInPcs--
+                _notifyContentUpdate.postValue(SingleEvents(0))
+            }
         }
     }
 }
