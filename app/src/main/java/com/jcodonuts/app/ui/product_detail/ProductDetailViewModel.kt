@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.utils.recycler_adapter.RecyclerItem
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.ProductRepository
 import com.jcodonuts.app.ui.base.BaseModel

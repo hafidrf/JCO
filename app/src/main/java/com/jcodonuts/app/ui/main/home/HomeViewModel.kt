@@ -1,6 +1,7 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
@@ -32,11 +33,19 @@ class HomeViewModel @Inject constructor(
     val showQRcode : LiveData<SingleEvents<String>>
         get() = _showQRcode
 
-    private val _openProductDetail = MutableLiveData<SingleEvents<String>>()
-    val openProductDetail : LiveData<SingleEvents<String>>
+    private val _openProductDetail = MutableLiveData<SingleEvents<HomeMenuItem>>()
+    val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
 
+    private val _updateData = MutableLiveData<SingleEvents<Int>>()
+    val updateData : LiveData<SingleEvents<Int>>
+        get() = _updateData
+
     private val _menus = mutableListOf<Menu>()
+
+    init {
+        datas.value = mutableListOf()
+    }
 
     @SuppressLint("CheckResult")
     fun loadPromo(){
@@ -53,7 +62,6 @@ class HomeViewModel @Inject constructor(
                 getMenus()
                 temp.add(HomeMenus(_menus))
 
-                datas.postValue(temp)
                 loadMenuItems()
             }, {
 
@@ -67,9 +75,9 @@ class HomeViewModel @Inject constructor(
                 .observeOn(schedulers.ui())
                 .subscribe({ data ->
                     val temp = datas.value?: mutableListOf()
-                    temp.add(data)
+                    temp.addAll(data.homeMenuItems)
 
-                    datas.postValue(temp)
+                    datas.value=temp
                 }, {
 
                 })
@@ -111,8 +119,11 @@ class HomeViewModel @Inject constructor(
         }
     }
 
-    override fun onMenuItemClick(menuItem: HomeMenuItem) {
-        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
-//        _openProductDetail.value = SingleEvents(menuItem.toString())
+    override fun onMenuItemClick(index: Int) {
+//        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
+        datas.value?.let {
+            _openProductDetail.value = SingleEvents(it[index] as HomeMenuItem)
+        }
+
     }
 }

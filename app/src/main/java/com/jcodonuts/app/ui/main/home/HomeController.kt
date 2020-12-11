@@ -1,19 +1,12 @@
 package com.jcodonuts.app.ui.main.home
 
-import com.airbnb.epoxy.AsyncEpoxyController
-import com.airbnb.epoxy.Carousel
-import com.airbnb.epoxy.carousel
+import com.airbnb.epoxy.*
 import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
 
-class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyController() {
+class HomeController(private val listener: HomeControllerListener)
+    : TypedEpoxyController<List<BaseCell>>() {
     private val TAG = "HomeController"
-
-    var data: List<BaseCell> = emptyList()
-        set(value) {
-            field = value
-            requestModelBuild()
-        }
 
     var menuSelected = R.drawable.img_jco_menu_all
         set(value) {
@@ -21,8 +14,8 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
             requestModelBuild()
         }
 
-    override fun buildModels() {
-        data.forEach { cellData ->
+    override fun buildModels(data: List<BaseCell>?) {
+        data?.forEachIndexed { index, cellData ->
             when(cellData) {
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(cellData)
@@ -30,7 +23,7 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader(cellData)
                 is HomeMenus -> addHomeMenu(cellData, listener)
-                is HomeMenuItems -> addHomeMenuItem(cellData, listener)
+                is HomeMenuItem -> addHomeMenuItem(cellData, listener, index)
             }
         }
     }
@@ -96,14 +89,12 @@ class HomeController(private val listener: HomeControllerListener) : AsyncEpoxyC
         }
     }
 
-    private fun addHomeMenuItem(cellData: HomeMenuItems, listener: HomeControllerListener) {
-        cellData.homeMenuItems.forEachIndexed { index, it ->
+    private fun addHomeMenuItem(cellData: HomeMenuItem, listener: HomeControllerListener, index:Int) {
             homeMenuItem {
-                id(it.hashCode().toString())
-                data(it)
+                id(cellData.hashCode())
+                data(cellData)
+                index(index)
                 onClickListener(listener)
-                left(index%2==0)
             }
-        }
     }
 }

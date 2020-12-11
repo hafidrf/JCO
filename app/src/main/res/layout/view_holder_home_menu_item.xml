@@ -7,23 +7,21 @@
     <data>
         <import type="android.view.View"/>
         <variable
+            name="index"
+            type="Integer" />
+        <variable
             name="data"
             type="com.jcodonuts.app.data.local.HomeMenuItem" />
         <variable
             name="onClickListener"
             type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
-        <variable
-            name="left"
-            type="Boolean" />
     </data>
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="16dp"
-        android:paddingStart="@{left? @dimen/home_menu_padding_16 : @dimen/home_menu_padding_8}"
-        android:paddingEnd="@{left? @dimen/home_menu_padding_8 : @dimen/home_menu_padding_16}">
+        android:paddingBottom="16dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -109,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?attr/selectableItemBackground"
-            android:onClick="@{()->onClickListener.onMenuItemClick(data)}"/>
+            android:onClick="@{()->onClickListener.onMenuItemClick(index)}"/>
 
     </FrameLayout>
 

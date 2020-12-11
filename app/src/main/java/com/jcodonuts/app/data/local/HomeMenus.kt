@@ -8,4 +8,4 @@ data class Menu(
     val title: String,
     val img: Int,
     var isSelected: Boolean,
-)
+):BaseCell()

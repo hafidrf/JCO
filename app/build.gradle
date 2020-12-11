@@ -1,15 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs"
-
-apply plugin: 'com.jakewharton.butterknife'
-
-androidExtensions {
-    experimental = true
-}
 
 android {
     compileSdkVersion 29
@@ -40,6 +33,7 @@ android {
 
     buildFeatures{
         dataBinding = true
+        viewBinding true
     }
 
     kotlinOptions {
@@ -51,8 +45,15 @@ android {
     }
 }
 
-repositories {
-    mavenCentral()
+kapt {
+    correctErrorTypes = true
+}
+
+project.android.buildTypes.all { buildType ->
+    buildType.javaCompileOptions.annotationProcessorOptions.arguments =
+            [
+                    validateEpoxyModelUsage     : "false",
+            ]
 }
 
 dependencies {
@@ -122,9 +123,13 @@ dependencies {
     implementation "com.android.support:multidex:$multidexVersion"
 
     //recyclerview epoxy
-    implementation 'com.airbnb.android:epoxy:4.1.0'
-    kapt 'com.airbnb.android:epoxy-processor:4.1.0'
-    implementation 'com.airbnb.android:epoxy-databinding:4.1.0'
+    implementation 'com.airbnb.android:epoxy:4.3.1'
+    kapt 'com.airbnb.android:epoxy-processor:4.3.1'
+    kaptTest 'com.airbnb.android:epoxy-processor:4.3.1'
+    implementation 'com.airbnb.android:epoxy-databinding:4.3.1'
+//    implementation 'com.airbnb.android:epoxy-adapter:4.3.1'
+    implementation 'com.airbnb.android:epoxy-annotations:4.3.1'
 
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
 }
+

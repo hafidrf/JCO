@@ -2,7 +2,6 @@ package com.jcodonuts.app.data.local
 
 import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.base.BaseModel
-import com.jcodonuts.app.utils.recycler_adapter.RecyclerItem
 
 
 data class ProductDetail(

@@ -27,13 +27,21 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         controller.spanCount=2
         Carousel.setDefaultGlobalSnapHelperFactory(null)
         binding.homeRecyclerview.setController(controller)
+        binding.homeRecyclerview.addItemDecoration(HomeSpacingDecoration())
 
         if(!isFragmentFromPaused){
             viewModel.loadPromo()
         }
 
         viewModel.datas.observe(this, Observer {
-            controller.data = it
+            Log.d(TAG, "controller.setData ");
+            controller.setData(it)
+        })
+
+        viewModel.updateData.observe(this, { it ->
+            it.getContentIfNotHandled()?.let {index ->
+                controller.requestModelBuild()
+            }
         })
 
         viewModel.menuSelected.observe(this, {

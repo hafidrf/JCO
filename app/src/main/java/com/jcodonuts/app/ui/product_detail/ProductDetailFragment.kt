@@ -4,8 +4,6 @@ import android.os.Bundle
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentProductDetailBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.zzexample.article.MenuAdapter
-import com.jcodonuts.app.utils.recycler_adapter.DataBindingRecyclerAdapter
 import javax.inject.Inject
 
 class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProductDetailBinding, ProductDetailViewModel>() {

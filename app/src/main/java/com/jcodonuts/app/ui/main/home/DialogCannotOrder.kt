@@ -5,29 +5,32 @@ import android.view.*
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jcodonuts.app.R
-import kotlinx.android.synthetic.main.dlg_cannot_place_order.view.*
+import com.jcodonuts.app.databinding.DlgCannotPlaceOrderBinding
 
 class DialogCannotOrder() : BottomSheetDialogFragment() {
 
     private lateinit var listener : OnDialogClickListener
+    private lateinit var binding : DlgCannotPlaceOrderBinding
     override fun getTheme(): Int {
         return R.style.DialogFullWidth
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return  inflater.inflate(R.layout.dlg_cannot_place_order, container, false)
+        binding = DlgCannotPlaceOrderBinding.inflate(inflater)
+        return binding.root
+//        return  inflater.inflate(R.layout.dlg_cannot_place_order, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isCancelable = false
-        view.btnDlgClose.setOnClickListener {
+        binding.btnDlgClose.setOnClickListener {
             dialog?.cancel()
         }
-        view.btnLogin.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             listener.onLoginClick()
         }
-        view.btnRegister.setOnClickListener {
+        binding.btnRegister.setOnClickListener {
             listener.onRegisterClick()
         }
 

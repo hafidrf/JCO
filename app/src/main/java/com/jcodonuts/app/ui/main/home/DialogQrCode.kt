@@ -1,9 +1,7 @@
 package com.jcodonuts.app.ui.main.home
 
-import android.os.Build
 import android.os.Bundle
 import android.view.*
-import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import android.widget.FrameLayout
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -12,11 +10,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.HomeDialogQrcode
 import com.jcodonuts.app.data.local.Qrcode
-import kotlinx.android.synthetic.main.dlg_home_qrcode.view.*
+import com.jcodonuts.app.databinding.DlgCannotPlaceOrderBinding
+import com.jcodonuts.app.databinding.DlgHomeQrcodeBinding
 
 
 class DialogQrCode() : BottomSheetDialogFragment() {
 
+    private lateinit var binding : DlgHomeQrcodeBinding
     override fun getTheme(): Int {
         return R.style.DialogFullWidth
     }
@@ -26,18 +26,20 @@ class DialogQrCode() : BottomSheetDialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return  inflater.inflate(R.layout.dlg_home_qrcode, container, false)
+        binding = DlgHomeQrcodeBinding.inflate(inflater)
+        return binding.root
+//        return  inflater.inflate(R.layout.dlg_home_qrcode, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isCancelable = false
-        view.btnDlgClose.setOnClickListener {
+        binding.btnDlgClose.setOnClickListener {
             dissmissDialog()
         }
 
         val controller = QrcodeController()
-        view.qrcodeRecyclerview.setController(controller)
+        binding.qrcodeRecyclerview.setController(controller)
 
         val listQr = mutableListOf<Qrcode>()
         listQr.add(

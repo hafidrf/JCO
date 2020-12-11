@@ -11,5 +11,5 @@ interface HomeControllerListener {
     fun onBannerPromoClick(promoBanner: PromoBanner)
     fun onPromoSeeAllClick()
     fun onMenuClick(menu:Menu)
-    fun onMenuItemClick(menuItem:HomeMenuItem)
+    fun onMenuItemClick(index:Int)
 }
