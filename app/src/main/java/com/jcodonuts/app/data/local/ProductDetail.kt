@@ -20,19 +20,11 @@ data class ProductDetailContent(
     var quantityInPcs: Int,
     var totalPerPack: Int,
     val type: String
-):BaseModel{
-    override fun layoutId(): Int {
-        return R.layout.view_holder_product_detail_contents
-    }
-}
+):BaseCell()
 
 data class ProductDetailDonut(
     val imgURL: String,
     val name: String,
     val price: String,
     var quantity: Int
-):BaseModel{
-    override fun layoutId(): Int {
-        return R.layout.view_holder_product_detail_donut_item
-    }
-}
+):BaseCell()

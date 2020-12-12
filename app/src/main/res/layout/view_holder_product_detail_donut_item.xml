@@ -9,9 +9,9 @@
             type="com.jcodonuts.app.data.local.ProductDetailDonut" />
         <variable
             name="onClickListener"
-            type="com.jcodonuts.app.ui.product_detail.ViewHolderListener" />
+            type="com.jcodonuts.app.ui.product_detail.ProductDetailControllerListener" />
         <variable
-            name="position"
+            name="index"
             type="Integer" />
     </data>
 
@@ -57,7 +57,7 @@
                     android:layout_height="20dp"
                     android:src="@drawable/img_btn_minus"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:onClick="@{()->onClickListener.onDonutMinusClick(position)}"/>
+                    android:onClick="@{()->onClickListener.onDonutMinusClick(index)}"/>
 
                 <TextView
                     android:id="@+id/txtQuantity"
@@ -75,7 +75,7 @@
                     android:layout_height="20dp"
                     android:src="@drawable/img_btn_plus"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:onClick="@{()->onClickListener.onDonutPlusClick(position)}"/>
+                    android:onClick="@{()->onClickListener.onDonutPlusClick(index)}"/>
 
             </LinearLayout>
         </LinearLayout>

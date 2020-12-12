@@ -127,10 +127,8 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuItemClick(index: Int) {
-//        _showDialogCannotOrder.value = SingleEvents(menuItem.toString())
         datas.value?.let {
             _openProductDetail.value = SingleEvents(it[index] as HomeMenuItem)
         }
-
     }
 }

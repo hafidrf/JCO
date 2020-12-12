@@ -49,13 +49,6 @@ kapt {
     correctErrorTypes = true
 }
 
-project.android.buildTypes.all { buildType ->
-    buildType.javaCompileOptions.annotationProcessorOptions.arguments =
-            [
-                    validateEpoxyModelUsage     : "false",
-            ]
-}
-
 dependencies {
 
     // Kotlin

@@ -1,33 +1,22 @@
 package com.jcodonuts.app.ui.product_detail
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.ProductRepository
-import com.jcodonuts.app.ui.base.BaseModel
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider
-import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject
 
 class ProductDetailViewModel @Inject constructor(
         private val productRepository: ProductRepository,
         private val scheduler: SchedulerProvider
-): BaseViewModel(), ViewHolderListener {
+): BaseViewModel(), ProductDetailControllerListener {
 
-    private val _datas = MutableLiveData<MutableList<BaseModel>>()
-    val datas : LiveData<MutableList<BaseModel>>
+    private val _datas = MutableLiveData<MutableList<BaseCell>>()
+    val datas : LiveData<MutableList<BaseCell>>
         get() = _datas
-
-    private val _notifyContentUpdate = MutableLiveData<SingleEvents<Int>>()
-    val notifyContentUpdate : LiveData<SingleEvents<Int>>
-        get() = _notifyContentUpdate
-
-    private val _notifyItemUpdate = MutableLiveData<SingleEvents<Int>>()
-    val notifyItemUpdate : LiveData<SingleEvents<Int>>
-        get() = _notifyItemUpdate
 
     @SuppressLint("CheckResult")
     fun loadDetail(){
@@ -48,32 +37,38 @@ class ProductDetailViewModel @Inject constructor(
 
     override fun onPlusClick(position: Int) {
         _datas.value?.let {
-            val content = (it[position] as ProductDetailContent)
+            val content = (it[position] as ProductDetailContent).copy()
             content.quantity++
-            _notifyContentUpdate.postValue(SingleEvents(position))
+            it[position] = content
+            _datas.postValue(it)
         }
     }
 
     override fun onMinusClick(position: Int) {
         _datas.value?.let {
-            val content = (it[position] as ProductDetailContent)
+            val content = (it[position] as ProductDetailContent).copy()
             if(content.quantity>0){
                 content.quantity--
-                _notifyContentUpdate.postValue(SingleEvents(position))
+
+                it[position] = content
+                _datas.postValue(it)
             }
         }
     }
 
     override fun onDonutPlusClick(position: Int) {
         _datas.value?.let {
-            val content = (it[0] as ProductDetailContent)
-            val max = content.quantity*content.totalPerPack
-            if(content.quantityInPcs<max){
-                (it[position] as ProductDetailDonut).quantity++
-                _notifyItemUpdate.postValue(SingleEvents(position))
+            val header = (it[0] as ProductDetailContent).copy()
+            val max = header.quantity*header.totalPerPack
+            if(header.quantityInPcs<max){
+                val donut = (it[position] as ProductDetailDonut).copy()
+                    donut.quantity++
 
-                content.quantityInPcs++
-                _notifyContentUpdate.postValue(SingleEvents(0))
+                header.quantityInPcs++
+
+                it[0] = header
+                it[position] = donut
+                _datas.postValue(it)
             }
         }
     }
@@ -82,11 +77,15 @@ class ProductDetailViewModel @Inject constructor(
         _datas.value?.let {
             if((it[position] as ProductDetailDonut).quantity>0){
 
-                (it[position] as ProductDetailDonut).quantity--
-                _notifyItemUpdate.postValue(SingleEvents(position))
+                val donut = (it[position] as ProductDetailDonut).copy()
+                    donut.quantity--
 
-                (it[0] as ProductDetailContent).quantityInPcs--
-                _notifyContentUpdate.postValue(SingleEvents(0))
+                val header = (it[0] as ProductDetailContent).copy()
+                    header.quantityInPcs--
+
+                it[0] = header
+                it[position] = donut
+                _datas.postValue(it)
             }
         }
     }

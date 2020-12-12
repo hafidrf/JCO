@@ -98,7 +98,7 @@ class HomeController(private val listener: HomeControllerListener)
 
     private fun addHomeMenuItem(cellData: HomeMenuItem, listener: HomeControllerListener, index:Int) {
             homeMenuItem {
-                id(cellData.hashCode())
+                id(cellData.imgURL)
                 data(cellData)
                 index(index)
                 onClickListener(listener)

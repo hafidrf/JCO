@@ -12,9 +12,9 @@
             type="com.jcodonuts.app.data.local.ProductDetailContent" />
         <variable
             name="onClickListener"
-            type="com.jcodonuts.app.ui.product_detail.ViewHolderListener" />
+            type="com.jcodonuts.app.ui.product_detail.ProductDetailControllerListener" />
         <variable
-            name="position"
+            name="index"
             type="Integer" />
     </data>
 
@@ -86,7 +86,7 @@
                     android:layout_height="32dp"
                     android:src="@drawable/img_btn_minus"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:onClick="@{()->onClickListener.onMinusClick(position)}"/>
+                    android:onClick="@{()->onClickListener.onMinusClick(index)}"/>
 
                 <TextView
                     android:id="@+id/txtQuantity"
@@ -105,7 +105,7 @@
                     android:layout_height="32dp"
                     android:src="@drawable/img_btn_plus"
                     android:background="?attr/selectableItemBackgroundBorderless"
-                    android:onClick="@{()->onClickListener.onPlusClick(position)}"/>
+                    android:onClick="@{()->onClickListener.onPlusClick(index)}"/>
 
             </LinearLayout>
 

@@ -8,7 +8,6 @@ import javax.inject.Inject
 
 class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProductDetailBinding, ProductDetailViewModel>() {
 
-    private lateinit var adapter: ProductDetailAdapter
 
     override fun getViewModelClass(): Class<ProductDetailViewModel> {
         return ProductDetailViewModel::class.java
@@ -23,9 +22,7 @@ class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProduct
             onBackPress()
         }
 
-//        val controller = ProductDetailController(viewModel)
-//
-//        binding.homeRecyclerview.setController(controller)
+
 
         initRecyclerview()
 
@@ -35,23 +32,23 @@ class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProduct
     }
 
     private fun initRecyclerview() {
-        adapter = ProductDetailAdapter(viewModel)
-        binding.recyclerview.adapter = adapter
+        val controller = ProductDetailController(viewModel)
+        binding.recyclerview.setController(controller)
 
         viewModel.datas.observe(this,  {
-            adapter.submitList(it)
+            controller.data = it
         })
 
-        viewModel.notifyItemUpdate.observe(this, {
-            it.getContentIfNotHandled()?.let { position ->
-                adapter.notifyItemChanged(position)
-            }
-        })
-
-        viewModel.notifyContentUpdate.observe(this, {
-            it.getContentIfNotHandled()?.let { position ->
-                adapter.notifyItemChanged(position)
-            }
-        })
+//        viewModel.notifyItemUpdate.observe(this, {
+//            it.getContentIfNotHandled()?.let { position ->
+//                adapter.notifyItemChanged(position)
+//            }
+//        })
+//
+//        viewModel.notifyContentUpdate.observe(this, {
+//            it.getContentIfNotHandled()?.let { position ->
+//                adapter.notifyItemChanged(position)
+//            }
+//        })
     }
 }
