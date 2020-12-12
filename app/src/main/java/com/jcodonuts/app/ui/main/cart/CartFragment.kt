@@ -2,20 +2,19 @@ package com.jcodonuts.app.ui.main.cart
 
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.Divider16
 import com.jcodonuts.app.databinding.FragmentMainCartBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
+import com.jcodonuts.app.ui.main.home.HomeController
+import com.jcodonuts.app.ui.main.home.HomeSpacingDecoration
 import javax.inject.Inject
 
-class CartFragment @Inject constructor() : BaseFragment<FragmentMainCartBinding, CartViewModel>(), ControllerListener {
+class CartFragment @Inject constructor() : BaseFragment<FragmentMainCartBinding, CartViewModel>() {
 
-    private lateinit var listTest:MutableList<Divider16>
-    private lateinit var  controller :CartController
-    private lateinit var tempDivider:Divider16
-    private var tempIndex:Int = -1
 
     override fun getViewModelClass(): Class<CartViewModel> {
         return CartViewModel::class.java
@@ -26,31 +25,23 @@ class CartFragment @Inject constructor() : BaseFragment<FragmentMainCartBinding,
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-        controller = CartController(this)
-        controller.addInterceptor {
-            if(tempIndex!=-1){
-                listTest[tempIndex].temp="update"
-//                tempDivider?.let {
-////                    listTest[tempIndex]=it
-//                }
-            }
+        initRecyclerview()
+
+        if(!isFragmentFromPaused){
+            viewModel.loadData()
         }
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
+
+    private fun initRecyclerview(){
+        val controller = CartController(viewModel)
         binding.recyclerView.setController(controller)
-        listTest = mutableListOf(Divider16("test1"), Divider16("test2"), Divider16("test3"))
-        controller.setData(listTest)
+        viewModel.datas.observe(this,  {
+            controller.setData(it)
+        })
     }
 
     override fun onBackPress() {
         val navhost = (parentFragment as InjectingNavHostFragment)
         (navhost.parentFragment as MainFragment).backToHome()
-    }
-
-    override fun onClick(index: Int) {
-//        tempDivider = listTest[index]
-        tempIndex = index
-//        tempDivider.temp = "update"
-
-        controller.setData(listTest)
     }
 }

@@ -1,59 +1,33 @@
 package com.jcodonuts.app.ui.main.cart
 
-import android.content.Context
-import android.view.View
-import android.widget.Toast
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
-import com.airbnb.epoxy.stickyheader.StickyHeaderCallbacks
-import com.jcodonuts.app.data.local.Divider16
-import com.jcodonuts.app.itemCart
-import com.jcodonuts.app.utils.BindingClick
+import com.jcodonuts.app.cartSwitch
+import com.jcodonuts.app.data.local.*
 
 /**
  * Showcases [EpoxyController] with sticky header support
  */
 class CartController(
-    private val listeners: ControllerListener
-) : TypedEpoxyController<List<Divider16>>(
+    private val listeners: CartControllerListener
+) : TypedEpoxyController<List<BaseCell>>(
     EpoxyAsyncUtil.getAsyncBackgroundHandler(),
     EpoxyAsyncUtil.getAsyncBackgroundHandler()
-), StickyHeaderCallbacks {
+) {
 
-    override fun buildModels(data: List<Divider16>?) {
+    override fun buildModels(data: List<BaseCell>?) {
         data?.forEachIndexed() { index, cellData ->
-            itemCart {
-                id("view holder $index")
-                data(cellData)
-                index(index)
-                listener(listeners)
-//                click(View.OnClickListener {
-//                    listeners.onClick(cellData)
-//                })
+            when(cellData) {
+                is CartSwitch -> addCartSwitch(cellData)
             }
         }
+    }
 
-
-//        for (i in 0 until 100) {
-//            when {
-//                i % 5 == 0 -> stickyItemEpoxyHolder {
-//                    id("sticky-header $i")
-//                    title("Sticky header $i")
-//                    listener {
-//                        Toast.makeText(context, "clicked", Toast.LENGTH_LONG).show()
-//                    }
-//                }
-//                else -> itemEpoxyHolder {
-//                    id("view holder $i")
-//                    title("this is a View Holder item")
-//                    listener {
-//                        Toast.makeText(context, "clicked", Toast.LENGTH_LONG)
-//                            .show()
-//                    }
-//                }
-//            }
-//        }
+    private fun addCartSwitch(cell: BaseCell){
+        cartSwitch {
+            id("switch_cart")
+        }
     }
 
 }

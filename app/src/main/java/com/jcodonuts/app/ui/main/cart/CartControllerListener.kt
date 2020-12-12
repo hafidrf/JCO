@@ -3,6 +3,6 @@ package com.jcodonuts.app.ui.main.cart
 import com.jcodonuts.app.data.local.Divider16
 
 
-interface ControllerListener {
+interface CartControllerListener {
     fun onClick(index: Int)
 }

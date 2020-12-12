@@ -11,7 +11,7 @@
             type="Integer" />
         <variable
             name="listener"
-            type="com.jcodonuts.app.ui.main.cart.ControllerListener" />
+            type="com.jcodonuts.app.ui.main.cart.CartControllerListener" />
 
     </data>
 
