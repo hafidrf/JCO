@@ -87,6 +87,12 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
                 navigateTo(R.string.linkPickupFragment)
             }
         })
+
+        viewModel.showMenuSearch.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkMenuSearchFragment)
+            }
+        })
     }
 
     override fun onBackPress() {

@@ -87,6 +87,15 @@
             app:uri="@string/linkPickupFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/menuSearchFragment"
+        android:name="com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment"
+        android:label="MenuSearchFragment" >
+        <deepLink
+            android:id="@+id/linkMenuSearchFragment"
+            app:uri="@string/linkMenuSearchFragment" />
+    </fragment>
+
 
 
 

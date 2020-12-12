@@ -131,5 +131,8 @@ dependencies {
     implementation 'com.airbnb.android:epoxy-annotations:4.3.1'
 
     implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.2'
+
+    implementation 'co.lujun:androidtagview:1.1.7'
+
 }
 

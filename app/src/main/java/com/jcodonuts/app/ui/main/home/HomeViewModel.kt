@@ -36,6 +36,10 @@ class HomeViewModel @Inject constructor(
     val showPickup : LiveData<SingleEvents<String>>
         get() = _showPickup
 
+    private val _showMenuSearch = MutableLiveData<SingleEvents<String>>()
+    val showMenuSearch : LiveData<SingleEvents<String>>
+        get() = _showMenuSearch
+
     private val _openProductDetail = MutableLiveData<SingleEvents<HomeMenuItem>>()
     val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
@@ -105,7 +109,7 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onSearchClick() {
-
+        _showMenuSearch.value = SingleEvents("menu_search")
     }
 
     override fun onBannerPromoClick(promoBanner: PromoBanner) {

@@ -1,20 +1,21 @@
-package com.jcodonuts.app.ui.pickup
+package com.jcodonuts.app.ui.main.menu_search
 
 import android.os.Bundle
 import com.jcodonuts.app.R
+import com.jcodonuts.app.databinding.FragmentMenuSearchBinding
 import com.jcodonuts.app.databinding.FragmentPickupBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.main.menu_search.MenuSearchController
+import com.jcodonuts.app.ui.main.home.HomeSpacingDecoration
 import javax.inject.Inject
 
-class PickupFragment @Inject constructor() : BaseFragment<FragmentPickupBinding, PickupViewModel>() {
+class MenuSearchFragment @Inject constructor() : BaseFragment<FragmentMenuSearchBinding, MenuSearchViewModel>() {
 
-    override fun getViewModelClass(): Class<PickupViewModel> {
-        return PickupViewModel::class.java
+    override fun getViewModelClass(): Class<MenuSearchViewModel> {
+        return MenuSearchViewModel::class.java
     }
 
     override fun getLayoutId(): Int {
-        return R.layout.fragment_pickup
+        return R.layout.fragment_menu_search
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
@@ -33,8 +34,9 @@ class PickupFragment @Inject constructor() : BaseFragment<FragmentPickupBinding,
     }
 
     private fun initRecyclerview(){
-        val controller = PickupController(viewModel)
+        val controller = MenuSearchController(viewModel)
         binding.recyclerview.setController(controller)
+        binding.recyclerview.addItemDecoration(HomeSpacingDecoration())
         viewModel.datas.observe(this,  {
             controller.data = it
         })

@@ -7,6 +7,7 @@ import com.jcodonuts.app.data.local.BaseCell
 import com.jcodonuts.app.data.local.LocationSearch
 import com.jcodonuts.app.data.repository.PickupRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
+import com.jcodonuts.app.ui.main.menu_search.MenuSearchControllerListener
 import com.jcodonuts.app.utils.SchedulerProvider
 import javax.inject.Inject
 

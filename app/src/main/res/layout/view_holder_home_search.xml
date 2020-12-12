@@ -38,29 +38,35 @@
         </LinearLayout>
 
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:background="@drawable/bg_search_round"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_search"
-                android:layout_marginRight="18dp"/>
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:onClick="@{()->listener.onSearchClick()}">
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/food_drink_or_anything"
-                android:textSize="12sp"
-                android:textColor="@color/c_text_secondary"/>
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:background="@drawable/bg_search_round"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginRight="18dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_drink_or_anything"
+                    android:textSize="12sp"
+                    android:textColor="@color/c_text_secondary"/>
+
+            </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
 

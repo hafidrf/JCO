@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.MenuSearchTagName" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <include layout="@layout/view_holder_divider16"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Best Seller"
+            android:textColor="@color/c_black"
+            android:textSize="20sp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <co.lujun.androidtagview.TagContainerLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:container_enable_drag="false"
+            app:horizontal_interval="10dp"
+            app:vertical_interval="10dp"
+            app:tag_clickable="true"
+            app:listTags="@{data.tags}"
+            app:container_background_color="@android:color/transparent"
+            app:container_border_color="@android:color/transparent"
+            app:tag_text_color="@color/c_black"
+            app:tag_text_size="12sp"
+            app:tag_corner_radius="12dp"
+            app:tag_border_color="@color/c_text_secondary"
+            app:tag_background_color="@color/c_white"
+            app:tag_vertical_padding="16dp"
+            app:tag_horizontal_padding="10dp"
+            app:tag_theme="none"/>
+    </LinearLayout>
+
+
+</layout>

@@ -10,15 +10,15 @@ import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.ImageViewCompat
 import androidx.databinding.BindingAdapter
-import androidx.recyclerview.widget.ListAdapter
+import co.lujun.androidtagview.TagContainerLayout
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.jcodonuts.app.R
 
 
-@BindingAdapter(value=["imgUrl", "roundCorner"], requireAll = false)
-fun AppCompatImageView.setImgUrl(imgUrl:String?, roundCorner:Int=0){
+@BindingAdapter(value = ["imgUrl", "roundCorner"], requireAll = false)
+fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0){
     if(imgUrl!=null){
         if(roundCorner>0){
             Glide.with(context)
@@ -40,36 +40,55 @@ fun AppCompatImageView.setImgUrl(imgUrl:String?, roundCorner:Int=0){
 }
 
 @BindingAdapter("imgSVG")
-fun AppCompatImageView.bindImgSVG(url:String){
+fun AppCompatImageView.bindImgSVG(url: String){
     SvgLoader.fetchSvg(context, url, this)
 }
 
 @BindingAdapter("src")
-fun ImageView.bindSrc(img:Int){
+fun ImageView.bindSrc(img: Int){
     this.setImageResource(img)
 }
 
 @BindingAdapter("isLocationFavorite")
-fun ImageView.bindLocationFavorited(isFavorite:Boolean){
+fun ImageView.bindLocationFavorited(isFavorite: Boolean){
     if(isFavorite){
-        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.colorPrimary)))
+        ImageViewCompat.setImageTintList(
+            this, ColorStateList.valueOf(
+                ContextCompat.getColor(
+                    context,
+                    R.color.colorPrimary
+                )
+            )
+        )
     }else{
-        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.c_text_secondary)))
+        ImageViewCompat.setImageTintList(
+            this, ColorStateList.valueOf(
+                ContextCompat.getColor(
+                    context,
+                    R.color.c_text_secondary
+                )
+            )
+        )
     }
 }
 
 @BindingAdapter("selected")
-fun LinearLayout.bindSelected(selected:Boolean){
+fun LinearLayout.bindSelected(selected: Boolean){
     this.isSelected = selected
 }
 
 @BindingAdapter("selected")
-fun TextView.bindSelected(selected:Boolean){
+fun TextView.bindSelected(selected: Boolean){
     this.isSelected = selected
 }
 
+@BindingAdapter("listTags")
+fun TagContainerLayout.bindListTags(datas: List<String>){
+    this.tags = datas
+}
+
 @BindingAdapter("loadWeb")
-fun WebView.loadWeb(url:String){
+fun WebView.loadWeb(url: String){
     this.loadUrl(url)
 }
 
@@ -78,6 +97,6 @@ fun WebView.loadWeb(url:String){
 //    this.webViewClient = client
 //}
 
-fun dpToPx(dp:Int):Int{
+fun dpToPx(dp: Int):Int{
     return (dp * Resources.getSystem().displayMetrics.density).toInt()
 }

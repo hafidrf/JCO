@@ -1,13 +1,10 @@
 package com.jcodonuts.app.ui.pickup
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.EpoxyController
-import com.airbnb.epoxy.TypedEpoxyController
-import com.airbnb.epoxy.stickyheader.StickyHeaderCallbacks
 import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
-import com.jcodonuts.app.ui.main.home.HomeControllerListener
+import com.jcodonuts.app.ui.main.menu_search.MenuSearchControllerListener
 
 /**
  * Showcases [EpoxyController] with sticky header support
