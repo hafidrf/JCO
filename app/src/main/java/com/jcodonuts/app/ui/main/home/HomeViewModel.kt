@@ -1,7 +1,6 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
@@ -37,11 +36,7 @@ class HomeViewModel @Inject constructor(
     val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
 
-    private val _updateData = MutableLiveData<SingleEvents<Int>>()
-    val updateData : LiveData<SingleEvents<Int>>
-        get() = _updateData
-
-    private val _menus = mutableListOf<Menu>()
+    private val _menus = mutableListOf<MenuCategory>()
 
     init {
         datas.value = mutableListOf()
@@ -60,7 +55,7 @@ class HomeViewModel @Inject constructor(
                 temp.add(data)
                 temp.add(HomeMenuHeader("What are you looking for?"))
                 getMenus()
-                temp.add(HomeMenus(_menus))
+                temp.add(HomeMenuCategories(_menus))
 
                 loadMenuItems()
             }, {
@@ -84,13 +79,13 @@ class HomeViewModel @Inject constructor(
     }
 
     private fun getMenus(){
-        _menus.add(Menu("All", R.drawable.img_jco_menu_all, true))
-        _menus.add(Menu("Promo", R.drawable.img_jco_menu_promo, false))
-        _menus.add(Menu("Donuts", R.drawable.img_jco_menu_donuts, false))
-        _menus.add(Menu("Beverage", R.drawable.img_jco_menu_beverage, false))
-        _menus.add(Menu("Cookies & Nuts", R.drawable.img_jco_menu_cookies, false))
-        _menus.add(Menu("Hampers", R.drawable.img_jco_menu_hampers, false))
-        _menus.add(Menu("Others", R.drawable.img_jco_menu_other, false))
+        _menus.add(MenuCategory("All", R.drawable.img_jco_menu_all, true))
+        _menus.add(MenuCategory("Promo", R.drawable.img_jco_menu_promo, false))
+        _menus.add(MenuCategory("Donuts", R.drawable.img_jco_menu_donuts, false))
+        _menus.add(MenuCategory("Beverage", R.drawable.img_jco_menu_beverage, false))
+        _menus.add(MenuCategory("Cookies & Nuts", R.drawable.img_jco_menu_cookies, false))
+        _menus.add(MenuCategory("Hampers", R.drawable.img_jco_menu_hampers, false))
+        _menus.add(MenuCategory("Others", R.drawable.img_jco_menu_other, false))
     }
 
     override fun onLinkajaClick() {
@@ -113,9 +108,9 @@ class HomeViewModel @Inject constructor(
 
     }
 
-    override fun onMenuClick(menu: Menu) {
-        if(menu.img!=menuSelected.value){
-            menuSelected.postValue(menu.img)
+    override fun onMenuCategoryClick(menuCategory: MenuCategory) {
+        if(menuCategory.img!=menuSelected.value){
+            menuSelected.postValue(menuCategory.img)
         }
     }
 

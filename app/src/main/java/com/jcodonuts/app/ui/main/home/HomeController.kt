@@ -5,8 +5,14 @@ import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
 
 class HomeController(private val listener: HomeControllerListener)
-    : TypedEpoxyController<List<BaseCell>>() {
+    : AsyncEpoxyController() {
     private val TAG = "HomeController"
+
+    var data: List<BaseCell> = emptyList()
+        set(value) {
+            field = value
+            requestModelBuild()
+        }
 
     var menuSelected = R.drawable.img_jco_menu_all
         set(value) {
@@ -14,7 +20,7 @@ class HomeController(private val listener: HomeControllerListener)
             requestModelBuild()
         }
 
-    override fun buildModels(data: List<BaseCell>?) {
+    override fun buildModels() {
         data?.forEachIndexed { index, cellData ->
             when(cellData) {
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
@@ -22,7 +28,7 @@ class HomeController(private val listener: HomeControllerListener)
                 is HomePromoHeader -> addHomePromoHeader(cellData)
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader(cellData)
-                is HomeMenus -> addHomeMenu(cellData, listener)
+                is HomeMenuCategories -> addHomeMenuCategory(cellData, listener)
                 is HomeMenuItem -> addHomeMenuItem(cellData, listener, index)
             }
         }
@@ -72,12 +78,12 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomeMenu(cellData: HomeMenus, listener: HomeControllerListener) {
+    private fun addHomeMenuCategory(cellData: HomeMenuCategories, listener: HomeControllerListener) {
         val models = cellData.homeMenus.map {
             HomeMenuBindingModel_()
                     .id(it.img.toString())
                     .data(it)
-                    .isSelected(it.img == menuSelected)
+                    .selected(it.img == menuSelected)
                     .onClickListener(listener)
         }
 

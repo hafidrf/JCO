@@ -7,9 +7,9 @@
     <data>
         <variable
             name="data"
-            type="com.jcodonuts.app.data.local.Menu" />
+            type="com.jcodonuts.app.data.local.MenuCategory" />
         <variable
-            name="isSelected"
+            name="selected"
             type="Boolean" />
         <variable
             name="onClickListener"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="?attr/selectableItemBackground"
-        android:onClick="@{()->onClickListener.onMenuClick(data)}">
+        android:onClick="@{()->onClickListener.onMenuCategoryClick(data)}">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -31,7 +31,7 @@
             android:paddingBottom="6dp"
             android:background="@drawable/bg_home_menu_container"
             android:gravity="center_vertical"
-            selected="@{isSelected}">
+            selected="@{selected}">
 
             <LinearLayout
                 android:layout_width="38dp"
@@ -40,7 +40,7 @@
                 android:orientation="vertical"
                 android:padding="8dp"
                 android:layout_marginRight="12dp"
-                selected="@{isSelected}"
+                selected="@{selected}"
                 android:gravity="center">
                 <ImageView
                     android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/home_menu_color"
                 android:text="@{data.title}"
-                selected="@{isSelected}"
+                selected="@{selected}"
                 tools:text="Donnuts"/>
 
         </LinearLayout>

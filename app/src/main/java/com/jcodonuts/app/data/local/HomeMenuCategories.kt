@@ -1,10 +1,10 @@
 package com.jcodonuts.app.data.local
 
-data class HomeMenus(
-    val homeMenus: List<Menu>
+data class HomeMenuCategories(
+    val homeMenus: List<MenuCategory>
 ):BaseCell()
 
-data class Menu(
+data class MenuCategory(
     val title: String,
     val img: Int,
     var isSelected: Boolean,

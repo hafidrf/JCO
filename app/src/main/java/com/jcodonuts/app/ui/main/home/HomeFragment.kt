@@ -35,13 +35,7 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
 
         viewModel.datas.observe(this, Observer {
             Log.d(TAG, "controller.setData ");
-            controller.setData(it)
-        })
-
-        viewModel.updateData.observe(this, { it ->
-            it.getContentIfNotHandled()?.let {index ->
-                controller.requestModelBuild()
-            }
+            controller.data = it
         })
 
         viewModel.menuSelected.observe(this, {
