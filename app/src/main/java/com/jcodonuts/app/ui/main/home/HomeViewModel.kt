@@ -32,6 +32,10 @@ class HomeViewModel @Inject constructor(
     val showQRcode : LiveData<SingleEvents<String>>
         get() = _showQRcode
 
+    private val _showPickup = MutableLiveData<SingleEvents<String>>()
+    val showPickup : LiveData<SingleEvents<String>>
+        get() = _showPickup
+
     private val _openProductDetail = MutableLiveData<SingleEvents<HomeMenuItem>>()
     val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
@@ -94,6 +98,10 @@ class HomeViewModel @Inject constructor(
 
     override fun onQrCodeClick() {
         _showQRcode.value = SingleEvents("qrcode")
+    }
+
+    override fun onPickupClick() {
+        _showPickup.value = SingleEvents("show_pickup")
     }
 
     override fun onSearchClick() {

@@ -21,27 +21,30 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-        Log.d(TAG, ":onViewReady ");
+        initRecyclerview()
+        initObserver()
 
+        if(!isFragmentFromPaused){
+            viewModel.loadPromo()
+        }
+    }
+
+    private fun initRecyclerview(){
         val controller = HomeController(viewModel)
         controller.spanCount=2
         Carousel.setDefaultGlobalSnapHelperFactory(null)
         binding.homeRecyclerview.setController(controller)
         binding.homeRecyclerview.addItemDecoration(HomeSpacingDecoration())
-
-        if(!isFragmentFromPaused){
-            viewModel.loadPromo()
-        }
-
         viewModel.datas.observe(this, Observer {
-            Log.d(TAG, "controller.setData ");
             controller.data = it
         })
 
         viewModel.menuSelected.observe(this, {
             controller.menuSelected = it
         })
+    }
 
+    private fun initObserver(){
         viewModel.showDialogCannotOrder.observe(this, {
             it.getContentIfNotHandled()?.let {
 
@@ -76,6 +79,12 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
             it.getContentIfNotHandled()?.let {
                 val dlg = DialogQrCode()
                 dlg.showDialog(requireActivity().supportFragmentManager)
+            }
+        })
+
+        viewModel.showPickup.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkPickupFragment)
             }
         })
     }

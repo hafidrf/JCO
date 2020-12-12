@@ -24,7 +24,7 @@ class HomeController(private val listener: HomeControllerListener)
         data?.forEachIndexed { index, cellData ->
             when(cellData) {
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
-                is HomeSearchSection -> addHomeSearchSection(cellData)
+                is HomeSearchSection -> addHomeSearchSection(cellData, listener)
                 is HomePromoHeader -> addHomePromoHeader(cellData)
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader(cellData)
@@ -43,10 +43,11 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomeSearchSection(cellData: HomeSearchSection){
+    private fun addHomeSearchSection(cellData: HomeSearchSection, listener: HomeControllerListener){
         homeSearch {
             id("search")
             spanSizeOverride { _, _, _ -> 2 }
+            listener(listener)
         }
     }
 

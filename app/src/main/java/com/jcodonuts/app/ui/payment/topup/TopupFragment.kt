@@ -17,9 +17,7 @@ class TopupFragment @Inject constructor() : BaseFragment<FragmentPaymentTopupBin
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-        binding.topBar.btnBack.setOnClickListener {
-            onBackPress()
-        }
+        setupActionBar()
 
         val controller = TopupController()
         binding.recyclerview.setController(controller)
@@ -31,5 +29,12 @@ class TopupFragment @Inject constructor() : BaseFragment<FragmentPaymentTopupBin
         viewModel.datas.observe(this, {
             controller.data = it
         })
+    }
+
+    private fun setupActionBar(){
+        binding.topBar.btnBack.setOnClickListener {
+            onBackPress()
+        }
+        binding.topBar.title = "M-Banking"
     }
 }

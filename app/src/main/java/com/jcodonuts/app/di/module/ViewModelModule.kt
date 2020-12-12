@@ -17,6 +17,7 @@ import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
+import com.jcodonuts.app.ui.pickup.PickupViewModel
 import com.jcodonuts.app.ui.product_detail.ProductDetailViewModel
 import com.jcodonuts.app.ui.splash.SplashViewModel
 import dagger.Binds
@@ -89,6 +90,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ProductDetailViewModel::class)
     internal abstract fun providesProductDetailViewModel(viewModel: ProductDetailViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PickupViewModel::class)
+    internal abstract fun providesPickupViewModel(viewModel: PickupViewModel) : ViewModel
 
 
 

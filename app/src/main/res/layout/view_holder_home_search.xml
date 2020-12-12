@@ -3,26 +3,40 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="16dp">
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pick_up_from"
-            android:textSize="12sp"
-            android:textColor="@color/c_text_secondary"/>
+            android:orientation="vertical"
+            android:onClick="@{()->listener.onPickupClick()}"
+            android:background="?attr/selectableItemBackground">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pick_up_from"
+                android:textSize="12sp"
+                android:textColor="@color/c_text_secondary"/>
 
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="J.co Cihampelas Walk"
-            android:textSize="16sp"
-            android:textColor="@color/c_black"
-            android:layout_marginTop="8dp"/>
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="J.co Cihampelas Walk"
+                android:textSize="16sp"
+                android:textColor="@color/c_black"
+                android:layout_marginTop="8dp"/>
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

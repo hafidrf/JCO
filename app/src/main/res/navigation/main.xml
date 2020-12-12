@@ -78,6 +78,15 @@
             app:uri="@string/linkProductDetail" />
     </fragment>
 
+    <fragment
+        android:id="@+id/pickupFragment"
+        android:name="com.jcodonuts.app.ui.pickup.PickupFragment"
+        android:label="PickupFragment" >
+        <deepLink
+            android:id="@+id/linkPickupFragment"
+            app:uri="@string/linkPickupFragment" />
+    </fragment>
+
 
 
 

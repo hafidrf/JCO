@@ -40,4 +40,10 @@ class RepositoryModule {
     fun provideProductRepository(application: Application): ProductRepository {
         return ProductRepositoryImpl(application)
     }
+
+    @Provides
+    @ApplicationScope
+    fun providePickupRepository(application: Application): PickupRepository {
+        return PickupRepositoryImpl(application)
+    }
 }

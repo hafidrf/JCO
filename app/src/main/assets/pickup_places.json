@@ -1,0 +1,352 @@
+[
+  {
+    "_id": "5fd4147b44662e1b8ae9864f",
+    "placeName": "Poshome",
+    "address": "Jerome Avenue, Sussex, Marshall Islands",
+    "distance": "10Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b954b23fa8edee196",
+    "placeName": "Assistix",
+    "address": "Vandam Street, Statenville, Wyoming",
+    "distance": "2Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b90e76a4ed9964a07",
+    "placeName": "Polarium",
+    "address": "Landis Court, Sena, Texas",
+    "distance": "5Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b4dc4a5aeff6469c9",
+    "placeName": "Singavera",
+    "address": "Kane Street, Lisco, Delaware",
+    "distance": "7Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b9213dd6e3d1c1a78",
+    "placeName": "Equicom",
+    "address": "Rost Place, Echo, Idaho",
+    "distance": "6Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b540c1295258c9c8d",
+    "placeName": "Sarasonic",
+    "address": "Lefferts Avenue, Joppa, New Mexico",
+    "distance": "8Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bcf31d2b77641240d",
+    "placeName": "Spherix",
+    "address": "Meeker Avenue, Vienna, Arizona",
+    "distance": "7Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b135842a3de4cca9b",
+    "placeName": "Cormoran",
+    "address": "Benson Avenue, Enoree, Oklahoma",
+    "distance": "2Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bf5de0a33958f9f13",
+    "placeName": "Geologix",
+    "address": "Hall Street, Lafferty, New Jersey",
+    "distance": "7Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147ba6db466e9a2ba0a3",
+    "placeName": "Zilidium",
+    "address": "Nelson Street, Brazos, Colorado",
+    "distance": "3Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b0223fcf220deea84",
+    "placeName": "Opportech",
+    "address": "Story Court, Moraida, Missouri",
+    "distance": "4Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bf77170c4ba1e61d4",
+    "placeName": "Accidency",
+    "address": "Douglass Street, Interlochen, Connecticut",
+    "distance": "9Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b5a7a71c877c6bd00",
+    "placeName": "Cytrek",
+    "address": "Rose Street, Gibsonia, South Carolina",
+    "distance": "4Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b7684f4df98635c2e",
+    "placeName": "Quarmony",
+    "address": "Boynton Place, Richmond, Nevada",
+    "distance": "2Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b869d4e8cc195300b",
+    "placeName": "Xurban",
+    "address": "Bokee Court, Verdi, North Dakota",
+    "distance": "4Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b6f771e0698b6cd36",
+    "placeName": "Edecine",
+    "address": "Lewis Avenue, Cherokee, New Hampshire",
+    "distance": "2Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bd598f767ec9daec2",
+    "placeName": "Plexia",
+    "address": "Sands Street, Sims, Mississippi",
+    "distance": "4Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b39d811fa9c5e21b2",
+    "placeName": "Pharmacon",
+    "address": "Moffat Street, Fowlerville, Minnesota",
+    "distance": "3Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b747d399c8949ec57",
+    "placeName": "Signidyne",
+    "address": "Montgomery Street, Wolcott, Montana",
+    "distance": "8Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b4c8260055aa8e701",
+    "placeName": "Oulu",
+    "address": "Dictum Court, Jacumba, District Of Columbia",
+    "distance": "9Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b63db9a1b7333f946",
+    "placeName": "Kengen",
+    "address": "Quentin Street, Cashtown, Federated States Of Micronesia",
+    "distance": "7Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b338dbe6c17facb2f",
+    "placeName": "Cubix",
+    "address": "Quentin Road, Bordelonville, Oregon",
+    "distance": "7Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b157a1469b2d5470d",
+    "placeName": "Neurocell",
+    "address": "Norwood Avenue, Glenshaw, Washington",
+    "distance": "5Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b4bfbf0ae0570bb75",
+    "placeName": "Eclipsent",
+    "address": "National Drive, Kennedyville, Virgin Islands",
+    "distance": "6Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b6e85bddc02d7a97f",
+    "placeName": "Geekfarm",
+    "address": "Nautilus Avenue, Greer, Georgia",
+    "distance": "8Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bccddebd0346ff6c8",
+    "placeName": "Duoflex",
+    "address": "Myrtle Avenue, Trinway, Louisiana",
+    "distance": "5Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b18a47b7839113699",
+    "placeName": "Brainquil",
+    "address": "Waldane Court, Freeburn, Maryland",
+    "distance": "8Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b3c069386b8042b48",
+    "placeName": "Nitracyr",
+    "address": "Kensington Walk, Forestburg, California",
+    "distance": "7Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b7365ca979a131054",
+    "placeName": "Dognost",
+    "address": "Gerritsen Avenue, Conestoga, Wisconsin",
+    "distance": "6Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b137800ebcd1922fb",
+    "placeName": "Wrapture",
+    "address": "Bennet Court, Colton, Hawaii",
+    "distance": "2Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b35dee4179b8d14f4",
+    "placeName": "Zerology",
+    "address": "Front Street, Tonopah, West Virginia",
+    "distance": "9Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147ba01ae627fe748159",
+    "placeName": "Assistia",
+    "address": "Regent Place, Kingstowne, Nebraska",
+    "distance": "10Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bb9007095c60aced6",
+    "placeName": "Dreamia",
+    "address": "Imlay Street, Sultana, Alaska",
+    "distance": "9Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bc6164d75f78e82f5",
+    "placeName": "Kindaloo",
+    "address": "Bancroft Place, Corinne, Pennsylvania",
+    "distance": "4Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bc2458670f8ff2714",
+    "placeName": "Overplex",
+    "address": "Hill Street, Berlin, New York",
+    "distance": "3Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bb715f4f9c0a346a9",
+    "placeName": "Uniworld",
+    "address": "Clinton Avenue, Concho, Ohio",
+    "distance": "9Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bbc10878512300ebd",
+    "placeName": "Xyqag",
+    "address": "Fuller Place, Hiwasse, Iowa",
+    "distance": "4Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b3f5177183176e357",
+    "placeName": "Naxdis",
+    "address": "Goodwin Place, Rockingham, American Samoa",
+    "distance": "3Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b5d6be3db7f1e20c4",
+    "placeName": "Jamnation",
+    "address": "Bradford Street, Barstow, Northern Mariana Islands",
+    "distance": "8Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b657f6943731645dd",
+    "placeName": "Confrenzy",
+    "address": "Lefferts Place, Boomer, Utah",
+    "distance": "10Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b3cda6f8cc45b9b68",
+    "placeName": "Imperium",
+    "address": "Ocean Avenue, Konterra, Kentucky",
+    "distance": "6Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b7ddc0e67172f94ce",
+    "placeName": "Xiix",
+    "address": "Bay Street, Cedarville, Indiana",
+    "distance": "8Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b314574e71c9bfacb",
+    "placeName": "Splinx",
+    "address": "Vandalia Avenue, Rivereno, Virginia",
+    "distance": "4Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bfb5bb61eff2a4b49",
+    "placeName": "Assitia",
+    "address": "Varick Street, Orovada, Arkansas",
+    "distance": "8Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b2e0ff000cfcabf97",
+    "placeName": "Futuris",
+    "address": "Victor Road, Salunga, Michigan",
+    "distance": "3Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bfb1cc1f1ba55a429",
+    "placeName": "Koogle",
+    "address": "Brevoort Place, Kirk, Kansas",
+    "distance": "8Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147bdf888c18a9755155",
+    "placeName": "Neteria",
+    "address": "Lloyd Street, Corriganville, Maine",
+    "distance": "5Km",
+    "isFavorite": true
+  },
+  {
+    "_id": "5fd4147b26bd7c15d2048e61",
+    "placeName": "Qnekt",
+    "address": "Bath Avenue, Gorham, Puerto Rico",
+    "distance": "8Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147b2e29d7cfef5b06a3",
+    "placeName": "Telequiet",
+    "address": "Eaton Court, Makena, South Dakota",
+    "distance": "6Km",
+    "isFavorite": false
+  },
+  {
+    "_id": "5fd4147bdb7fe3d5cc1d7044",
+    "placeName": "Ramjob",
+    "address": "Harkness Avenue, Hebron, Rhode Island",
+    "distance": "2Km",
+    "isFavorite": true
+  }
+]

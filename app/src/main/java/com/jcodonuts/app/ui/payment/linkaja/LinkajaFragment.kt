@@ -19,9 +19,7 @@ class LinkajaFragment @Inject constructor() : BaseFragment<FragmentPaymentLinkaj
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-        binding.topBar.btnBack.setOnClickListener {
-            onBackPress()
-        }
+        setupActionBar()
 
         val controller = LinkajaController(viewModel)
         binding.linkajaRecyclerview.setController(controller)
@@ -39,5 +37,12 @@ class LinkajaFragment @Inject constructor() : BaseFragment<FragmentPaymentLinkaj
                 navigateTo(R.string.linkTopup)
             }
         })
+    }
+
+    private fun setupActionBar(){
+        binding.topBar.btnBack.setOnClickListener {
+            onBackPress()
+        }
+        binding.topBar.title = "Link Aja"
     }
 }

@@ -1,11 +1,14 @@
 package com.jcodonuts.app.utils
 
+import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.content.ContextCompat
+import androidx.core.widget.ImageViewCompat
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.ListAdapter
 import com.bumptech.glide.Glide
@@ -44,6 +47,15 @@ fun AppCompatImageView.bindImgSVG(url:String){
 @BindingAdapter("src")
 fun ImageView.bindSrc(img:Int){
     this.setImageResource(img)
+}
+
+@BindingAdapter("isLocationFavorite")
+fun ImageView.bindLocationFavorited(isFavorite:Boolean){
+    if(isFavorite){
+        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.colorPrimary)))
+    }else{
+        ImageViewCompat.setImageTintList(this, ColorStateList.valueOf(ContextCompat.getColor(context, R.color.c_text_secondary)))
+    }
 }
 
 @BindingAdapter("selected")
