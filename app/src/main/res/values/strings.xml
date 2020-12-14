@@ -6,6 +6,7 @@
     <string name="linkTopup">jcodonuts://com.jcodonuts.app/topup</string>
     <string name="linkProductDetail">jcodonuts://com.jcodonuts.app/product_detail</string>
     <string name="linkPickupFragment">jcodonuts://com.jcodonuts.app/pickup</string>
+    <string name="linkDeliveryFragment">jcodonuts://com.jcodonuts.app/delivery</string>
     <string name="linkMenuSearchFragment">jcodonuts://com.jcodonuts.app/menu_search</string>
 
     <string name="dummy_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nisi vitae ornare congue, lectus dui porta dui, vitae pulvinar odio velit ac leo. Proin eget pharetra neque. Etiam tempor arcu a eleifend interdum. Nam diam dui, pulvinar in consectetur non, mollis quis tortor. Nulla mauris libero, lacinia eu pharetra et, efficitur vel libero. Phasellus quis purus venenatis, tincidunt nibh pharetra, consectetur ex. Mauris a turpis feugiat, semper ante quis, pellentesque tellus. Morbi pharetra convallis sodales. Morbi sed maximus leo. Donec nec lacinia mi. Quisque commodo nibh convallis, iaculis quam eget, aliquet felis. Nunc consectetur leo sit amet blandit pulvinar. Aliquam erat volutpat. Vestibulum sit amet risus ultricies, vestibulum sem sit amet, vestibulum velit. In nunc nisi, congue iaculis sodales quis, feugiat mattis massa. Pellentesque id tempus mauris.Maecenas maximus, sem venenatis fringilla euismod, libero tellus euismod massa, non semper sem sem nec tortor. Aliquam quis gravida lorem. Suspendisse condimentum condimentum magna, ut tincidunt ligula fringilla sit amet. Ut porttitor ligula ligula, ut varius justo dictum eget. Fusce eget condimentum dolor. Duis gravida ligula eu ornare mollis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent sit amet aliquam dolor. Phasellus odio sem, malesuada a nunc vel, interdum imperdiet sapien. Curabitur dignissim posuere convallis. Fusce felis libero, dapibus in dictum sed, vestibulum id elit.Nullam sodales est quis orci ultrices, quis rhoncus lacus aliquam. Nunc laoreet placerat dolor, ac lacinia ante maximus in. Aliquam erat volutpat. Mauris dignissim quam leo, ut vestibulum purus auctor vel. Sed ut urna vel ex hendrerit tempus eu vitae neque. Sed in ultricies magna. Nam in eleifend dui. Ut rutrum leo at magna faucibus, id ullamcorper ante vestibulum. Nulla mauris tortor, molestie id odio nec, volutpat convallis tortor. Aliquam sed purus at orci euismod ornare rutrum in tortor. Cras scelerisque eu elit sollicitudin feugiat.In facilisis risus sit amet odio rutrum lobortis. Quisque quis nulla ex. Nullam dictum eget nulla sed condimentum. Sed at ante scelerisque, pellentesque est ut, auctor lacus. Nam dapibus vel nisl ac pellentesque. Nullam et interdum eros. Suspendisse viverra, mi sit amet auctor iaculis, neque nisl bibendum libero, interdum mollis enim orci in elit.</string>
@@ -66,4 +67,16 @@
     <string name="show_the_barcode_to_be_scanned_by_the_cashier">Show the barcode to be scanned by the cashier</string>
     <string name="scan_code_to_pay">Scan code to pay</string>
     <string name="search_here">Search here</string>
+    <string name="outlet_for_pickup">Outlet for pickup</string>
+    <string name="add_detail_location">Add detail location</string>
+    <string name="notes">Notes</string>
+    <string name="payment">Payment</string>
+    <string name="change">Change</string>
+    <string name="price">Price</string>
+    <string name="delivery_service">Delivery Service</string>
+    <string name="order">Order</string>
+    <string name="total_price">Total Price</string>
+    <string name="delivery">Delivery</string>
+    <string name="pickup">Pickup</string>
+    <string name="you_can_make_any_notes_for_the_outlet">You can make any notes for the outlet</string>
 </resources>

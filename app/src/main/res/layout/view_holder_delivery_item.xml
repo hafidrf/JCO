@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.DeliveryItem" />
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.delivery.DeliveryControllerListener" />
+        <import type="android.graphics.Color"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{()->listener.onClick(index)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_location"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="4dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_black"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-medium"
+                    tools:text="Jco Cihampelas Walk"
+                    android:text="@{data.placeName}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_black"
+                    android:textSize="16sp"
+                    tools:text="Payment"
+                    android:text="@{data.address}"
+                    android:layout_marginTop="6dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="6dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/c_text_secondary"
+                        android:textSize="12sp"
+                        tools:text="Payment"
+                        android:text="@{data.distance}"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_baseline_bookmark"
+                        app:isLocationFavorite="@{data.favorite}"
+                        android:layout_marginStart="16dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:onClick="@{()->listener.onFavoriteClick(index)}"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+    </LinearLayout>
+
+</layout>

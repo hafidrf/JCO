@@ -15,6 +15,7 @@ import com.jcodonuts.app.ui.main.home.HomeViewModel
 import com.jcodonuts.app.ui.main.notification.NotificationViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
+import com.jcodonuts.app.ui.delivery.DeliveryViewModel
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchViewModel
@@ -96,6 +97,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(PickupViewModel::class)
     internal abstract fun providesPickupViewModel(viewModel: PickupViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(DeliveryViewModel::class)
+    internal abstract fun providesDeliveryViewModel(viewModel: DeliveryViewModel) : ViewModel
 
     @Binds
     @IntoMap

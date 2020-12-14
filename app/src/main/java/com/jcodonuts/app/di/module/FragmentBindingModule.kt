@@ -14,6 +14,7 @@ import com.jcodonuts.app.ui.main.home.HomeFragment
 import com.jcodonuts.app.ui.main.notification.NotificationFragment
 import com.jcodonuts.app.ui.main.profile.ProfileFragment
 import com.jcodonuts.app.ui.auth.register.RegisterFragment
+import com.jcodonuts.app.ui.delivery.DeliveryFragment
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.payment.topup.TopupFragment
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment
@@ -91,6 +92,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(PickupFragment::class)
     abstract fun bindPickupFragment(fragment: PickupFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(DeliveryFragment::class)
+    abstract fun bindDeliveryFragment(fragment: DeliveryFragment): Fragment
 
     @Binds
     @IntoMap

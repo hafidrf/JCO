@@ -88,6 +88,15 @@
     </fragment>
 
     <fragment
+        android:id="@+id/deliveryFragment"
+        android:name="com.jcodonuts.app.ui.delivery.DeliveryFragment"
+        android:label="DeliveryFragment" >
+        <deepLink
+            android:id="@+id/linkDeliveryFragment"
+            app:uri="@string/linkDeliveryFragment" />
+    </fragment>
+
+    <fragment
         android:id="@+id/menuSearchFragment"
         android:name="com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment"
         android:label="MenuSearchFragment" >

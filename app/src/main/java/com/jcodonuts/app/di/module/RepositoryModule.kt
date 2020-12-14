@@ -46,4 +46,10 @@ class RepositoryModule {
     fun providePickupRepository(application: Application): PickupRepository {
         return PickupRepositoryImpl(application)
     }
+
+    @Provides
+    @ApplicationScope
+    fun provideDeliveryRepository(application: Application): DeliveryRepository {
+        return DeliveryRepositoryImpl(application)
+    }
 }

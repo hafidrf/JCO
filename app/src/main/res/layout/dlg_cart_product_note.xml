@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dlg_cannot_place_order"
+    android:padding="16dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/notes"
+            android:textSize="20sp"
+            android:textColor="@color/c_black"/>
+
+        <ImageView
+            android:id="@+id/btnDlgClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_close"
+            app:tint="@color/c_black"
+            android:padding="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/you_can_make_any_notes_for_the_outlet"
+        android:textSize="16sp"
+        android:textColor="@color/c_text_secondary"
+        android:layout_marginTop="16dp"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtNote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="14sp"
+        android:textColor="@color/c_black"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:text="@string/save"
+        style="@style/MyButton"
+        android:layout_marginTop="40dp"/>
+
+</LinearLayout>

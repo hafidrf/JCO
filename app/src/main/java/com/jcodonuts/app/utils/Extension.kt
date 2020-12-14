@@ -2,6 +2,7 @@ package com.jcodonuts.app.utils
 
 import android.content.res.ColorStateList
 import android.content.res.Resources
+import android.util.Log
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
@@ -15,7 +16,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.jcodonuts.app.R
+import com.jcodonuts.app.ui.main.cart.CartControllerListener
 
+private const val TAG = "Extension"
 
 @BindingAdapter(value = ["imgUrl", "roundCorner"], requireAll = false)
 fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0){
@@ -90,6 +93,13 @@ fun TagContainerLayout.bindListTags(datas: List<String>){
 @BindingAdapter("loadWeb")
 fun WebView.loadWeb(url: String){
     this.loadUrl(url)
+}
+
+@BindingAdapter("onCartChangeListener")
+fun SwitchCompatEx.onCartChangeListener(listener:CartControllerListener){
+    this.setOnCheckedChangeListener { _, isChecked ->
+        listener.onSwitchChange(isChecked)
+    }
 }
 
 //@BindingAdapter("setWebViewClient")

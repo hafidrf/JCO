@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.main.cart.CartControllerListener" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,9 +20,10 @@
             android:layout_height="64dp"
             android:layout_gravity="center"
             android:minHeight="64dp"
-            android:textOff="Delivery"
-            android:textOn="Pickup"
-            app:switchMinWidth="260dp" />
+            android:textOff="@string/delivery"
+            android:textOn="@string/pickup"
+            app:switchMinWidth="260dp"
+            app:onCartChangeListener="@{listener}"/>
     </LinearLayout>
 
 </layout>
