@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.ChoosePaymentData" />
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentControllerListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{()->listener.onClick(index)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                tools:src="@drawable/ic_location"
+                imgUrl="@{data.icon}"
+                android:layout_marginEnd="16dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="Linkaja"
+                android:text="@{data.name}"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="Rp 100.000"
+                android:text="@{data.credit}"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"/>
+
+    </LinearLayout>
+
+</layout>

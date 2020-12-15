@@ -68,7 +68,8 @@
                 android:textSize="14sp"
                 android:textColor="@color/c_link"
                 android:text="@string/change"
-                android:background="?attr/selectableItemBackground"/>
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{()->listener.onChangePaymentClick(index)}"/>
 
         </LinearLayout>
 
