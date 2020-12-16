@@ -26,6 +26,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        release {
+            storeFile file("jcodonuts")
+            storePassword "app-jcodonuts-2020"
+            keyAlias "app-jcodonuts"
+            keyPassword "app-jcodonuts-2020"
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
