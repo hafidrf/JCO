@@ -114,6 +114,15 @@
             app:uri="@string/linkChoosePaymentFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/paymentDetailFragment"
+        android:name="com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailFragment"
+        android:label="PaymentDetailFragment" >
+        <deepLink
+            android:id="@+id/linkPaymentDetailFragment"
+            app:uri="@string/linkPaymentDetailFragment" />
+    </fragment>
+
 
 
 

@@ -28,6 +28,10 @@ class CartViewModel @Inject constructor(): BaseViewModel(), CartControllerListen
     val showChangePayment : LiveData<SingleEvents<String>>
         get() = _showChangePayment
 
+    private val _showPaymentDetail = MutableLiveData<SingleEvents<String>>()
+    val showPaymentDetail : LiveData<SingleEvents<String>>
+        get() = _showPaymentDetail
+
     init {
         datas.value = mutableListOf()
     }
@@ -70,7 +74,7 @@ class CartViewModel @Inject constructor(): BaseViewModel(), CartControllerListen
     }
 
     override fun onOrderClick(index: Int) {
-        
+        _showPaymentDetail.value = SingleEvents("payment_detail")
     }
 
     override fun onChangePaymentClick(index: Int) {

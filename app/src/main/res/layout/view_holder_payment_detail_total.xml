@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.OrderTotal" />
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailControllerListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"
+            android:layout_marginVertical="16dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="9876545678"
+                android:text="@string/subtotal"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="2"
+                android:text="@{data.subTotal}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="18dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/delivery_fee"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="Rp. 20.000"
+                android:text="@{data.deliveryFee}"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="18dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/task_service"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="0"
+                android:text="@{data.taskAndService}"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"
+            android:layout_marginVertical="14dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginVertical="18dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/total"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="20sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="Rp. 300.000"
+                android:text="@{data.total}"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/img_qrcode"
+            android:layout_marginVertical="20dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="@string/your_order_has_been_processed_after_that_we_will_immediately_send_it"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOrderAgain"
+            android:text="@string/order_again"
+            style="@style/MyButton"
+            android:layout_marginTop="40dp"
+            android:onClick="@{()->listener.onBtnOrderClick(index)}"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTracking"
+            android:text="@string/tracking"
+            style="@style/MyButtonOutline"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->listener.onBtnTrackingClick(index)}"/>
+    </LinearLayout>
+
+
+</layout>

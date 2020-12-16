@@ -20,6 +20,7 @@ import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchViewModel
 import com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentViewModel
+import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailViewModel
 import com.jcodonuts.app.ui.pickup.PickupViewModel
 import com.jcodonuts.app.ui.product_detail.ProductDetailViewModel
 import com.jcodonuts.app.ui.splash.SplashViewModel
@@ -113,6 +114,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ChoosePaymentViewModel::class)
     internal abstract fun providesChoosePaymentViewModel(viewModel: ChoosePaymentViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PaymentDetailViewModel::class)
+    internal abstract fun providesPaymentDetailViewModel(viewModel: PaymentDetailViewModel) : ViewModel
 
 
 

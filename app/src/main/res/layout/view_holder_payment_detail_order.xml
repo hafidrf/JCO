@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.OrderDetail" />
+        <variable
+            name="index"
+            type="Integer" />
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailControllerListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_location"
+                android:layout_marginEnd="16dp"/>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_text_secondary"
+                    android:textSize="12sp"
+                    tools:text="Payment"
+                    android:text="@{data.addressType}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_black"
+                    android:textSize="20sp"
+                    android:fontFamily="sans-serif-medium"
+                    tools:text="Jco Cihampelas Walk"
+                    android:text="@{data.addressName}"
+                    android:layout_marginTop="4dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_black"
+                    android:textSize="16sp"
+                    tools:text="Payment"
+                    android:text="@{data.addressDetail}"
+                    android:layout_marginTop="6dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/c_text_secondary"
+                    android:textSize="12sp"
+                    tools:text="Payment"
+                    android:text="@{data.addressDistance}"
+                    android:layout_marginTop="4dp"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"
+            android:layout_marginVertical="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_black"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/order_summary"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_text_secondary"
+            android:textSize="14sp"
+            android:text="@string/no_order"
+            android:layout_marginTop="18dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="14dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_black"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                tools:text="9876545678"
+                android:text="@{data.orderNumber}"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_link"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/copy"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:onClick="@{()->listener.onOrderNumberCopy(index)}"/>
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_text_secondary"
+            android:textSize="14sp"
+            android:text="@string/purchase_date"
+            android:layout_marginTop="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_black"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif-medium"
+            tools:text="9876545678"
+            android:text="@{data.purchaseDate}"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/c_text_secondary"
+            android:textSize="14sp"
+            android:text="@string/products"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="4dp"/>
+    </LinearLayout>
+
+
+</layout>

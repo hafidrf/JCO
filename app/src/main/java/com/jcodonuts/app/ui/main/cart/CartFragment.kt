@@ -65,6 +65,12 @@ class CartFragment @Inject constructor() : BaseFragment<FragmentMainCartBinding,
             }
         })
 
+        viewModel.showPaymentDetail.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkPaymentDetailFragment)
+            }
+        })
+
         viewModel.showDialogNote.observe(this, {
             it.getContentIfNotHandled()?.let {
                 val dlg = DialogNote()

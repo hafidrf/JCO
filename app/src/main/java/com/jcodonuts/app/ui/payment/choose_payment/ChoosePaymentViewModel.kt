@@ -20,7 +20,7 @@ class ChoosePaymentViewModel @Inject constructor(): BaseViewModel(), ChoosePayme
     fun loadData(){
         val temp = _datas.value?.toMutableList() ?: mutableListOf()
         temp.add(ChoosePaymentData("https://seeklogo.com/images/L/link-aja-logo-F029ED0939-seeklogo.com.png","Link Aja", "Rp. 100.000"))
-        temp.add(ChoosePaymentData("https://freeiconshop.com/wp-content/uploads/edd/dollar-flat.png","Point", "Rp. 100.000"))
+        temp.add(ChoosePaymentData("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRBdVSIgv2ePknXUhvFZ7FO0vdIh1zhJJ_SQ&usqp=CAU","Point", "Rp. 100.000"))
 
         _datas.postValue(temp)
     }
