@@ -21,13 +21,13 @@ class HomeController(private val listener: HomeControllerListener)
         }
 
     override fun buildModels() {
-        data?.forEachIndexed { index, cellData ->
+        data.forEachIndexed { index, cellData ->
             when(cellData) {
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
-                is HomeSearchSection -> addHomeSearchSection(cellData, listener)
-                is HomePromoHeader -> addHomePromoHeader(cellData)
+                is HomeSearchSection -> addHomeSearchSection(listener)
+                is HomePromoHeader -> addHomePromoHeader()
                 is HomePromos -> addHomePromos(cellData)
-                is HomeMenuHeader -> addHomeMenuHeader(cellData)
+                is HomeMenuHeader -> addHomeMenuHeader()
                 is HomeMenuCategories -> addHomeMenuCategory(cellData, listener)
                 is HomeMenuItem -> addHomeMenuItem(cellData, listener, index)
             }
@@ -43,7 +43,7 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomeSearchSection(cellData: HomeSearchSection, listener: HomeControllerListener){
+    private fun addHomeSearchSection(listener: HomeControllerListener){
         homeSearch {
             id("search")
             spanSizeOverride { _, _, _ -> 2 }
@@ -51,14 +51,14 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomePromoHeader(cellData: HomePromoHeader){
+    private fun addHomePromoHeader(){
         homePromoHeader {
             id("carousel-header")
             spanSizeOverride { _, _, _ -> 2 }
         }
     }
 
-    private fun addHomeMenuHeader(cellData: HomeMenuHeader){
+    private fun addHomeMenuHeader(){
         homeMenuHeader {
             id("menu_header")
             spanSizeOverride { _, _, _ -> 2 }

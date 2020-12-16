@@ -20,7 +20,7 @@ class PickupController(
         }
 
     override fun buildModels() {
-        data?.forEachIndexed { index, cellData ->
+        data.forEachIndexed { index, cellData ->
             when(cellData) {
                 is LocationSearch -> addLocationSearch()
                 is PickupItem -> addPickupItem(cellData, listener, index)

@@ -20,10 +20,10 @@ class MenuSearchController(
         }
 
     override fun buildModels() {
-        data?.forEachIndexed { index, cellData ->
+        data.forEachIndexed { index, cellData ->
             when(cellData) {
                 is CommonSearch -> addCommonSearch()
-                is MenuSearchTagName -> addMenuSearchTagName(cellData, index)
+                is MenuSearchTagName -> addMenuSearchTagName(cellData)
                 is HomeMenuItem -> addHomeMenuItem(cellData, listener, index)
             }
         }
@@ -45,7 +45,7 @@ class MenuSearchController(
         }
     }
 
-    private fun addMenuSearchTagName(cellData: MenuSearchTagName, index:Int){
+    private fun addMenuSearchTagName(cellData: MenuSearchTagName){
         menuSearchTagview {
             id(cellData.hashCode())
             data(cellData)

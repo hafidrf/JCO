@@ -19,7 +19,7 @@ class CartController(
     override fun buildModels(data: List<BaseCell>?) {
         data?.forEachIndexed() { index, cellData ->
             when(cellData) {
-                is CartSwitch -> addCartSwitch(cellData, listener)
+                is CartSwitch -> addCartSwitch(listener)
                 is CartDeliveryAddress -> addCartDeliveryAddress(cellData, index, listener)
                 is CartPickupAddress -> addCartPickupAddress(cellData, index, listener)
                 is CartProduct -> addCartProduct(cellData, index, listener)
@@ -28,7 +28,7 @@ class CartController(
         }
     }
 
-    private fun addCartSwitch(cell: BaseCell, listener:CartControllerListener){
+    private fun addCartSwitch(listener:CartControllerListener){
         cartSwitch {
             id("switch_cart")
             listener(listener)

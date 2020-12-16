@@ -20,7 +20,7 @@ class DeliveryController(
         }
 
     override fun buildModels() {
-        data?.forEachIndexed { index, cellData ->
+        data.forEachIndexed { index, cellData ->
             when(cellData) {
                 is LocationSearch -> addLocationSearch()
                 is DeliveryItem -> addDeliveryItem(cellData, listener, index)

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "870068254032",
+    "firebase_url": "https://jco-apps.firebaseio.com",
+    "project_id": "jco-apps",
+    "storage_bucket": "jco-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:870068254032:android:b468fcc8be71e1ae5d6855",
+        "android_client_info": {
+          "package_name": "com.jcodonuts.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "870068254032-1j6s79m92o534k1iddibuqajen6rbepn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3alQ-BCW1jQSMz8jSFp_tquK161i9Ve4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "870068254032-1j6s79m92o534k1iddibuqajen6rbepn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
