@@ -1,6 +1,7 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
@@ -57,7 +58,7 @@ class HomeViewModel @Inject constructor(
             .observeOn(schedulers.ui())
             .subscribe({ data ->
                 val temp = datas.value?: mutableListOf()
-                temp.add(HomeHeadSection("test"))
+                temp.add(HomeHeadSection("Farriza Ahmad"))
                 temp.add(HomeSearchSection("test"))
                 temp.add(HomePromoHeader("test"))
                 temp.add(data)
@@ -110,6 +111,10 @@ class HomeViewModel @Inject constructor(
 
     override fun onSearchClick() {
         _showMenuSearch.value = SingleEvents("menu_search")
+    }
+
+    override fun onSwitchAppClick() {
+        Log.d(TAG, "click ")
     }
 
     override fun onBannerPromoClick(promoBanner: PromoBanner) {

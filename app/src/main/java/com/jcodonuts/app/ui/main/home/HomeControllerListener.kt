@@ -9,6 +9,7 @@ interface HomeControllerListener {
     fun onQrCodeClick()
     fun onPickupClick()
     fun onSearchClick()
+    fun onSwitchAppClick()
     fun onBannerPromoClick(promoBanner: PromoBanner)
     fun onPromoSeeAllClick()
     fun onMenuCategoryClick(menuCategory: MenuCategory)

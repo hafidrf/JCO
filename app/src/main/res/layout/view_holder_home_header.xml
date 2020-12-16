@@ -55,7 +55,12 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:text="JCO Apps"
-                        android:textColor="@color/c_white"/>
+                        android:textColor="@color/c_white"
+                        android:drawableEnd="@drawable/ic_baseline_keyboard_arrow_down"
+                        android:drawablePadding="4dp"
+                        app:drawableTint="@color/c_white"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:onClick="@{()->onClickListener.onSwitchAppClick()}"/>
 
                 </LinearLayout>
 

@@ -45,34 +45,38 @@ class MenuSearchViewModel @Inject constructor(
     }
 
     override fun onLinkajaClick() {
-        
+
     }
 
     override fun onQrCodeClick() {
-        
+
     }
 
     override fun onPickupClick() {
-        
+
     }
 
     override fun onSearchClick() {
-        
+
+    }
+
+    override fun onSwitchAppClick() {
+
     }
 
     override fun onBannerPromoClick(promoBanner: PromoBanner) {
-        
+
     }
 
     override fun onPromoSeeAllClick() {
-        
+
     }
 
     override fun onMenuCategoryClick(menuCategory: MenuCategory) {
-        
+
     }
 
     override fun onMenuItemClick(index: Int) {
-        
+
     }
 }
