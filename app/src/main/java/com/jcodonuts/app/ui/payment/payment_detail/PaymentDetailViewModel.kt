@@ -17,6 +17,10 @@ class PaymentDetailViewModel @Inject constructor(): BaseViewModel(), PaymentDeta
     val trackingClick : LiveData<SingleEvents<String>>
         get() = _trackingClick
 
+    private val _orderAgainClick = MutableLiveData<SingleEvents<String>>()
+    val orderAgainClick : LiveData<SingleEvents<String>>
+        get() = _orderAgainClick
+
     fun loadData(){
         val temp = _datas.value?.toMutableList() ?: mutableListOf()
         temp.add(OrderDetail("Pickup at","Jco Cihampelas Walk","Cipaganti, Coblong, Bandung, Jawa Barat 40131","2 km", "875678", "14 October 2020"))
@@ -34,7 +38,7 @@ class PaymentDetailViewModel @Inject constructor(): BaseViewModel(), PaymentDeta
     }
 
     override fun onBtnOrderClick(index: Int) {
-        
+        _orderAgainClick.value = SingleEvents("orderAgainClick");
     }
 
     override fun onBtnTrackingClick(index: Int) {

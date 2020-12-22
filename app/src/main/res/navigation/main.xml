@@ -21,6 +21,9 @@
         android:id="@+id/mainFragment"
         android:name="com.jcodonuts.app.ui.main.base.MainFragment"
         android:label="MainFragment" >
+        <deepLink
+            android:id="@+id/linkMainFragment"
+            app:uri="@string/linkMainFragment" />
 
     </fragment>
 

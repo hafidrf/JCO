@@ -3,7 +3,8 @@ package com.jcodonuts.app.data.local
 data class ModelTracking(
         val trackingHeader: TrackingHeader,
         val trackingStatus: TrackingStatus,
-        val trackingProgress: TrackingProgress
+        val trackingProgress: TrackingProgress,
+        val trackingFooter: TrackingFooter
         ):BaseCell()
 
 data class TrackingHeader(
@@ -22,4 +23,8 @@ data class TrackingProgress(
         val time:String,
         val isComplete:Boolean,
         val position:String,
+):BaseCell()
+
+data class TrackingFooter(
+        val text:String,
 ):BaseCell()

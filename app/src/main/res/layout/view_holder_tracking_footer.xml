@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.TrackingFooter" />
+
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.tracking.TrackingControllerListener" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/order_has_arrived_please_confirm_your_order"
+            android:textColor="@color/c_text_secondary"
+            android:textSize="14sp"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirm"
+            android:text="@string/confirm"
+            style="@style/MyButton"
+            android:layout_marginTop="24dp"
+            android:onClick="@{()->listener.onBtnConfirmClick()}"/>
+
+    </LinearLayout>
+
+</layout>

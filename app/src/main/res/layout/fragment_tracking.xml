@@ -13,14 +13,21 @@
             layout="@layout/layout_custom_actionbar"
             app:title="@{`Tracking`}"/>
 
-        <com.airbnb.epoxy.EpoxyRecyclerView
-            android:id="@+id/recycler_view"
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/view_holder_tracking_progress"
-            android:padding="16dp"
-            android:clipToPadding="true"/>
+            android:layout_height="match_parent">
+            <com.airbnb.epoxy.EpoxyRecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/view_holder_tracking_progress"
+                android:padding="16dp"
+                android:clipToPadding="true"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
     </LinearLayout>
 </layout>

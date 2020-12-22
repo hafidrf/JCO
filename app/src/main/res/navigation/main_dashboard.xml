@@ -9,6 +9,9 @@
         android:id="@+id/home"
         android:name="com.jcodonuts.app.ui.main.home.HomeFragment"
         android:label="HomeFragment" >
+        <deepLink
+            android:id="@+id/linkHome"
+            app:uri="@string/linkHome" />
     </fragment>
 
     <fragment

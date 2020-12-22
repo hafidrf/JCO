@@ -23,6 +23,7 @@ class PaymentDetailFragment @Inject constructor() : BaseFragment<FragmentPayment
     override fun onViewReady(savedInstance: Bundle?) {
         setupActionBar()
         setupRecyclerview()
+        setupObserver()
     }
 
     private fun setupRecyclerview(){
@@ -40,6 +41,20 @@ class PaymentDetailFragment @Inject constructor() : BaseFragment<FragmentPayment
         viewModel.trackingClick.observe(this, {
             it.getContentIfNotHandled()?.let {
                 navigateTo(R.string.linkTrackingFragment)
+            }
+        })
+    }
+
+    private fun setupObserver(){
+        viewModel.trackingClick.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkTrackingFragment)
+            }
+        })
+
+        viewModel.orderAgainClick.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkMainFragment)
             }
         })
     }

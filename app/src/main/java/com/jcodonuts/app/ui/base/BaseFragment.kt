@@ -17,9 +17,11 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.MainActivity
+import com.jcodonuts.app.ui.main.base.MainFragment
 import java.net.URI
 import javax.inject.Inject
 
