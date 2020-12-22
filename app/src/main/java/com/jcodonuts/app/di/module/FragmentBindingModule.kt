@@ -23,6 +23,7 @@ import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailFragment
 import com.jcodonuts.app.ui.pickup.PickupFragment
 import com.jcodonuts.app.ui.product_detail.ProductDetailFragment
 import com.jcodonuts.app.ui.splash.SplashFragment
+import com.jcodonuts.app.ui.tracking.TrackingFragment
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -114,6 +115,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(PaymentDetailFragment::class)
     abstract fun bindPaymentDetailFragment(fragment: PaymentDetailFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(TrackingFragment::class)
+    abstract fun bindTrackingFragment(fragment: TrackingFragment): Fragment
 
 
 

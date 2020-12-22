@@ -13,9 +13,9 @@ class PaymentDetailViewModel @Inject constructor(): BaseViewModel(), PaymentDeta
     val datas : LiveData<List<BaseCell>>
         get() = _datas
 
-    private val _paymentClick = MutableLiveData<SingleEvents<ChoosePaymentData>>()
-    val paymentClick : LiveData<SingleEvents<ChoosePaymentData>>
-        get() = _paymentClick
+    private val _trackingClick = MutableLiveData<SingleEvents<String>>()
+    val trackingClick : LiveData<SingleEvents<String>>
+        get() = _trackingClick
 
     fun loadData(){
         val temp = _datas.value?.toMutableList() ?: mutableListOf()
@@ -38,7 +38,7 @@ class PaymentDetailViewModel @Inject constructor(): BaseViewModel(), PaymentDeta
     }
 
     override fun onBtnTrackingClick(index: Int) {
-        
+        _trackingClick.value = SingleEvents("tracking");
     }
 
 }

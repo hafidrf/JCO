@@ -75,6 +75,11 @@ fun ImageView.bindLocationFavorited(isFavorite: Boolean){
     }
 }
 
+@BindingAdapter("imgDrawable")
+fun AppCompatImageView.bindImgDrawable(drawable: Int){
+    this.setImageResource(drawable)
+}
+
 @BindingAdapter("selected")
 fun LinearLayout.bindSelected(selected: Boolean){
     this.isSelected = selected

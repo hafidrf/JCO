@@ -37,11 +37,11 @@ class PaymentDetailFragment @Inject constructor() : BaseFragment<FragmentPayment
             controller.data = it
         })
 
-//        viewModel.paymentClick.observe(this, {
-//            it.getContentIfNotHandled()?.let {
-//                navigateTo(R.string.linkTopup)
-//            }
-//        })
+        viewModel.trackingClick.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkTrackingFragment)
+            }
+        })
     }
 
     private fun setupActionBar(){

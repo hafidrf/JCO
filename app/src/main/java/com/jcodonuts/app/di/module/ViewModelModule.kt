@@ -24,6 +24,7 @@ import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailViewModel
 import com.jcodonuts.app.ui.pickup.PickupViewModel
 import com.jcodonuts.app.ui.product_detail.ProductDetailViewModel
 import com.jcodonuts.app.ui.splash.SplashViewModel
+import com.jcodonuts.app.ui.tracking.TrackingViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -119,6 +120,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(PaymentDetailViewModel::class)
     internal abstract fun providesPaymentDetailViewModel(viewModel: PaymentDetailViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(TrackingViewModel::class)
+    internal abstract fun providesTrackingViewModel(viewModel: TrackingViewModel) : ViewModel
 
 
 

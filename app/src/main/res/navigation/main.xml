@@ -123,6 +123,15 @@
             app:uri="@string/linkPaymentDetailFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/trackingFragment"
+        android:name="com.jcodonuts.app.ui.tracking.TrackingFragment"
+        android:label="TrackingFragment" >
+        <deepLink
+            android:id="@+id/linkTrackingFragment"
+            app:uri="@string/linkTrackingFragment" />
+    </fragment>
+
 
 
 
