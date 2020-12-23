@@ -24,7 +24,9 @@
         <deepLink
             android:id="@+id/linkMainFragment"
             app:uri="@string/linkMainFragment" />
-
+        <argument
+            android:name="menu"
+            app:argType="java.lang.String" />
     </fragment>
 
     <fragment
@@ -79,6 +81,9 @@
         <deepLink
             android:id="@+id/linkProductDetail"
             app:uri="@string/linkProductDetail" />
+        <action
+            android:id="@+id/action_from_product_to_mainFragment"
+            app:destination="@id/mainFragment"/>
     </fragment>
 
     <fragment

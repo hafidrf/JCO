@@ -1,12 +1,14 @@
 package com.jcodonuts.app.ui.product_detail
 
 import android.annotation.SuppressLint
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.ProductRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider
+import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject
 
 class ProductDetailViewModel @Inject constructor(
@@ -17,6 +19,10 @@ class ProductDetailViewModel @Inject constructor(
     private val _datas = MutableLiveData<MutableList<BaseCell>>()
     val datas : LiveData<MutableList<BaseCell>>
         get() = _datas
+
+    private val _addToCart = MutableLiveData<SingleEvents<String>>()
+    val addToCart : LiveData<SingleEvents<String>>
+        get() = _addToCart
 
     @SuppressLint("CheckResult")
     fun loadDetail(){
@@ -88,5 +94,9 @@ class ProductDetailViewModel @Inject constructor(
                 _datas.postValue(it)
             }
         }
+    }
+
+    override fun onAddToCart() {
+        _addToCart.value = SingleEvents("addToCart")
     }
 }

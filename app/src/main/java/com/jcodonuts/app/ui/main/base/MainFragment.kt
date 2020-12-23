@@ -36,6 +36,12 @@ class MainFragment @Inject constructor() : BaseFragment<FragmentMainBinding, Mai
         binding.bottomNavigation.setOnNavigationItemReselectedListener {
 
         }
+
+        arguments?.let {
+            if(it.getString("menu").equals("cart")){
+                binding.bottomNavigation.selectedItemId = R.id.cart
+            }
+        }
     }
 
     fun backToHome(){

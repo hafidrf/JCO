@@ -109,4 +109,10 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
         Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
                 .navigate(uri)
     }
+
+    open fun navigateTo(link:String){
+        val uri = Uri.parse(link)
+        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                .navigate(uri)
+    }
 }

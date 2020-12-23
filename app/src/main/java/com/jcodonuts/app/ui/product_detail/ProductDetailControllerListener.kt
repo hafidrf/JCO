@@ -4,4 +4,5 @@ interface ProductDetailControllerListener {
     fun onMinusClick(position:Int)
     fun onDonutPlusClick(position:Int)
     fun onDonutMinusClick(position:Int)
+    fun onAddToCart()
 }

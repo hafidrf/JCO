@@ -22,7 +22,7 @@ class SplashFragment @Inject constructor() : BaseFragment<FragmentSplashBinding,
     override fun onViewReady(savedInstance: Bundle?) {
         viewModel.countSplash()
         viewModel.complete.observe(this, Observer {
-            val action = SplashFragmentDirections.actionToMainFragment()
+            val action = SplashFragmentDirections.actionToMainFragment("")
             findNavController()
                 .navigate(action,
                     FragmentNavigator.Extras.Builder()
