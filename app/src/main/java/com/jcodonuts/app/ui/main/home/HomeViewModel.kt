@@ -41,6 +41,10 @@ class HomeViewModel @Inject constructor(
     val showMenuSearch : LiveData<SingleEvents<String>>
         get() = _showMenuSearch
 
+    private val _showChangeApp = MutableLiveData<SingleEvents<String>>()
+    val showChangeApp : LiveData<SingleEvents<String>>
+        get() = _showChangeApp
+
     private val _openProductDetail = MutableLiveData<SingleEvents<HomeMenuItem>>()
     val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
@@ -114,7 +118,7 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onSwitchAppClick() {
-        Log.d(TAG, "click ")
+        _showChangeApp.value = SingleEvents("change_app")
     }
 
     override fun onBannerPromoClick(promoBanner: PromoBanner) {

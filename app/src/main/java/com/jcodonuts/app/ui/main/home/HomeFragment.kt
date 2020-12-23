@@ -93,6 +93,17 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
                 navigateTo(R.string.linkMenuSearchFragment)
             }
         })
+
+        viewModel.showChangeApp.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                val dlg = DialogChangeApp()
+                dlg.showDialog(requireActivity().supportFragmentManager, "HomeFragmentChangeApp", object : DialogChangeApp.OnDialogClickListener {
+                    override fun onChange() {
+                        dlg.dissmissDialog()
+                    }
+                })
+            }
+        })
     }
 
     override fun onBackPress() {

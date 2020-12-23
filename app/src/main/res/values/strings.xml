@@ -101,4 +101,6 @@
     <string name="status">Status</string>
     <string name="order_has_arrived_please_confirm_your_order">Order has arrived please confirm your order.</string>
     <string name="confirm">Confirm</string>
+    <string name="jco_donuts">JCO Donuts</string>
+    <string name="jco_reserve">JCO Reserve</string>
 </resources>
