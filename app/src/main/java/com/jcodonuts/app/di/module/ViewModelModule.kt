@@ -16,9 +16,11 @@ import com.jcodonuts.app.ui.main.notification.NotificationViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
 import com.jcodonuts.app.ui.delivery.DeliveryViewModel
+import com.jcodonuts.app.ui.hot_promo.HotPromoViewModel
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchViewModel
+import com.jcodonuts.app.ui.main.wishlist.WishlistViewModel
 import com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentViewModel
 import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailViewModel
 import com.jcodonuts.app.ui.pickup.PickupViewModel
@@ -55,6 +57,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CartViewModel::class)
     internal abstract fun providesCartViewModel(viewModel: CartViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(WishlistViewModel::class)
+    internal abstract fun providesWishlistViewModel(viewModel: WishlistViewModel) : ViewModel
 
     @Binds
     @IntoMap
@@ -125,6 +132,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(TrackingViewModel::class)
     internal abstract fun providesTrackingViewModel(viewModel: TrackingViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(HotPromoViewModel::class)
+    internal abstract fun providesHotPromoViewModel(viewModel: HotPromoViewModel) : ViewModel
 
 
 

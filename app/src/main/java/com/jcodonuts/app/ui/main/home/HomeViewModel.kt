@@ -45,6 +45,10 @@ class HomeViewModel @Inject constructor(
     val showChangeApp : LiveData<SingleEvents<String>>
         get() = _showChangeApp
 
+    private val _showHotPromo = MutableLiveData<SingleEvents<String>>()
+    val showHotPromo : LiveData<SingleEvents<String>>
+        get() = _showHotPromo
+
     private val _openProductDetail = MutableLiveData<SingleEvents<HomeMenuItem>>()
     val openProductDetail : LiveData<SingleEvents<HomeMenuItem>>
         get() = _openProductDetail
@@ -126,7 +130,7 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onPromoSeeAllClick() {
-
+        _showHotPromo.value = SingleEvents("hot_promo")
     }
 
     override fun onMenuCategoryClick(menuCategory: MenuCategory) {

@@ -12,6 +12,7 @@ import javax.inject.Inject
 interface HomeRepository {
     fun getPromo(): Single<HomePromos>
     fun getMenuItems(): Single<HomeMenuItems>
+    fun getMenuItemsWishlist(): Single<HomeMenuItems>
 }
 
 class HomeRepositoryImpl @Inject constructor(
@@ -32,6 +33,15 @@ class HomeRepositoryImpl @Inject constructor(
         return composeSingle {
             Single.fromCallable {
                 val jsonString = application.baseContext.assets.readFile("donut.json")
+                Gson().fromJson(jsonString, HomeMenuItems::class.java)
+            }
+        }
+    }
+
+    override fun getMenuItemsWishlist(): Single<HomeMenuItems> {
+        return composeSingle {
+            Single.fromCallable {
+                val jsonString = application.baseContext.assets.readFile("product_wishlist.json")
                 Gson().fromJson(jsonString, HomeMenuItems::class.java)
             }
         }

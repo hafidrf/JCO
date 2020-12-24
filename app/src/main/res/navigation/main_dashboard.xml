@@ -22,6 +22,13 @@
     </fragment>
 
     <fragment
+        android:id="@+id/wishlist"
+        android:name="com.jcodonuts.app.ui.main.wishlist.WishlistFragment"
+        android:label="WishlistFragment" >
+
+    </fragment>
+
+    <fragment
         android:id="@+id/notification"
         android:name="com.jcodonuts.app.ui.main.notification.NotificationFragment"
         android:label="NotificationFragment" >

@@ -15,9 +15,11 @@ import com.jcodonuts.app.ui.main.notification.NotificationFragment
 import com.jcodonuts.app.ui.main.profile.ProfileFragment
 import com.jcodonuts.app.ui.auth.register.RegisterFragment
 import com.jcodonuts.app.ui.delivery.DeliveryFragment
+import com.jcodonuts.app.ui.hot_promo.HotPromoFragment
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.payment.topup.TopupFragment
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment
+import com.jcodonuts.app.ui.main.wishlist.WishlistFragment
 import com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentFragment
 import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailFragment
 import com.jcodonuts.app.ui.pickup.PickupFragment
@@ -50,6 +52,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(CartFragment::class)
     abstract fun bindCartFragment(cartFragment: CartFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(WishlistFragment::class)
+    abstract fun bindWishlistFragment(fragment: WishlistFragment): Fragment
 
     @Binds
     @IntoMap
@@ -120,6 +127,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(TrackingFragment::class)
     abstract fun bindTrackingFragment(fragment: TrackingFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(HotPromoFragment::class)
+    abstract fun bindHotPromoFragment(fragment: HotPromoFragment): Fragment
 
 
 

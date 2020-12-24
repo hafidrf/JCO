@@ -1,0 +1,31 @@
+{
+  "homeMenuItems": [
+    {
+      "name": "Choco Caviar Strawberry",
+      "imgURL": "https://drive.google.com/uc?id=1G5cn0fGZuBVYaYisji7v61TrWQrCZdg3",
+      "price": "Rp. 5,000",
+      "isFavorite": "true",
+      "isFreeDelivery": "true",
+      "isStartFrom": "true",
+      "isPromo": "true"
+    },
+    {
+      "name": "New Single Chocolate Frappe",
+      "imgURL": "https://drive.google.com/uc?id=1OAnrOZyVpBsscR8hvry7bUHR83FWJXAF",
+      "price": "Rp. 5,000",
+      "isFavorite": "true",
+      "isFreeDelivery": "false",
+      "isStartFrom": "true",
+      "isPromo": "true"
+    },
+    {
+      "name": "New Single Iced Chocolate",
+      "imgURL": "https://drive.google.com/uc?id=1TucarHug9owT3FX10Fw_qsRVGkbNd1K5",
+      "price": "Rp. 5,000",
+      "isFavorite": "true",
+      "isFreeDelivery": "false",
+      "isStartFrom": "true",
+      "isPromo": "true"
+    }
+  ]
+}

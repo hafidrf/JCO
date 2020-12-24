@@ -107,6 +107,6 @@ class ProductDetailViewModel @Inject constructor(
     }
 
     override fun onBtnFavoriteClick() {
-        
+
     }
 }

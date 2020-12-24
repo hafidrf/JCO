@@ -25,7 +25,7 @@ class HomeController(private val listener: HomeControllerListener)
             when(cellData) {
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(listener)
-                is HomePromoHeader -> addHomePromoHeader()
+                is HomePromoHeader -> addHomePromoHeader(listener)
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader()
                 is HomeMenuCategories -> addHomeMenuCategory(cellData, listener)
@@ -51,10 +51,11 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomePromoHeader(){
+    private fun addHomePromoHeader(listener: HomeControllerListener){
         homePromoHeader {
             id("carousel-header")
             spanSizeOverride { _, _, _ -> 2 }
+            onClickListener(listener)
         }
     }
 

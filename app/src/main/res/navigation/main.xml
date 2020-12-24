@@ -140,6 +140,15 @@
             app:uri="@string/linkTrackingFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/hotPromoFragment"
+        android:name="com.jcodonuts.app.ui.hot_promo.HotPromoFragment"
+        android:label="HotPromoFragment" >
+        <deepLink
+            android:id="@+id/linkHotPromoFragment"
+            app:uri="@string/linkHotPromoFragment" />
+    </fragment>
+
 
 
 

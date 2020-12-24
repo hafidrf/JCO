@@ -4,6 +4,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="onClickListener"
+            type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -16,7 +22,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/c_black"
             android:textSize="20sp"
-            android:text="Hot Promo"/>
+            android:text="@string/hot_promo"/>
 
 
         <com.google.android.material.textview.MaterialTextView
@@ -24,7 +30,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/TextViewLink"
-            android:text="See all"/>
+            android:text="@string/see_all"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:onClick="@{()->onClickListener.onPromoSeeAllClick()}"/>
 
     </LinearLayout>
 

@@ -104,6 +104,12 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
                 })
             }
         })
+
+        viewModel.showHotPromo.observe(this, {
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkHotPromoFragment)
+            }
+        })
     }
 
     override fun onBackPress() {
