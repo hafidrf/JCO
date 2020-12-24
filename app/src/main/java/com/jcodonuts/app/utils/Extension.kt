@@ -80,6 +80,16 @@ fun AppCompatImageView.bindImgDrawable(drawable: Int){
     this.setImageResource(drawable)
 }
 
+@BindingAdapter("isMenuItemFavorite")
+fun AppCompatImageView.bindFavorite(isFavorite: Boolean){
+    if(isFavorite){
+        this.setColorFilter(ContextCompat.getColor(context, R.color.c_favorite_true), android.graphics.PorterDuff.Mode.SRC_IN)
+    }else{
+        this.setColorFilter(ContextCompat.getColor(context, R.color.c_favorite_false), android.graphics.PorterDuff.Mode.SRC_IN)
+    }
+
+}
+
 @BindingAdapter("selected")
 fun LinearLayout.bindSelected(selected: Boolean){
     this.isSelected = selected

@@ -9,5 +9,7 @@ data class HomeMenuItem(
     val imgURL: String,
     val price: String,
     val isStartFrom: Boolean,
-    var isPromo: Boolean
+    var isPromo: Boolean,
+    var isFreeDelivery: Boolean,
+    var isFavorite: Boolean
 ):BaseCell()

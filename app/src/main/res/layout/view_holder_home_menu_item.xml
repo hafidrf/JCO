@@ -26,7 +26,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:onClick="@{()->onClickListener.onMenuItemClick(index)}">
 
             <FrameLayout
                 android:layout_width="match_parent"
@@ -49,20 +50,14 @@
                         roundCorner="@{16}"/>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/promo"
-                    android:textColor="@color/c_white"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="10dp"
-                    android:paddingTop="4dp"
-                    android:paddingBottom="4dp"
-                    android:textSize="12sp"
-                    android:background="@drawable/bg_tag_promo"
-                    android:layout_margin="10dp"
-                    android:layout_gravity="top|right"
-                    android:visibility="@{data.promo?View.VISIBLE:View.GONE}"/>
+                    android:src="@drawable/ic_baseline_favorite"
+                    android:padding="12dp"
+                    android:layout_gravity="top|end"
+                    isMenuItemFavorite="@{data.favorite}"
+                    android:onClick="@{()->onClickListener.onMenuItemFavoriteClick(index)}"/>
 
             </FrameLayout>
 
@@ -76,6 +71,15 @@
                 android:layout_marginTop="6dp"
                 android:singleLine="true"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/c_text_secondary"
+                android:textSize="12sp"
+                android:text="*Mulai dari"
+                android:layout_marginTop="6dp"
+                android:visibility="@{data.startFrom?View.VISIBLE:View.GONE}"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -85,19 +89,36 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/c_text_secondary"
-                    android:textSize="12sp"
-                    android:text="*Mulai dari"
-                    android:layout_marginRight="8dp"
-                    android:visibility="@{data.startFrom?View.VISIBLE:View.GONE}"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
                     android:textColor="@color/c_link"
                     android:textSize="12sp"
                     tools:text="Rp. 60.000"
                     android:text="@{data.price}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/promo"
+                    android:textColor="@color/c_white"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="3dp"
+                    android:textSize="10sp"
+                    android:singleLine="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_tag_promo"
+                    android:visibility="@{data.promo?View.VISIBLE:View.GONE}"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/free_delivery"
+                    android:textColor="@color/c_white"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="3dp"
+                    android:textSize="10sp"
+                    android:singleLine="true"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_tag_free_delivery"
+                    android:visibility="@{data.freeDelivery?View.VISIBLE:View.GONE}"/>
             </LinearLayout>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -105,8 +126,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/selectableItemBackground"
-            android:onClick="@{()->onClickListener.onMenuItemClick(index)}"/>
+            />
 
     </FrameLayout>
 

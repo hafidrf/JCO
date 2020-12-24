@@ -144,4 +144,13 @@ class HomeViewModel @Inject constructor(
             }
         }
     }
+
+    override fun onMenuItemFavoriteClick(index: Int) {
+        datas.value?.let {
+            val temp = (it[index] as HomeMenuItem).copy()
+            temp.isFavorite = !temp.isFavorite
+            it[index] = temp
+            datas.postValue(it)
+        }
+    }
 }

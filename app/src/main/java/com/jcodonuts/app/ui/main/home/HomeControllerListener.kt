@@ -14,4 +14,5 @@ interface HomeControllerListener {
     fun onPromoSeeAllClick()
     fun onMenuCategoryClick(menuCategory: MenuCategory)
     fun onMenuItemClick(index:Int)
+    fun onMenuItemFavoriteClick(index:Int)
 }

@@ -19,4 +19,7 @@
     <color name="c_text_secondary">#8E8E8E</color>
     <color name="c_divider">#c5c5c5</color>
 
+    <color name="c_favorite_true">#F30000</color>
+    <color name="c_favorite_false">#80000000</color>
+
 </resources>

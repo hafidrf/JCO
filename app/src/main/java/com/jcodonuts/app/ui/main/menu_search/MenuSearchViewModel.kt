@@ -79,4 +79,8 @@ class MenuSearchViewModel @Inject constructor(
     override fun onMenuItemClick(index: Int) {
 
     }
+
+    override fun onMenuItemFavoriteClick(index: Int) {
+
+    }
 }
