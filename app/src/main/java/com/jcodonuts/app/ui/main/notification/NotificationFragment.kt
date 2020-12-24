@@ -19,7 +19,26 @@ class NotificationFragment @Inject constructor() : BaseFragment<FragmentMainNoti
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        initActionBar()
+        initRecyclerview()
 
+        if(!isFragmentFromPaused){
+            viewModel.loadData()
+        }
+    }
+
+    private fun initActionBar(){
+        binding.topBar.btnBack.setOnClickListener {
+            onBackPress()
+        }
+    }
+
+    private fun initRecyclerview(){
+        val controller = NotificationController(viewModel)
+        binding.recyclerview.setController(controller)
+        viewModel.datas.observe(this,  {
+            controller.data = it
+        })
     }
 
     override fun onBackPress() {

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.jcodonuts.app.R"/>
+
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.ModelNotification" />
+
+        <variable
+            name="index"
+            type="Integer" />
+
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.main.notification.NotificationControllerListener" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="16dp"
+        android:background="?attr/selectableItemBackground"
+        android:onClick="@{()->listener.onClick(index)}">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                tools:src="@drawable/img_placeholder_notification"
+                imgUrl="@{data.img}"
+                imgPlaceholder="@{R.drawable.img_placeholder_notification}"
+                android:layout_marginEnd="16dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        tools:text="We have sent your order"
+                        android:text="@{data.title}"
+                        android:textSize="16sp"
+                        android:textColor="@color/c_black"
+                        android:fontFamily="sans-serif-medium"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="14 Oct"
+                        android:text="@{data.date}"
+                        android:textSize="10sp"
+                        android:textColor="@color/c_link"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="We have sent your order"
+                    android:text="@{data.desc}"
+                    android:textSize="12sp"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/c_text_secondary"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/c_divider"/>
+    </LinearLayout>
+
+</layout>

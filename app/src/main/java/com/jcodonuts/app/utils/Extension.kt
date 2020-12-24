@@ -20,21 +20,27 @@ import com.jcodonuts.app.ui.main.cart.CartControllerListener
 
 private const val TAG = "Extension"
 
-@BindingAdapter(value = ["imgUrl", "roundCorner"], requireAll = false)
-fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0){
+@BindingAdapter(value = ["imgUrl", "roundCorner", "imgPlaceholder"], requireAll = false)
+fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0, imgPlaceholder:Int=0){
+
+    var placeholder = R.drawable.img_placeholder_donut
+    if(imgPlaceholder!=0){
+        placeholder = imgPlaceholder
+    }
+
     if(imgUrl!=null){
         if(roundCorner>0){
             Glide.with(context)
                     .load(imgUrl)
-                    .placeholder(R.drawable.img_placeholder_donut)
-                    .error(R.drawable.img_placeholder_donut)
+                    .placeholder(placeholder)
+                    .error(placeholder)
                     .transform(CenterInside(), RoundedCorners(dpToPx(roundCorner)))
                     .into(this)
         }else{
             Glide.with(context)
                     .load(imgUrl)
-                    .placeholder(R.drawable.img_placeholder_donut)
-                    .error(R.drawable.img_placeholder_donut)
+                    .placeholder(placeholder)
+                    .error(placeholder)
                     .into(this)
         }
     }else{
