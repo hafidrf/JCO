@@ -9,14 +9,13 @@
             type="com.jcodonuts.app.ui.product_detail.ProductDetailViewModel" />
     </data>
 
-    <com.jcodonuts.app.utils.MyLinearLayout
+    <com.jcodonuts.app.utils.MyFrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
         <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="match_parent"
             android:fitsSystemWindows="true">
             <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
@@ -68,12 +67,35 @@
                 app:layout_behavior="@string/appbar_scrolling_view_behavior" />
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAddToCart"
-            android:text="@string/add_to_cart"
-            style="@style/MyButton"
-            android:layout_margin="16dp"
-            android:onClick="@{()->viewModel.onAddToCart()}"/>
-    </com.jcodonuts.app.utils.MyLinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="bottom"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <FrameLayout
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/bg_btn_favorite"
+                android:layout_marginEnd="16dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_favorite"
+                    android:layout_gravity="center"/>
+
+            </FrameLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddToCart"
+                android:text="@string/add_to_cart"
+                style="@style/MyButton"
+                android:onClick="@{()->viewModel.onAddToCart()}"/>
+        </LinearLayout>
+
+    </com.jcodonuts.app.utils.MyFrameLayout>
 
 </layout>

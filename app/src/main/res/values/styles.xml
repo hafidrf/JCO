@@ -40,6 +40,17 @@
         <item name="android:letterSpacing">0</item>
     </style>
 
+    <style name="MyButtonOutlineFavorite" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="cornerRadius">16dp</item>
+        <item name="strokeColor">@color/c_divider</item>
+        <item name="backgroundColor">@color/c_white</item>
+        <item name="android:layout_height">66dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
     <style name="TextViewLink" parent="Widget.AppCompat.TextView">
         <item name="background">?attr/selectableItemBackground</item>
         <item name="android:textColor">@color/c_link</item>

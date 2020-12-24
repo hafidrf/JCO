@@ -34,6 +34,12 @@ class ProductDetailViewModel @Inject constructor(
                     val temp = _datas.value?.toMutableList() ?: mutableListOf()
                     temp.add(data.content)
                     temp.addAll(data.donuts)
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
                     _datas.postValue(temp)
                 },{
 
@@ -98,5 +104,9 @@ class ProductDetailViewModel @Inject constructor(
 
     override fun onAddToCart() {
         _addToCart.value = SingleEvents("addToCart")
+    }
+
+    override fun onBtnFavoriteClick() {
+        
     }
 }
