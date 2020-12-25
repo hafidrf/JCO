@@ -4,6 +4,6 @@ data class ProfileHeader(val img:String, val name:String, val balance:String, va
 
 data class ProfileMenuHeader(val title:String):BaseCell()
 
-data class ProfileMenu(val icon:Int, val title:String):BaseCell()
+data class ProfileMenu(val icon:Int, val title:String, val type:Int):BaseCell()
 
 data class ProfileFooter(val temp:String=""):BaseCell()

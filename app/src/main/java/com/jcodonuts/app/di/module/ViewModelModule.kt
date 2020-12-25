@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.jcodonuts.app.di.module.factory.ViewModelFactory
 import com.jcodonuts.app.di.scope.ApplicationScope
 import com.jcodonuts.app.di.scope.ViewModelKey
+import com.jcodonuts.app.ui.auth.change_password.ChangePasswordViewModel
 import com.jcodonuts.app.ui.zzexample.article.ArticleViewModel
 import com.jcodonuts.app.ui.zzexample.detail.DetailViewModel
 import com.jcodonuts.app.ui.auth.forgot_password.ForgotPasswordViewModel
@@ -137,6 +138,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(HotPromoViewModel::class)
     internal abstract fun providesHotPromoViewModel(viewModel: HotPromoViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ChangePasswordViewModel::class)
+    internal abstract fun providesChangePasswordViewModel(viewModel: ChangePasswordViewModel) : ViewModel
 
 
 

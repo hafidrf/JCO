@@ -4,6 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentFactory
 import com.jcodonuts.app.di.module.factory.InjectingFragmentFactory
 import com.jcodonuts.app.di.scope.FragmentKey
+import com.jcodonuts.app.ui.auth.change_password.ChangePasswordFragment
 import com.jcodonuts.app.ui.zzexample.article.ArticleFragment
 import com.jcodonuts.app.ui.zzexample.detail.DetailFragment
 import com.jcodonuts.app.ui.auth.forgot_password.ForgotPasswordFragment
@@ -132,6 +133,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(HotPromoFragment::class)
     abstract fun bindHotPromoFragment(fragment: HotPromoFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(ChangePasswordFragment::class)
+    abstract fun bindChangePasswordFragment(fragment: ChangePasswordFragment): Fragment
 
 
 

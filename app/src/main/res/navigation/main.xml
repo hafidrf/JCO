@@ -149,6 +149,15 @@
             app:uri="@string/linkHotPromoFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.jcodonuts.app.ui.auth.change_password.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" >
+        <deepLink
+            android:id="@+id/linkChangePasswordFragment"
+            app:uri="@string/linkChangePasswordFragment" />
+    </fragment>
+
 
 
 

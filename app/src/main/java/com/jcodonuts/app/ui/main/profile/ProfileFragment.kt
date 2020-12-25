@@ -2,6 +2,7 @@ package com.jcodonuts.app.ui.main.profile
 
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.observe
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainProfileBinding
 import com.jcodonuts.app.ui.base.BaseFragment
@@ -44,7 +45,15 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
     }
 
     private fun initObserver(){
-
+        viewModel.showMenuDetail.observe(this, {
+            it.getContentIfNotHandled().let{index->
+                when (index) {
+                    ProfileViewModel.CHANGE_PASSWORD -> {
+                        navigateTo(R.string.linkChangePasswordFragment)
+                    }
+                }
+            }
+        })
     }
 
     override fun onBackPress() {
