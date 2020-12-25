@@ -54,7 +54,7 @@
 
            <com.google.android.material.button.MaterialButton
                android:id="@+id/btnLogin"
-               android:text="Login"
+               android:text="@string/login"
                style="@style/MyButton"
                android:layout_marginTop="40dp"/>
 

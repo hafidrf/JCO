@@ -39,7 +39,6 @@
     <string name="menu_cart">Cart</string>
     <string name="menu_notification">Notification</string>
     <string name="menu_profile">Profile</string>
-    <string name="login">Login</string>
     <string name="phone_number">Phone number</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="dont_have_an_account">Don\'t have an account?</string>
@@ -109,4 +108,9 @@
     <string name="hot_promo">Hot Promo</string>
     <string name="see_all">See all</string>
     <string name="wishlist">Wishlist</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="your_balance">Your balance</string>
+    <string name="jpoint">JPoint</string>
+    <string name="login">Login</string>
+    <string name="sign_out">Sign Out</string>
 </resources>

@@ -7,6 +7,8 @@ import com.jcodonuts.app.databinding.FragmentMainProfileBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
+import com.jcodonuts.app.ui.main.cart.CartController
+import com.jcodonuts.app.ui.main.cart.DialogNote
 import javax.inject.Inject
 
 class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBinding, ProfileViewModel>() {
@@ -21,7 +23,28 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-        Log.d(TAG, "onViewReady ");
+        initRecyclerview()
+        initObserver()
+
+        binding.topBar.btnBack.setOnClickListener {
+            onBackPress()
+        }
+
+        if(!isFragmentFromPaused){
+            viewModel.loadData()
+        }
+    }
+
+    private fun initRecyclerview(){
+        val controller = ProfileController(viewModel)
+        binding.recyclerview.setController(controller)
+        viewModel.datas.observe(this,  {
+            controller.setData(it)
+        })
+    }
+
+    private fun initObserver(){
+
     }
 
     override fun onBackPress() {
