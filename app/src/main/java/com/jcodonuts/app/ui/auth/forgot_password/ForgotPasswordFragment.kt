@@ -7,6 +7,7 @@ import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentForgotPasswordBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogJco
+import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 
 class ForgotPasswordFragment @Inject constructor() : BaseFragment<FragmentForgotPasswordBinding, ForgotPasswordViewModel>() {
@@ -23,6 +24,7 @@ class ForgotPasswordFragment @Inject constructor() : BaseFragment<FragmentForgot
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        KeyboardUtil(requireActivity(), binding.root)
         binding.btnBack.setOnClickListener {
             onBackPress()
         }

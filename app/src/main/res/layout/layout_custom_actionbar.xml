@@ -10,11 +10,12 @@
             type="String" />
     </data>
 
-    <FrameLayout
+    <com.jcodonuts.app.utils.MyFrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        android:paddingTop="30dp">
+        android:paddingTop="30dp"
+        android:fitsSystemWindows="true">
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -43,5 +44,5 @@
             android:layout_marginStart="46dp"
             android:layout_marginEnd="46dp"/>
 
-    </FrameLayout>
+    </com.jcodonuts.app.utils.MyFrameLayout>
 </layout>

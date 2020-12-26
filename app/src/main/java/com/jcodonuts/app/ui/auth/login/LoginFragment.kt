@@ -5,6 +5,7 @@ import android.util.Log
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentLoginBinding
 import com.jcodonuts.app.ui.base.BaseFragment
+import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 
 class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
@@ -20,6 +21,7 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        KeyboardUtil(requireActivity(), binding.root)
         binding.btnForgotPassword.setOnClickListener {
             navigateTo(R.string.linkForgot)
         }

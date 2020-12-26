@@ -4,10 +4,7 @@ import android.app.Dialog
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
 import androidx.core.content.ContextCompat

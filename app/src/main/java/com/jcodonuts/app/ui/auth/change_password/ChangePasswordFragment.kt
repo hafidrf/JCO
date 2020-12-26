@@ -1,9 +1,11 @@
 package com.jcodonuts.app.ui.auth.change_password
 
 import android.os.Bundle
+import android.view.WindowManager
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentChangePasswordBinding
 import com.jcodonuts.app.ui.base.BaseFragment
+import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 
 class ChangePasswordFragment @Inject constructor(): BaseFragment<FragmentChangePasswordBinding, ChangePasswordViewModel>() {
@@ -17,6 +19,6 @@ class ChangePasswordFragment @Inject constructor(): BaseFragment<FragmentChangeP
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
-
+        KeyboardUtil(requireActivity(), binding.root)
     }
 }

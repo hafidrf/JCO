@@ -6,6 +6,7 @@ import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentRegisterBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogJco
+import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 
 class RegisterFragment @Inject constructor() : BaseFragment<FragmentRegisterBinding, RegisterViewModel>() {
@@ -21,6 +22,7 @@ class RegisterFragment @Inject constructor() : BaseFragment<FragmentRegisterBind
     }
 
     override fun onViewReady(savedInstance: Bundle?) {
+        KeyboardUtil(requireActivity(), binding.root)
         binding.btnBack.setOnClickListener {
             onBackPress()
         }
