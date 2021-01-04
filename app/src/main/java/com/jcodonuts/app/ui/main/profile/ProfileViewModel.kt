@@ -60,7 +60,7 @@ class ProfileViewModel @Inject constructor(): ProfileControllerListener, BaseVie
     }
 
     override fun onEditProfile() {
-        
+        _showEditProfile.value = SingleEvents("edit_profile")
     }
 
     override fun onLinkAjaClick() {

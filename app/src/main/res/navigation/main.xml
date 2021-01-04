@@ -158,6 +158,15 @@
             app:uri="@string/linkChangePasswordFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.jcodonuts.app.ui.edit_profile.EditProfileFragment"
+        android:label="EditProfileFragment" >
+        <deepLink
+            android:id="@+id/linkEditProfileFragment"
+            app:uri="@string/linkEditProfileFragment" />
+    </fragment>
+
 
 
 

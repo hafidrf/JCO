@@ -17,6 +17,7 @@ import com.jcodonuts.app.ui.main.notification.NotificationViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
 import com.jcodonuts.app.ui.delivery.DeliveryViewModel
+import com.jcodonuts.app.ui.edit_profile.EditProfileViewModel
 import com.jcodonuts.app.ui.hot_promo.HotPromoViewModel
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
@@ -143,6 +144,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(ChangePasswordViewModel::class)
     internal abstract fun providesChangePasswordViewModel(viewModel: ChangePasswordViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(EditProfileViewModel::class)
+    internal abstract fun providesEditProfileViewModel(viewModel: EditProfileViewModel) : ViewModel
 
 
 

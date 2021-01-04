@@ -6,12 +6,9 @@ import android.util.Log
 import androidx.lifecycle.observe
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainProfileBinding
-import com.jcodonuts.app.ui.TestingActivity
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
-import com.jcodonuts.app.ui.main.cart.CartController
-import com.jcodonuts.app.ui.main.cart.DialogNote
 import javax.inject.Inject
 
 class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBinding, ProfileViewModel>() {
@@ -47,12 +44,17 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
     }
 
     private fun initObserver(){
+        viewModel.showEditProfile.observe(this,{
+            it.getContentIfNotHandled()?.let {
+                navigateTo(R.string.linkEditProfileFragment)
+            }
+        })
+
         viewModel.showMenuDetail.observe(this, {
-            it.getContentIfNotHandled().let{index->
+            it.getContentIfNotHandled()?.let{index->
                 when (index) {
                     ProfileViewModel.CHANGE_PASSWORD -> {
                         navigateTo(R.string.linkChangePasswordFragment)
-//                        startActivity(Intent(context, TestingActivity::class.java))
                     }
                     ProfileViewModel.ORDER ->{
 //                        navigateTo(R.string.linkChangePasswordFragment)

@@ -16,6 +16,7 @@ import com.jcodonuts.app.ui.main.notification.NotificationFragment
 import com.jcodonuts.app.ui.main.profile.ProfileFragment
 import com.jcodonuts.app.ui.auth.register.RegisterFragment
 import com.jcodonuts.app.ui.delivery.DeliveryFragment
+import com.jcodonuts.app.ui.edit_profile.EditProfileFragment
 import com.jcodonuts.app.ui.hot_promo.HotPromoFragment
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.payment.topup.TopupFragment
@@ -138,6 +139,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(ChangePasswordFragment::class)
     abstract fun bindChangePasswordFragment(fragment: ChangePasswordFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(EditProfileFragment::class)
+    abstract fun bindEditProfileFragment(fragment: EditProfileFragment): Fragment
 
 
 
