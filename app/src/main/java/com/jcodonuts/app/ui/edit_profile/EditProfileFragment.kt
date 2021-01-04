@@ -1,15 +1,9 @@
 package com.jcodonuts.app.ui.edit_profile
 
 import android.os.Bundle
-import android.os.Handler
-import android.view.View
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentEditProfileBinding
-import com.jcodonuts.app.databinding.FragmentHotPromoBinding
-import com.jcodonuts.app.databinding.FragmentPaymentTopupBinding
-import com.jcodonuts.app.databinding.FragmentTrackingBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.utils.DialogJco
 import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 
@@ -33,7 +27,7 @@ class EditProfileFragment @Inject constructor() : BaseFragment<FragmentEditProfi
         }
 
         binding.btnBirthDate.setOnClickListener {
-            DialogBirtDate().showDialog(requireActivity().supportFragmentManager, object : DialogBirtDate.OnDialogClickListener{
+            DialogBirthDate().showDialog(requireActivity().supportFragmentManager, object : DialogBirthDate.OnDialogClickListener{
                 override fun onChange() {
 
                 }

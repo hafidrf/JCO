@@ -12,7 +12,7 @@ import com.jcodonuts.app.databinding.DlgBirthDateBinding
 import com.jcodonuts.app.databinding.DlgCannotPlaceOrderBinding
 import com.jcodonuts.app.databinding.DlgChangeAppBinding
 
-class DialogBirtDate() : BottomSheetDialogFragment() {
+class DialogBirthDate() : BottomSheetDialogFragment() {
 
     private lateinit var listener : OnDialogClickListener
     private lateinit var binding : DlgBirthDateBinding
