@@ -126,8 +126,13 @@ fun SwitchCompatEx.onCartChangeListener(listener:CartControllerListener){
 }
 
 @BindingAdapter("cardBackgroundColor")
-fun MaterialCardView.bindListTags(color: String){
+fun MaterialCardView.bindCardBg(color: String){
     this.setCardBackgroundColor(Color.parseColor(color))
+}
+
+@BindingAdapter("titleActionbar")
+fun TextView.bindTitle(title: Int){
+    this.setText(title)
 }
 
 //@BindingAdapter("setWebViewClient")

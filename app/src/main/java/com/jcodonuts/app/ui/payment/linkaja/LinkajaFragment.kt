@@ -43,6 +43,5 @@ class LinkajaFragment @Inject constructor() : BaseFragment<FragmentPaymentLinkaj
         binding.topBar.btnBack.setOnClickListener {
             onBackPress()
         }
-        binding.topBar.title = "Link Aja"
     }
 }

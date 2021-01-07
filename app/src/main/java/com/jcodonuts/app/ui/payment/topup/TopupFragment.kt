@@ -35,6 +35,6 @@ class TopupFragment @Inject constructor() : BaseFragment<FragmentPaymentTopupBin
         binding.topBar.btnBack.setOnClickListener {
             onBackPress()
         }
-        binding.topBar.title = "M-Banking"
+        binding.topBar.title = R.string.m_banking
     }
 }

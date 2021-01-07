@@ -19,7 +19,7 @@
         <include
             android:id="@+id/topBar"
             layout="@layout/layout_custom_actionbar"
-            app:title="@{`Edit Profile`}"/>
+            app:title="@{R.string.edit_profile_title}"/>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"

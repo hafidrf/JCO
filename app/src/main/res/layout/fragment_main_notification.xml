@@ -15,7 +15,7 @@
         <include
             android:id="@+id/topBar"
             layout="@layout/layout_custom_actionbar"
-            app:title="@{`Notification`}"/>
+            app:title="@{R.string.notification}"/>
 
         <com.airbnb.epoxy.EpoxyRecyclerView
             android:id="@+id/recyclerview"

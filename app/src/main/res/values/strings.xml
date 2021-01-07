@@ -129,4 +129,16 @@
     <string name="female">Female</string>
     <string name="english">English</string>
     <string name="indonesia">Indonesia</string>
+    <string name="change_password">Change Password</string>
+    <string name="choose_payment">Choose Payment</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="edit_profile_title">Edit Profile</string>
+    <string name="language">Language</string>
+    <string name="cart">Cart</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="search">Search</string>
+    <string name="payment_detail">Payment Detail</string>
+    <string name="link_aja">Link Aja</string>
+    <string name="m_banking">M-Banking</string>
 </resources>

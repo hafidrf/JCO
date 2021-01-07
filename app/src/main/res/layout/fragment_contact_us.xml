@@ -15,7 +15,7 @@
         <include
             android:id="@+id/topBar"
             layout="@layout/layout_custom_actionbar"
-            app:title="@{`Contact Us`}"/>
+            app:title="@{R.string.contact_us}"/>
 
         <com.airbnb.epoxy.EpoxyRecyclerView
             android:id="@+id/recyclerview"
