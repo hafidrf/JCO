@@ -57,7 +57,7 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
                         navigateTo(R.string.linkChangePasswordFragment)
                     }
                     ProfileViewModel.ORDER ->{
-//                        navigateTo(R.string.linkChangePasswordFragment)
+                        navigateTo(R.string.linkOrderFragment)
                     }
                     ProfileViewModel.LANGUAGE ->{
                         navigateTo(R.string.linkLanguageFragment)

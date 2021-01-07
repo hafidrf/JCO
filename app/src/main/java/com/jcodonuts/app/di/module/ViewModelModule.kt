@@ -24,6 +24,7 @@ import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchViewModel
 import com.jcodonuts.app.ui.main.wishlist.WishlistViewModel
+import com.jcodonuts.app.ui.order.OrderViewModel
 import com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentViewModel
 import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailViewModel
 import com.jcodonuts.app.ui.pickup.PickupViewModel
@@ -155,6 +156,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(LanguageViewModel::class)
     internal abstract fun providesLanguageViewModel(viewModel: LanguageViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(OrderViewModel::class)
+    internal abstract fun providesOrderViewModel(viewModel: OrderViewModel) : ViewModel
 
 
 

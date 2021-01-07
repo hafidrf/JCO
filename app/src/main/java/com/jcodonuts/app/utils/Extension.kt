@@ -2,6 +2,7 @@ package com.jcodonuts.app.utils
 
 import android.content.res.ColorStateList
 import android.content.res.Resources
+import android.graphics.Color
 import android.util.Log
 import android.webkit.WebView
 import android.widget.ImageView
@@ -15,6 +16,7 @@ import co.lujun.androidtagview.TagContainerLayout
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterInside
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.google.android.material.card.MaterialCardView
 import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.main.cart.CartControllerListener
 
@@ -121,6 +123,11 @@ fun SwitchCompatEx.onCartChangeListener(listener:CartControllerListener){
     this.setOnCheckedChangeListener { _, isChecked ->
         listener.onSwitchChange(isChecked)
     }
+}
+
+@BindingAdapter("cardBackgroundColor")
+fun MaterialCardView.bindListTags(color: String){
+    this.setCardBackgroundColor(Color.parseColor(color))
 }
 
 //@BindingAdapter("setWebViewClient")

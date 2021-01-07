@@ -23,6 +23,7 @@ import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.payment.topup.TopupFragment
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment
 import com.jcodonuts.app.ui.main.wishlist.WishlistFragment
+import com.jcodonuts.app.ui.order.OrderFragment
 import com.jcodonuts.app.ui.payment.choose_payment.ChoosePaymentFragment
 import com.jcodonuts.app.ui.payment.payment_detail.PaymentDetailFragment
 import com.jcodonuts.app.ui.pickup.PickupFragment
@@ -150,6 +151,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(LanguageFragment::class)
     abstract fun bindLanguageFragment(fragment: LanguageFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(OrderFragment::class)
+    abstract fun bindOrderFragment(fragment: OrderFragment): Fragment
 
 
 
