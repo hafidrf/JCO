@@ -15,6 +15,7 @@ import com.jcodonuts.app.ui.main.home.HomeFragment
 import com.jcodonuts.app.ui.main.notification.NotificationFragment
 import com.jcodonuts.app.ui.main.profile.ProfileFragment
 import com.jcodonuts.app.ui.auth.register.RegisterFragment
+import com.jcodonuts.app.ui.contact_us.ContactUsFragment
 import com.jcodonuts.app.ui.delivery.DeliveryFragment
 import com.jcodonuts.app.ui.edit_profile.EditProfileFragment
 import com.jcodonuts.app.ui.hot_promo.HotPromoFragment
@@ -156,6 +157,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(OrderFragment::class)
     abstract fun bindOrderFragment(fragment: OrderFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(ContactUsFragment::class)
+    abstract fun bindContactUsFragment(fragment: ContactUsFragment): Fragment
 
 
 

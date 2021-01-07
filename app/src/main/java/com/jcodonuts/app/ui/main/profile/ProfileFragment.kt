@@ -62,6 +62,9 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
                     ProfileViewModel.LANGUAGE ->{
                         navigateTo(R.string.linkLanguageFragment)
                     }
+                    ProfileViewModel.CONTACT_US ->{
+                        navigateTo(R.string.linkContactUsFragment)
+                    }
                 }
             }
         })

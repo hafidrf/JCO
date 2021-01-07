@@ -16,6 +16,7 @@ import com.jcodonuts.app.ui.main.home.HomeViewModel
 import com.jcodonuts.app.ui.main.notification.NotificationViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileViewModel
 import com.jcodonuts.app.ui.auth.register.RegisterViewModel
+import com.jcodonuts.app.ui.contact_us.ContactUsViewModel
 import com.jcodonuts.app.ui.delivery.DeliveryViewModel
 import com.jcodonuts.app.ui.edit_profile.EditProfileViewModel
 import com.jcodonuts.app.ui.hot_promo.HotPromoViewModel
@@ -161,6 +162,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(OrderViewModel::class)
     internal abstract fun providesOrderViewModel(viewModel: OrderViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(ContactUsViewModel::class)
+    internal abstract fun providesContactUsViewModel(viewModel: ContactUsViewModel) : ViewModel
 
 
 

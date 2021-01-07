@@ -185,6 +185,15 @@
             app:uri="@string/linkOrderFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.jcodonuts.app.ui.contact_us.ContactUsFragment"
+        android:label="ContactUsFragment" >
+        <deepLink
+            android:id="@+id/linkContactUsFragment"
+            app:uri="@string/linkContactUsFragment" />
+    </fragment>
+
 
 
 
