@@ -18,6 +18,7 @@ import com.jcodonuts.app.ui.auth.register.RegisterFragment
 import com.jcodonuts.app.ui.delivery.DeliveryFragment
 import com.jcodonuts.app.ui.edit_profile.EditProfileFragment
 import com.jcodonuts.app.ui.hot_promo.HotPromoFragment
+import com.jcodonuts.app.ui.language.LanguageFragment
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaFragment
 import com.jcodonuts.app.ui.payment.topup.TopupFragment
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchFragment
@@ -144,6 +145,11 @@ abstract class FragmentBindingModule {
     @IntoMap
     @FragmentKey(EditProfileFragment::class)
     abstract fun bindEditProfileFragment(fragment: EditProfileFragment): Fragment
+
+    @Binds
+    @IntoMap
+    @FragmentKey(LanguageFragment::class)
+    abstract fun bindLanguageFragment(fragment: LanguageFragment): Fragment
 
 
 

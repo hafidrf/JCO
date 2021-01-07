@@ -167,6 +167,15 @@
             app:uri="@string/linkEditProfileFragment" />
     </fragment>
 
+    <fragment
+        android:id="@+id/languageFragment"
+        android:name="com.jcodonuts.app.ui.language.LanguageFragment"
+        android:label="LanguageFragment" >
+        <deepLink
+            android:id="@+id/linkLanguageFragment"
+            app:uri="@string/linkLanguageFragment" />
+    </fragment>
+
 
 
 

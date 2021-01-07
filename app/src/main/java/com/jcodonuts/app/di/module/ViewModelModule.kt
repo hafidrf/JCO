@@ -19,6 +19,7 @@ import com.jcodonuts.app.ui.auth.register.RegisterViewModel
 import com.jcodonuts.app.ui.delivery.DeliveryViewModel
 import com.jcodonuts.app.ui.edit_profile.EditProfileViewModel
 import com.jcodonuts.app.ui.hot_promo.HotPromoViewModel
+import com.jcodonuts.app.ui.language.LanguageViewModel
 import com.jcodonuts.app.ui.payment.linkaja.LinkajaViewModel
 import com.jcodonuts.app.ui.payment.topup.TopupViewModel
 import com.jcodonuts.app.ui.main.menu_search.MenuSearchViewModel
@@ -149,6 +150,11 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(EditProfileViewModel::class)
     internal abstract fun providesEditProfileViewModel(viewModel: EditProfileViewModel) : ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(LanguageViewModel::class)
+    internal abstract fun providesLanguageViewModel(viewModel: LanguageViewModel) : ViewModel
 
 
 
