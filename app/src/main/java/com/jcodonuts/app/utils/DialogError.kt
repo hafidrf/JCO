@@ -4,12 +4,14 @@ import android.app.Dialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.widget.LinearLayout
+import androidx.appcompat.app.AlertDialog
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.DlgSuccessBinding
 
-class DialogJco(private val context: Context){
+class DialogError(private val context: Context){
     var dialog: Dialog? = null
 
     lateinit var binding : DlgSuccessBinding
@@ -17,25 +19,24 @@ class DialogJco(private val context: Context){
     init{
         dialog = Dialog(context, R.style.AppTheme_AppCompat_Dialog_Alert_NoFloating)
     }
-    fun showPopup(title:String, desc:String, txtButton:String, onClickListener: View.OnClickListener){
+
+    fun showPopup(desc:String, onClickListener: View.OnClickListener){
 
         binding = DlgSuccessBinding.inflate(LayoutInflater.from(context))
 
-//        val dialogview = LayoutInflater.from(context)
-//            .inflate(R.layout.dlg_success, null, false)
-        binding.dlgTitle.text = title
+        binding.imgTop.setImageResource(R.drawable.ic_baseline_error)
+        binding.dlgTitle.text = context.getString(R.string.error)
         binding.dlgDesc.text = desc
-        binding.dlgButton.text = txtButton
+        binding.dlgButton.text = context.getString(R.string.ok)
 
         binding.dlgButton.setOnClickListener(onClickListener)
         //initializing dialog screen
 
         dialog?.window!!.setBackgroundDrawableResource(android.R.color.transparent)
-        dialog?.window!!.setLayout(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT )
+        dialog?.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT )
         dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog?.setCancelable(false)
         dialog?.setContentView(binding.root)
-//        dialog?.window!!.attributes.windowAnimations = R.style.Theme_MaterialComponents_BottomSheetDialog
         dialog?.show()
 
     }

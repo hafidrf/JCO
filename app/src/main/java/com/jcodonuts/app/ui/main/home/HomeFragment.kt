@@ -27,6 +27,7 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         if(!isFragmentFromPaused){
             viewModel.fetchHome()
         }
+        viewModel.checkFromLogin()
     }
 
     private fun initRecyclerview(){

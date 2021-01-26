@@ -2,6 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="com.jcodonuts.app.ui.auth.login.LoginViewModel" />
+        <import type="android.view.View"/>
+    </data>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -56,7 +63,13 @@
                android:id="@+id/btnLogin"
                android:text="@string/login"
                style="@style/MyButton"
-               android:layout_marginTop="40dp"/>
+               android:layout_marginTop="40dp"
+               android:visibility="@{viewModel.loggingIn?View.GONE:View.VISIBLE}"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.loggingIn?View.VISIBLE:View.GONE}"/>
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/btnForgotPassword"

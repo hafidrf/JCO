@@ -142,4 +142,9 @@
     <string name="link_aja">Link Aja</string>
     <string name="m_banking">M-Banking</string>
     <string name="what_are_you_looking_for">What are you looking for?</string>
+    <string name="err_password_empty">Password number cannot be empty</string>
+    <string name="err_phone_empty">Phone number cannot be empty</string>
+    <string name="ok">OK</string>
+    <string name="error">Error</string>
+    <string name="err_password_length">The Password field must be at least 5 characters in length.</string>
 </resources>

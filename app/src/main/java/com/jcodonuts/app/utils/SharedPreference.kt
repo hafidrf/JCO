@@ -8,6 +8,7 @@ class SharedPreference(val context: Context) {
     companion object{
         val ACCESS_TOKEN = "ACCESS_TOKEN"
         val REFRESH_TOKEN = "REFRESH_TOKEN"
+        val FROM_LOGIN = "FROM_LOGIN"
     }
 
     private val PREFS_NAME = "jcoApp"
@@ -51,7 +52,7 @@ class SharedPreference(val context: Context) {
         return sharedPref.getInt(KEY_NAME, 0)
     }
 
-    fun getValueBoolien(KEY_NAME: String, defaultValue: Boolean): Boolean {
+    fun getValueBoolean(KEY_NAME: String, defaultValue: Boolean): Boolean {
 
         return sharedPref.getBoolean(KEY_NAME, defaultValue)
 

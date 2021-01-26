@@ -3,6 +3,7 @@ package com.jcodonuts.app.di.module
 import android.app.Application
 import com.jcodonuts.app.App
 import com.jcodonuts.app.data.remote.api.JcoApi
+import com.jcodonuts.app.data.remote.api.JcoUserApi
 import com.jcodonuts.app.data.remote.api.NewsApi
 import com.jcodonuts.app.data.repository.*
 import com.jcodonuts.app.di.scope.ApplicationScope
@@ -59,5 +60,11 @@ class RepositoryModule {
     @ApplicationScope
     fun provideDeliveryRepository(application: Application): DeliveryRepository {
         return DeliveryRepositoryImpl(application)
+    }
+
+    @Provides
+    @ApplicationScope
+    fun provideAuthRepository(service:JcoUserApi): AuthRepository {
+        return AuthRepositoryImpl(service)
     }
 }

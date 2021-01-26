@@ -1,18 +1,13 @@
 package com.jcodonuts.app.ui.main.home
 
-import android.annotation.SuppressLint
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
-import com.jcodonuts.app.data.remote.helper.DataStatus
-import com.jcodonuts.app.data.remote.helper.NetworkState
 import com.jcodonuts.app.data.remote.model.req.HomeReq
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
-import com.jcodonuts.app.ui.base.ItemLoading
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
@@ -65,6 +60,13 @@ class HomeViewModel @Inject constructor(
 
     init {
         datas.value = mutableListOf()
+    }
+
+    fun checkFromLogin(){
+        if(sharedPreference.getValueBoolean(SharedPreference.FROM_LOGIN, false)){
+            fetchHome()
+            sharedPreference.save(SharedPreference.FROM_LOGIN, false)
+        }
     }
 
     fun fetchHome(){
