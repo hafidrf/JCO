@@ -2,14 +2,22 @@ package com.jcodonuts.app.di.module
 
 import android.app.Application
 import com.jcodonuts.app.App
+import com.jcodonuts.app.data.remote.api.JcoApi
 import com.jcodonuts.app.data.remote.api.NewsApi
 import com.jcodonuts.app.data.repository.*
 import com.jcodonuts.app.di.scope.ApplicationScope
+import com.jcodonuts.app.utils.SharedPreference
 import dagger.Module
 import dagger.Provides
 
 @Module
 class RepositoryModule {
+
+    @Provides
+    @ApplicationScope
+    fun provideSharePref(app:Application): SharedPreference {
+        return SharedPreference(app.applicationContext)
+    }
 
     @Provides
     @ApplicationScope
@@ -25,7 +33,7 @@ class RepositoryModule {
 
     @Provides
     @ApplicationScope
-    fun provideHomeRepository(service:NewsApi, application: Application): HomeRepository {
+    fun provideHomeRepository(service:JcoApi, application: Application): HomeRepository {
         return HomeRepositoryImpl(service, application)
     }
 

@@ -6,6 +6,6 @@ data class HomeMenuCategories(
 
 data class MenuCategory(
     val title: String,
-    val img: Int,
+    val img: String,
     var isSelected: Boolean,
 ):BaseCell()

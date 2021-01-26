@@ -14,7 +14,7 @@ class HomeController(private val listener: HomeControllerListener)
             requestModelBuild()
         }
 
-    var menuSelected = R.drawable.img_jco_menu_all
+    var menuSelected = ""
         set(value) {
             field = value
             requestModelBuild()
@@ -23,6 +23,7 @@ class HomeController(private val listener: HomeControllerListener)
     override fun buildModels() {
         data.forEachIndexed { index, cellData ->
             when(cellData) {
+                is Divider16 -> addDivider16(cellData)
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(listener)
                 is HomePromoHeader -> addHomePromoHeader(listener)
@@ -31,6 +32,12 @@ class HomeController(private val listener: HomeControllerListener)
                 is HomeMenuCategories -> addHomeMenuCategory(cellData, listener)
                 is HomeMenuItem -> addHomeMenuItem(cellData, listener, index)
             }
+        }
+    }
+
+    private fun addDivider16(cellData: Divider16){
+        divider16 {
+            id(cellData.hashCode())
         }
     }
 

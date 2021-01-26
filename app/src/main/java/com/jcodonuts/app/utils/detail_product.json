@@ -1,0 +1,74 @@
+{
+  "status": 200,
+  "message": "success",
+  "data": {
+    "product_id": 1,
+    "variant_group": [
+      {
+        "variant_group_id": 1,
+        "product_id": 1,
+        "variant_group_name": "Manis",
+        "variant_group_desc": "Makanan manis",
+        "optional": 1,
+        "limit": 10,
+        "jco_id_menu": "18cdbd7b4ca3a15f6a2204eafa5a57c6",
+        "jco_menu_code": "5181001",
+        "variant": [
+          {
+            "variant_id": 1,
+            "variant_group_id": 1,
+            "variant_name": "Keju susu",
+            "variant_price": 10000,
+            "variant_img": "kejususu.png"
+          }
+        ]
+      },
+      {
+        "variant_group_id": 2,
+        "product_id": 1,
+        "variant_group_name": "Donut",
+        "variant_group_desc": "donut",
+        "optional": 0,
+        "limit": 12,
+        "jco_id_menu": "18cdbd7b4ca3a15f6a2204eafa5a57c6",
+        "jco_menu_code": "5181001",
+        "variant": [
+          {
+            "variant_id": 2,
+            "variant_group_id": 2,
+            "variant_name": "Cokelat",
+            "variant_price": 0,
+            "variant_img": "kejususu.png"
+          },
+          {
+            "variant_id": 3,
+            "variant_group_id": 2,
+            "variant_name": "Keju",
+            "variant_price": 0,
+            "variant_img": "kejususu.png"
+          },
+          {
+            "variant_id": 4,
+            "variant_group_id": 2,
+            "variant_name": "Oreo",
+            "variant_price": 0,
+            "variant_img": "kejususu.png"
+          }
+        ]
+      }
+    ],
+    "id_menu": "5181001",
+    "menu_code": "5181001",
+    "category_name": "others",
+    "menu_name": "1 Box J.Coffee Drip",
+    "menu_desc": "Cara penyajiannya bisa dilihat di sini",
+    "menu_image": "https://order.jcodelivery.com/assets/img/jcoffee-drip.jpg",
+    "menu_amount": "1",
+    "min_quantity": "1",
+    "material": "Pcs",
+    "menu_price": "70000",
+    "is_promo": "0",
+    "is_freedelivery": "0",
+    "is_favorite": "0"
+  }
+}

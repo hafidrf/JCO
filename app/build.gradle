@@ -15,13 +15,15 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
-        versionName "0.8.1"
+        versionName "0.8.2"
 
         // Enabling multidex support.
         multiDexEnabled true
 
-        buildConfigField("String", "BASE_URL", "\"https://newsapi.org/v2/\"")
+        buildConfigField("String", "BASE_URL", "\"https://jcouserapidev.oxxo.co.id/\"")
+        buildConfigField("String", "BASE_URL_USER", "\"https://jcousergolangdev.oxxo.co.id/\"")
         buildConfigField("String", "API_KEY", "\"60f4644e6a7447d6bab78bae05b266dd\"")
+        buildConfigField("String", "AUTHORIZATION", "\"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiYjRiMWNiZDI0N2I4NTg5OTRhMzJiMzg5NmQ0NDljMjBiNjg5NDc1MjJkMjVmMzU1MWRjOTFmNDIyODc0ZmQzZTZkNWVjMDY4Yzk2ZDg0ZmUiLCJpYXQiOiIxNjExNjMwOTEwLjcyMzI2NSIsIm5iZiI6IjE2MTE2MzA5MTAuNzIzMjY5IiwiZXhwIjoiMTY0MzE2NjkxMC43MTIxMDMiLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.Sq4O7eP_GboaxWd4ohwSRczqMKTqtBb5A2vm7Sc_MJhHefmrbPzfbquCEJuPNMP9QNk1wH2L6ryq8O-n-SurJ78CkOssVKfa0iHBrjSSwhMuUdUjqB4rJp7Yl6h9-kfd18h1fuKMTKn6-Z-H14oCfXQ7s1E7Sc-WavvS5wPl88VC4SIIMHz7pwUvagrdSQXAbY0nZ2pjKr19r5zinZLIuEgLlS6RLTK6pGmQIo12btXsKYiIuBcO-k0Wh7TNer_bWHjLiOIpm9b8mtAWfEWI9PVINtnIYdk_5_vvY4azdDz8JCif_EKxzngRBbD5LL_F11qJXglGyKBRi147ejzZe9Is6WYqN8wWMB3rXxDqwlyq12yTkPHVRM0CU2p46kRX2VNmz3aWNFMu-aWispo9shalyBoGBI3lDsw2VrPFdt5mmu8EzVRSEOC5bhbqoum06fw4hey09W-AxfkpnQUOh-I5N5TMsTiNOdYHTg_EIujtu7jDeqWTjC0_3LoSKchO3HNIw0X_nh4wn5W9W493thwQaq4luTl0aQRXPZmUMhJVdokTOn66vz_7UFvY6_70QPw28LQUvXYgaGjYjlJKwhMDDbEHTZUR_xYXvEDU-npbg4hJasLRC1AnQSF2iMuMuFm8PBZs59_jOL4GlIvlQro1CJz9Cs8MOi4Bc_nghVY\"")
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

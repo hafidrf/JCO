@@ -1,0 +1,103 @@
+{
+  "status": 200,
+  "message": "success",
+  "user": {
+    "user_fullname": "Dikis",
+    "user_point": "eyJpdiI6Ik9BZjlxdytyRWxLMzgxdXhDWEdwMFE9PSIsInZhbHVlIjoieHI0aXdMTnZOWHZtdmJMbzV1Wm5oZz09IiwibWFjIjoiZTlkNjA0YjVhYjZmYWJkYmE3NDQ2NTdmZjc5N2VmMWQ3ODQ0YzJiZTcwZWNjYmRhOThkOGEwNTM0NTYyODIyNCJ9"
+  },
+  "pickup_from": {
+
+  },
+  "promos":[
+    {
+      "promo_banner": "http:asdfgadsf.asdf/jjkj/jpg"
+    }
+  ],
+  "category": [
+    {
+      "category_name": "all",
+      "category_title": "All",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_promo.jpg",
+      "material": "Box",
+      "is_order": "0",
+      "is_show": "1",
+      "is_promo": "1"
+    },
+    {
+      "category_name": "promo",
+      "category_title": "Promo",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_promo.jpg",
+      "material": "Box",
+      "is_order": "0",
+      "is_show": "1",
+      "is_promo": "1"
+    },
+    {
+      "category_name": "donuts",
+      "category_title": "Donuts",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_donuts.jpg",
+      "material": "Box",
+      "is_order": "1",
+      "is_show": "1",
+      "is_promo": "0"
+    },
+    {
+      "category_name": "beverage",
+      "category_title": "Beverage",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_beverages.jpg",
+      "material": "Cup",
+      "is_order": "2",
+      "is_show": "1",
+      "is_promo": "0"
+    },
+    {
+      "category_name": "cookies",
+      "category_title": "Cookies",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_cookies.jpg",
+      "material": "Box",
+      "is_order": "4",
+      "is_show": "1",
+      "is_promo": "0"
+    },
+    {
+      "category_name": "hampers",
+      "category_title": "Hampers",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_hampers.jpg",
+      "material": "Box",
+      "is_order": "6",
+      "is_show": "1",
+      "is_promo": "0"
+    },
+    {
+      "category_name": "others",
+      "category_title": "Others",
+      "category_img": "https://order.jcodelivery.com/assets/img/element/jco_others.jpg",
+      "material": "Pcs",
+      "is_order": "7",
+      "is_show": "1",
+      "is_promo": "0"
+    }
+  ],
+  "products": [
+    {
+      "menu_code": "1112004",
+      "menu_ordering": null,
+      "category_name": "beverage",
+      "category_title": "Beverage",
+      "menu_name": "Americano",
+      "menu_desc": null,
+      "menu_image": "https://order.jcodelivery.com/assets/img/menu/hot-americano.jpg",
+      "min_quantity": "1",
+      "max_quantity": "0",
+      "start_date": "2020-05-01",
+      "end_date": "2050-12-31",
+      "is_promo": "0",
+      "is_active": "1",
+      "is_freedelivery": "1",
+      "is_favorite": "1",
+      "menu_amount": "0",
+      "menu_price": "20000",
+      "menu_URL": "https://api.test.jcodelivery.com/v1/menu?id_menu=d459073c4c3a3446b58aab5da140b2d2"
+    }
+  ]
+}

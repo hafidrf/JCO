@@ -65,7 +65,6 @@
     <style name="BaseEditText" parent="Widget.Design.TextInputLayout"/>
 
     <style name="DialogFullWidth" parent="@style/Theme.Design.BottomSheetDialog">
-
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>

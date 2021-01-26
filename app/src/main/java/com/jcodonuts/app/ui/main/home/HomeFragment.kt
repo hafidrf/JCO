@@ -25,7 +25,7 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         initObserver()
 
         if(!isFragmentFromPaused){
-            viewModel.loadPromo()
+            viewModel.fetchHome()
         }
     }
 

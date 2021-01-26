@@ -1,25 +1,33 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.annotation.SuppressLint
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.remote.helper.DataStatus
+import com.jcodonuts.app.data.remote.helper.NetworkState
+import com.jcodonuts.app.data.remote.model.req.HomeReq
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
+import com.jcodonuts.app.ui.base.ItemLoading
 import com.jcodonuts.app.utils.SchedulerProvider
+import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject
 
 class HomeViewModel @Inject constructor(
     private val homeRepository: HomeRepository,
-    private val schedulers: SchedulerProvider
+    private val schedulers: SchedulerProvider,
+    private val sharedPreference: SharedPreference,
+    private val app:Application
 ): BaseViewModel(),HomeControllerListener {
     private val TAG = "HomeViewModel"
 
     val datas = MutableLiveData<MutableList<BaseCell>>()
-    val menuSelected = MutableLiveData<Int>()
+    val menuSelected = MutableLiveData<String>()
 
     private val _showDialogCannotOrder = MutableLiveData<SingleEvents<String>>()
     val showDialogCannotOrder : LiveData<SingleEvents<String>>
@@ -59,50 +67,59 @@ class HomeViewModel @Inject constructor(
         datas.value = mutableListOf()
     }
 
-    @SuppressLint("CheckResult")
-    fun loadPromo(){
-        homeRepository.getPromo()
+    fun fetchHome(){
+        val body = HomeReq( "Jakarta Barat", "20")
+        lastDisposable = homeRepository.fetchHome(body)
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
-            .subscribe({ data ->
+            .subscribe({ model ->
                 val temp = datas.value?: mutableListOf()
-                temp.add(HomeHeadSection("Farriza Ahmad"))
+
+                if(isLoggedIn()){
+                    temp.add(HomeHeadSection(model.user.member_name, model.user.member_point))
+                }else{
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                    temp.add(Divider16(""))
+                }
+
                 temp.add(HomeSearchSection("test"))
                 temp.add(HomePromoHeader("test"))
-                temp.add(data)
-                temp.add(HomeMenuHeader("What are you looking for?"))
-                getMenus()
-                temp.add(HomeMenuCategories(_menus))
+                val promos = mutableListOf<PromoBanner>()
+                model.promos.map {
+                    promos.add(PromoBanner(it.menu_image))
+                }
+                temp.add(HomePromos(promos))
 
-                loadMenuItems()
-            }, {
+                temp.add(HomeMenuHeader(app.getString(R.string.what_are_you_looking_for)))
 
+                val menus = mutableListOf<MenuCategory>()
+                model.category.map {
+                    if(it.category_name == "all"){
+                        menus.add(0,MenuCategory(it.category_title, it.category_img,
+                            true
+                        ))
+                        menuSelected.postValue(it.category_img)
+                    }else{
+                        menus.add(MenuCategory(it.category_title, it.category_img,
+                            false
+                        ))
+                    }
+
+                }
+
+                temp.add(HomeMenuCategories(menus))
+
+                model.products.map {
+                    temp.add(HomeMenuItem(it.menu_name, it.menu_image, it.menu_price, false, it.is_promo=="1", it.is_freedelivery=="1", it.is_favorite=="1"))
+                }
+
+                datas.value=temp
+            },{
+                handleError(it)
             })
-    }
 
-    @SuppressLint("CheckResult")
-    fun loadMenuItems(){
-        homeRepository.getMenuItems()
-                .subscribeOn(schedulers.io())
-                .observeOn(schedulers.ui())
-                .subscribe({ data ->
-                    val temp = datas.value?: mutableListOf()
-                    temp.addAll(data.homeMenuItems)
-
-                    datas.value=temp
-                }, {
-
-                })
-    }
-
-    private fun getMenus(){
-        _menus.add(MenuCategory("All", R.drawable.img_jco_menu_all, true))
-        _menus.add(MenuCategory("Promo", R.drawable.img_jco_menu_promo, false))
-        _menus.add(MenuCategory("Donuts", R.drawable.img_jco_menu_donuts, false))
-        _menus.add(MenuCategory("Beverage", R.drawable.img_jco_menu_beverage, false))
-        _menus.add(MenuCategory("Cookies & Nuts", R.drawable.img_jco_menu_cookies, false))
-        _menus.add(MenuCategory("Hampers", R.drawable.img_jco_menu_hampers, false))
-        _menus.add(MenuCategory("Others", R.drawable.img_jco_menu_other, false))
+        lastDisposable?.let { compositeDisposable.add(it) }
     }
 
     override fun onLinkajaClick() {
@@ -114,11 +131,19 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onPickupClick() {
-        _showPickup.value = SingleEvents("show_pickup")
+        if(isLoggedIn()){
+            _showPickup.value = SingleEvents("show_pickup")
+        }else{
+            showDlgCannotOrder()
+        }
     }
 
     override fun onSearchClick() {
-        _showMenuSearch.value = SingleEvents("menu_search")
+        if(isLoggedIn()){
+            _showMenuSearch.value = SingleEvents("menu_search")
+        }else{
+            showDlgCannotOrder()
+        }
     }
 
     override fun onSwitchAppClick() {
@@ -130,7 +155,11 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onPromoSeeAllClick() {
-        _showHotPromo.value = SingleEvents("hot_promo")
+        if(isLoggedIn()){
+            _showHotPromo.value = SingleEvents("hot_promo")
+        }else{
+            showDlgCannotOrder()
+        }
     }
 
     override fun onMenuCategoryClick(menuCategory: MenuCategory) {
@@ -140,21 +169,34 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuItemClick(index: Int) {
-        if(index%2==0){
-            _showDialogCannotOrder.value = SingleEvents("_showDialogCannotOrder")
-        }else{
+        if(isLoggedIn()){
             datas.value?.let {
                 _openProductDetail.value = SingleEvents(it[index] as HomeMenuItem)
             }
+        }else{
+            showDlgCannotOrder()
         }
     }
 
     override fun onMenuItemFavoriteClick(index: Int) {
-        datas.value?.let {
-            val temp = (it[index] as HomeMenuItem).copy()
-            temp.isFavorite = !temp.isFavorite
-            it[index] = temp
-            datas.postValue(it)
+        if(isLoggedIn()){
+            datas.value?.let {
+                val temp = (it[index] as HomeMenuItem).copy()
+                temp.isFavorite = !temp.isFavorite
+                it[index] = temp
+                datas.postValue(it)
+            }
+        }else{
+            showDlgCannotOrder()
         }
+    }
+
+    private fun showDlgCannotOrder(){
+        _showDialogCannotOrder.value = SingleEvents("_showDialogCannotOrder")
+    }
+
+    private fun isLoggedIn():Boolean{
+        val data = sharedPreference.getValueString(SharedPreference.ACCESS_TOKEN)
+        return data != null && data != ""
     }
 }
