@@ -23,6 +23,7 @@ class HomeController(private val listener: HomeControllerListener)
     override fun buildModels() {
         data.forEachIndexed { index, cellData ->
             when(cellData) {
+                is LoadingPage -> addLoadingPage(cellData)
                 is Divider16 -> addDivider16(cellData)
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(listener)
@@ -38,6 +39,13 @@ class HomeController(private val listener: HomeControllerListener)
     private fun addDivider16(cellData: Divider16){
         divider16 {
             id(cellData.hashCode())
+        }
+    }
+
+    private fun addLoadingPage(cellData: LoadingPage){
+        lytLoadingShimmer {
+            id(cellData.hashCode())
+            spanSizeOverride { _, _, _ -> 2 }
         }
     }
 

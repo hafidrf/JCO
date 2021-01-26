@@ -70,19 +70,26 @@ class HomeViewModel @Inject constructor(
     }
 
     fun fetchHome(){
+
+        //add loading page
+        val loading = mutableListOf<BaseCell>()
+        loading.add(LoadingPage())
+        datas.value=loading
+
+        //request api
         val body = HomeReq( "Jakarta Barat", "20")
         lastDisposable = homeRepository.fetchHome(body)
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
             .subscribe({ model ->
-                val temp = datas.value?: mutableListOf()
+                val temp = mutableListOf<BaseCell>()
 
                 if(isLoggedIn()){
                     temp.add(HomeHeadSection(model.user.member_name, model.user.member_point))
                 }else{
-                    temp.add(Divider16(""))
-                    temp.add(Divider16(""))
-                    temp.add(Divider16(""))
+                    temp.add(Divider16())
+                    temp.add(Divider16())
+                    temp.add(Divider16())
                 }
 
                 temp.add(HomeSearchSection("test"))
