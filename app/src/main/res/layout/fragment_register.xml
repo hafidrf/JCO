@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="com.jcodonuts.app.ui.auth.register.RegisterViewModel" />
+    </data>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -124,8 +132,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="32dp"
-                        android:text="00.27"
-                        android:textColor="@color/c_black" />
+                        tools:text="00.27"
+                        android:textColor="@color/c_black"
+                        android:text="@{viewModel.countDown}"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -139,7 +148,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="@string/resend_otp" />
+                        android:text="@string/resend_otp"
+                        android:enabled="@{viewModel.enableResend}"
+                        android:onClick="@{()->viewModel.resendOTP()}"/>
 
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btnVerification"
@@ -169,6 +180,19 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="textCapWords" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/edtEmail"
+                        style="@style/BaseEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/email">
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textEmailAddress" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -229,5 +253,18 @@
             </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/c_black_op30"
+            android:visibility="@{viewModel.showLoadingOTP?View.VISIBLE:View.GONE}"
+            android:clickable="false">
+            <ProgressBar
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
     </FrameLayout>
 </layout>

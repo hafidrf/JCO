@@ -148,4 +148,14 @@
     <string name="error">Error</string>
     <string name="err_password_length">The Password field must be at least 5 characters in length.</string>
     <string name="err_phone_length">The Phone number field must be at least 10 characters in length.</string>
+    <string name="your_account_has_been_created">Your account has been created</string>
+    <string name="please_login_to_place_an_order">Please login to place an order</string>
+    <string name="invalid_code">Invalid code</string>
+    <string name="network_error">Network error</string>
+    <string name="verification_code_sent">Verification code sent</string>
+    <string name="email">Email</string>
+    <string name="err_password_not_same">Confirm password must be same with password</string>
+    <string name="err_email_invalid">Email invalid</string>
+    <string name="err_email_empty">Email cannot be empty</string>
+    <string name="err_fullname_empty">Full name cannot be empty</string>
 </resources>
