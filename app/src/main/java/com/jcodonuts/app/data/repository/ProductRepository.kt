@@ -1,11 +1,8 @@
 package com.jcodonuts.app.data.repository
 
 import android.app.Application
-import android.content.Context
 import android.content.res.AssetManager
 import com.google.gson.Gson
-import com.jcodonuts.app.data.local.Countries
-import com.jcodonuts.app.data.local.Country
 import com.jcodonuts.app.data.local.ProductDetail
 import io.reactivex.Single
 import javax.inject.Inject

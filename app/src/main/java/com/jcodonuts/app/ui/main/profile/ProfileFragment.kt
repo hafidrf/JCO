@@ -1,8 +1,6 @@
 package com.jcodonuts.app.ui.main.profile
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.observe
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainProfileBinding

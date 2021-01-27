@@ -1,7 +1,6 @@
 package com.jcodonuts.app.di.module
 
 import android.app.Application
-import com.jcodonuts.app.App
 import com.jcodonuts.app.data.remote.api.JcoApi
 import com.jcodonuts.app.data.remote.api.JcoUserApi
 import com.jcodonuts.app.data.remote.api.NewsApi

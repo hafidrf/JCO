@@ -1,8 +1,9 @@
 package com.jcodonuts.app.ui.payment.choose_payment
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.choosePayment
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ChoosePaymentData
 
 class ChoosePaymentController(private val listener: ChoosePaymentControllerListener) : AsyncEpoxyController() {
     private val TAG = "HomeController"

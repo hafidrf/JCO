@@ -147,4 +147,5 @@
     <string name="ok">OK</string>
     <string name="error">Error</string>
     <string name="err_password_length">The Password field must be at least 5 characters in length.</string>
+    <string name="err_phone_length">The Phone number field must be at least 10 characters in length.</string>
 </resources>

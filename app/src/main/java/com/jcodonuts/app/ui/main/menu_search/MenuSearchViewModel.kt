@@ -5,7 +5,6 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.HomeRepository
-import com.jcodonuts.app.data.repository.PickupRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.ui.main.home.HomeControllerListener
 import com.jcodonuts.app.utils.SchedulerProvider

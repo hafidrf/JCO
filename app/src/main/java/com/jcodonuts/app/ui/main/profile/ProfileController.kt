@@ -3,8 +3,11 @@ package com.jcodonuts.app.ui.main.profile
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
-import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.profileFooter
+import com.jcodonuts.app.profileHeader
+import com.jcodonuts.app.profileMenu
+import com.jcodonuts.app.profileMenuHeader
 
 /**
  * Showcases [EpoxyController] with sticky header support

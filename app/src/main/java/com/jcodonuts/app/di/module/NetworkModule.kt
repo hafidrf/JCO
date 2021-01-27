@@ -1,10 +1,8 @@
 package com.jcodonuts.app.di.module
 
 import android.app.Application
-import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.jcodonuts.app.App
 import com.jcodonuts.app.BuildConfig
 import com.jcodonuts.app.data.remote.api.JcoApi
 import com.jcodonuts.app.data.remote.api.JcoUserApi
@@ -14,17 +12,13 @@ import com.jcodonuts.app.utils.SharedPreference
 import dagger.Module
 import dagger.Provides
 import okhttp3.Cache
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
-import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
 import javax.inject.Named
-import javax.inject.Singleton
 
 @Module
 class NetworkModule {

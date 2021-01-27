@@ -2,9 +2,9 @@ package com.jcodonuts.app.utils
 
 import android.content.Context
 import android.util.AttributeSet
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import android.view.MotionEvent
 import android.view.View
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 @Suppress("unused")

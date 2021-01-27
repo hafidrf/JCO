@@ -1,10 +1,12 @@
 package com.jcodonuts.app.ui.product_detail
 
 import android.annotation.SuppressLint
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.Divider16
+import com.jcodonuts.app.data.local.ProductDetailContent
+import com.jcodonuts.app.data.local.ProductDetailDonut
 import com.jcodonuts.app.data.repository.ProductRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider

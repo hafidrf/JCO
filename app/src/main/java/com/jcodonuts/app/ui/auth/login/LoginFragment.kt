@@ -1,13 +1,11 @@
 package com.jcodonuts.app.ui.auth.login
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentLoginBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogError
-import com.jcodonuts.app.utils.DialogJco
 import com.jcodonuts.app.utils.KeyboardUtil
 import javax.inject.Inject
 

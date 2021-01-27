@@ -1,8 +1,13 @@
 package com.jcodonuts.app.ui.product_detail
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.Divider16
+import com.jcodonuts.app.data.local.ProductDetailContent
+import com.jcodonuts.app.data.local.ProductDetailDonut
+import com.jcodonuts.app.divider16
+import com.jcodonuts.app.productDetailContents
+import com.jcodonuts.app.productDetailDonutItem
 
 class ProductDetailController(private val listener:ProductDetailControllerListener) :
     AsyncEpoxyController() {

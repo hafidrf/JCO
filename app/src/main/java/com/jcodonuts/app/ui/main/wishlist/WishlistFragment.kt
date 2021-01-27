@@ -2,13 +2,11 @@ package com.jcodonuts.app.ui.main.wishlist
 
 import android.os.Bundle
 import com.jcodonuts.app.R
-import com.jcodonuts.app.databinding.FragmentMainNotificationBinding
 import com.jcodonuts.app.databinding.FragmentMainWishlistBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
 import com.jcodonuts.app.ui.main.home.HomeSpacingDecoration
-import com.jcodonuts.app.ui.main.menu_search.MenuSearchController
 import javax.inject.Inject
 
 class WishlistFragment @Inject constructor() : BaseFragment<FragmentMainWishlistBinding, WishlistViewModel>() {

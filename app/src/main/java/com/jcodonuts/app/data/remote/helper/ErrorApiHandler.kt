@@ -1,5 +1,6 @@
 package com.jcodonuts.app.data.remote.helper
 
+import com.google.gson.Gson
 import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.HttpException
@@ -27,8 +28,10 @@ object ErrorApiHandler {
      */
     private fun getErrorMessage(responseBody: ResponseBody?): String {
         return try {
-            val jsonObject = JSONObject(responseBody?.string()?:"")
-            jsonObject.getString("status_message")
+            val errorModel = Gson().fromJson(responseBody?.string(), ErrorModel::class.java)
+            errorModel.error
+//            val jsonObject = JSONObject(responseBody?.string()?:"")
+//            jsonObject.getString("status_message")
         } catch (e: Exception) {
             e.message ?: "Something wrong"
         }

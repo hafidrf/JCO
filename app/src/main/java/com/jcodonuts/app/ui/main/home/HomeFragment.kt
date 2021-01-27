@@ -1,7 +1,6 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
 import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R

@@ -1,7 +1,9 @@
 package com.jcodonuts.app.ui.main.home
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.fragment.app.FragmentManager
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -10,7 +12,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.HomeDialogQrcode
 import com.jcodonuts.app.data.local.Qrcode
-import com.jcodonuts.app.databinding.DlgCannotPlaceOrderBinding
 import com.jcodonuts.app.databinding.DlgHomeQrcodeBinding
 
 

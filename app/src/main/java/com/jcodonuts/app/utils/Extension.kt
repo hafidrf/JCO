@@ -3,7 +3,6 @@ package com.jcodonuts.app.utils
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Color
-import android.util.Log
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout

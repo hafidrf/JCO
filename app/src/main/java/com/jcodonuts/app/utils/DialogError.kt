@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.LinearLayout
-import androidx.appcompat.app.AlertDialog
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.DlgSuccessBinding
 

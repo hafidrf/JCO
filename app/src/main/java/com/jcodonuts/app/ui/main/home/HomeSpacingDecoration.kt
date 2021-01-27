@@ -2,7 +2,6 @@ package com.jcodonuts.app.ui.main.home
 
 import android.graphics.Rect
 import android.util.DisplayMetrics
-import android.util.Log
 import android.util.TypedValue
 import android.util.TypedValue.COMPLEX_UNIT_DIP
 import android.view.View

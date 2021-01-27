@@ -2,7 +2,10 @@ package com.jcodonuts.app.ui.payment.payment_detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.OrderDetail
+import com.jcodonuts.app.data.local.OrderProduct
+import com.jcodonuts.app.data.local.OrderTotal
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject

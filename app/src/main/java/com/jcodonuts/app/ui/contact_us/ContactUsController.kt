@@ -3,8 +3,13 @@ package com.jcodonuts.app.ui.contact_us
 import com.airbnb.epoxy.EpoxyAsyncUtil
 import com.airbnb.epoxy.EpoxyController
 import com.airbnb.epoxy.TypedEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ProfileMenu
+import com.jcodonuts.app.data.local.ProfileMenuHeader
+import com.jcodonuts.app.data.local.SocmedMenu
+import com.jcodonuts.app.profileMenu
+import com.jcodonuts.app.profileMenuHeader
+import com.jcodonuts.app.socmedMenu
 import com.jcodonuts.app.ui.main.profile.ProfileControllerListener
 
 /**

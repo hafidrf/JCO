@@ -1,13 +1,9 @@
 package com.jcodonuts.app.ui.payment.payment_detail
 
 import android.os.Bundle
-import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
-import com.jcodonuts.app.databinding.FragmentChoosePaymentBinding
 import com.jcodonuts.app.databinding.FragmentPaymentDetailBinding
-import com.jcodonuts.app.databinding.FragmentPaymentLinkajaBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.main.home.HomeController
 import javax.inject.Inject
 
 class PaymentDetailFragment @Inject constructor() : BaseFragment<FragmentPaymentDetailBinding, PaymentDetailViewModel>() {

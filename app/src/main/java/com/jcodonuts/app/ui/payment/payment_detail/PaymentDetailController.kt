@@ -1,8 +1,13 @@
 package com.jcodonuts.app.ui.payment.payment_detail
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.OrderDetail
+import com.jcodonuts.app.data.local.OrderProduct
+import com.jcodonuts.app.data.local.OrderTotal
+import com.jcodonuts.app.paymentDetailOrder
+import com.jcodonuts.app.paymentDetailProduct
+import com.jcodonuts.app.paymentDetailTotal
 
 class PaymentDetailController(private val listener: PaymentDetailControllerListener) : AsyncEpoxyController() {
     private val TAG = "HomeController"

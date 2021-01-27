@@ -1,25 +1,21 @@
 package com.jcodonuts.app.ui.base
 
-import android.app.Dialog
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.annotation.LayoutRes
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.MainActivity
-import com.jcodonuts.app.ui.main.base.MainFragment
-import java.net.URI
 import javax.inject.Inject
 
 abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {

@@ -1,7 +1,6 @@
 package com.jcodonuts.app.ui.auth.change_password
 
 import android.os.Bundle
-import android.view.WindowManager
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentChangePasswordBinding
 import com.jcodonuts.app.ui.base.BaseFragment

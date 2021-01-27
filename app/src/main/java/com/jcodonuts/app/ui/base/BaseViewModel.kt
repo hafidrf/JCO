@@ -63,8 +63,16 @@ abstract class BaseViewModel : ViewModel() {
         } else {
             NetworkState.error(Failure(StatusCode.UNKNOWN_ERROR,"There is unknown error"))
         }
-        Log.d(TAG, "Error: "+error.toString());
         _networkState.postValue(error)
+    }
+
+    fun getErrorMsg(throwable: Throwable?):String {
+        return if(throwable is Failure){
+            throwable.msg
+        } else {
+            "There is unknown error"
+        }
+
     }
 
     fun networkState(state: NetworkState){

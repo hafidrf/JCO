@@ -1,9 +1,7 @@
 package com.jcodonuts.app.ui.main.base
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController

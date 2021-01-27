@@ -3,13 +3,9 @@ package com.jcodonuts.app.ui.hot_promo
 import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.R
-import com.jcodonuts.app.data.local.*
-import com.jcodonuts.app.data.repository.PaymentRepository
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ModelHotPromo
 import com.jcodonuts.app.ui.base.BaseViewModel
-import com.jcodonuts.app.utils.SchedulerProvider
-import com.jcodonuts.app.utils.SingleEvents
-import io.reactivex.Scheduler
 import javax.inject.Inject
 
 class HotPromoViewModel @Inject constructor(): HotPromoControllerListener, BaseViewModel() {

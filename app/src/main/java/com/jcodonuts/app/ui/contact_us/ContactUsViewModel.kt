@@ -2,7 +2,10 @@ package com.jcodonuts.app.ui.contact_us
 
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ProfileMenu
+import com.jcodonuts.app.data.local.ProfileMenuHeader
+import com.jcodonuts.app.data.local.SocmedMenu
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.ui.main.profile.ProfileControllerListener
 import javax.inject.Inject

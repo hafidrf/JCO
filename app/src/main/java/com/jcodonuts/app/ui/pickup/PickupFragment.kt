@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentPickupBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.main.menu_search.MenuSearchController
 import javax.inject.Inject
 
 class PickupFragment @Inject constructor() : BaseFragment<FragmentPickupBinding, PickupViewModel>() {

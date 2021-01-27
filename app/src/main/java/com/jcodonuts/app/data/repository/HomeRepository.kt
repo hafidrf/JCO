@@ -7,8 +7,8 @@ import com.jcodonuts.app.data.local.HomeMenuItems
 import com.jcodonuts.app.data.local.HomePromos
 import com.jcodonuts.app.data.remote.api.JcoApi
 import com.jcodonuts.app.data.remote.helper.ErrorNetworkHandler
-import com.jcodonuts.app.data.remote.model.res.HomeRes
 import com.jcodonuts.app.data.remote.model.req.HomeReq
+import com.jcodonuts.app.data.remote.model.res.HomeRes
 import io.reactivex.Single
 import javax.inject.Inject
 

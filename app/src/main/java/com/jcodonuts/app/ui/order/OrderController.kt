@@ -1,8 +1,11 @@
 package com.jcodonuts.app.ui.order
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ModelOrder
+import com.jcodonuts.app.data.local.ModelOrderHeader
+import com.jcodonuts.app.orderHeader
+import com.jcodonuts.app.orderItem
 
 class OrderController(private val listener: OrderControllerListener) : AsyncEpoxyController() {
     private val TAG = "HomeController"

@@ -1,18 +1,17 @@
 package com.jcodonuts.app.ui.auth.login
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
-import com.jcodonuts.app.data.remote.helper.DataStatus
-import com.jcodonuts.app.data.remote.helper.NetworkState
 import com.jcodonuts.app.data.remote.model.req.LoginReq
 import com.jcodonuts.app.data.repository.AuthRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
-import com.jcodonuts.app.ui.base.ItemLoading
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
+import retrofit2.HttpException
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(
@@ -62,18 +61,21 @@ class LoginViewModel @Inject constructor(
                     .observeOn(schedulers.ui())
                     .subscribe({ model ->
                         _loggingIn.postValue(false)
-                        if(model.status_code == 200){
+                        if (model.status_code == 200) {
                             sharedPreference.save(SharedPreference.ACCESS_TOKEN, model.accessToken)
-                            sharedPreference.save(SharedPreference.REFRESH_TOKEN, model.refreshToken)
+                            sharedPreference.save(
+                                SharedPreference.REFRESH_TOKEN,
+                                model.refreshToken
+                            )
                             sharedPreference.save(SharedPreference.FROM_LOGIN, true)
 
                             _closeLoginPage.value = SingleEvents("close")
-                        }else{
+                        } else {
                             _loginFailed.value = SingleEvents(model.error)
                         }
-                    },{
+                    }, { e ->
                         _loggingIn.postValue(false)
-                        handleError(it)
+                        _loginFailed.value = SingleEvents(getErrorMsg(e))
                     })
 
                 lastDisposable?.let { compositeDisposable.add(it) }

@@ -5,11 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
-import com.jcodonuts.app.data.repository.PaymentRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
-import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SingleEvents
-import io.reactivex.Scheduler
 import javax.inject.Inject
 
 class TrackingViewModel @Inject constructor(): TrackingControllerListener, BaseViewModel() {

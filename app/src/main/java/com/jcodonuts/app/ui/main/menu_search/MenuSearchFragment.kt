@@ -3,7 +3,6 @@ package com.jcodonuts.app.ui.main.menu_search
 import android.os.Bundle
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMenuSearchBinding
-import com.jcodonuts.app.databinding.FragmentPickupBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.main.home.HomeSpacingDecoration
 import javax.inject.Inject

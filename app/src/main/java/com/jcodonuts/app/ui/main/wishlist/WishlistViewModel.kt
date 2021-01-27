@@ -2,7 +2,9 @@ package com.jcodonuts.app.ui.main.wishlist
 
 import android.annotation.SuppressLint
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.MenuCategory
+import com.jcodonuts.app.data.local.PromoBanner
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.ui.main.home.HomeControllerListener

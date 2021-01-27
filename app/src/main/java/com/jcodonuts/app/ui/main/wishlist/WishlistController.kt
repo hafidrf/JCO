@@ -2,8 +2,9 @@ package com.jcodonuts.app.ui.main.wishlist
 
 import com.airbnb.epoxy.AsyncEpoxyController
 import com.airbnb.epoxy.EpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.HomeMenuItem
+import com.jcodonuts.app.homeMenuItem
 import com.jcodonuts.app.ui.main.home.HomeControllerListener
 
 /**

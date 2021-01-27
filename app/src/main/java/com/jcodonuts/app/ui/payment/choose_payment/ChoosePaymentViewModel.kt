@@ -2,7 +2,8 @@ package com.jcodonuts.app.ui.payment.choose_payment
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ChoosePaymentData
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject

@@ -2,9 +2,11 @@ package com.jcodonuts.app.ui.pickup
 
 import com.airbnb.epoxy.AsyncEpoxyController
 import com.airbnb.epoxy.EpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
-import com.jcodonuts.app.ui.main.menu_search.MenuSearchControllerListener
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.LocationSearch
+import com.jcodonuts.app.data.local.PickupItem
+import com.jcodonuts.app.locationSearchview
+import com.jcodonuts.app.pickupItem
 
 /**
  * Showcases [EpoxyController] with sticky header support

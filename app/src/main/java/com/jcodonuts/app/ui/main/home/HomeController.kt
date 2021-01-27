@@ -1,6 +1,8 @@
 package com.jcodonuts.app.ui.main.home
 
-import com.airbnb.epoxy.*
+import com.airbnb.epoxy.AsyncEpoxyController
+import com.airbnb.epoxy.Carousel
+import com.airbnb.epoxy.carousel
 import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
 

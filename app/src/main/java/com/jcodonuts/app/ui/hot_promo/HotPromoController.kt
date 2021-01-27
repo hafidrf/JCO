@@ -1,10 +1,9 @@
 package com.jcodonuts.app.ui.hot_promo
 
-import android.util.Log
-import android.view.View
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.ModelHotPromo
+import com.jcodonuts.app.hotPromo
 
 class HotPromoController(val listener: HotPromoControllerListener) : AsyncEpoxyController() {
     private val TAG = "TopupController"

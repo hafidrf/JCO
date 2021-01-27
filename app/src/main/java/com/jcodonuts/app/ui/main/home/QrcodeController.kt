@@ -3,8 +3,9 @@ package com.jcodonuts.app.ui.main.home
 import com.airbnb.epoxy.AsyncEpoxyController
 import com.airbnb.epoxy.Carousel
 import com.airbnb.epoxy.carousel
-import com.jcodonuts.app.*
-import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.QrcodeItemBindingModel_
+import com.jcodonuts.app.data.local.BaseCell
+import com.jcodonuts.app.data.local.HomeDialogQrcode
 
 class QrcodeController() : AsyncEpoxyController() {
 

@@ -1,17 +1,11 @@
 package com.jcodonuts.app.ui.main.cart
 
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
-import com.jcodonuts.app.data.local.Divider16
 import com.jcodonuts.app.databinding.FragmentMainCartBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
-import com.jcodonuts.app.ui.main.home.DialogCannotOrder
-import com.jcodonuts.app.ui.main.home.HomeController
-import com.jcodonuts.app.ui.main.home.HomeSpacingDecoration
 import javax.inject.Inject
 
 class CartFragment @Inject constructor() : BaseFragment<FragmentMainCartBinding, CartViewModel>() {

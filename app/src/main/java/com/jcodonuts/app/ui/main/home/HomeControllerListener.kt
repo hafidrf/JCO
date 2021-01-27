@@ -1,6 +1,5 @@
 package com.jcodonuts.app.ui.main.home
 
-import com.jcodonuts.app.data.local.HomeMenuCategories
 import com.jcodonuts.app.data.local.MenuCategory
 import com.jcodonuts.app.data.local.PromoBanner
 

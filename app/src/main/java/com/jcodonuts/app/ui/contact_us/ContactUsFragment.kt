@@ -1,15 +1,10 @@
 package com.jcodonuts.app.ui.contact_us
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.observe
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentContactUsBinding
-import com.jcodonuts.app.databinding.FragmentMainProfileBinding
 import com.jcodonuts.app.ui.base.BaseFragment
-import com.jcodonuts.app.ui.base.InjectingNavHostFragment
-import com.jcodonuts.app.ui.main.base.MainFragment
 import javax.inject.Inject
 
 class ContactUsFragment @Inject constructor() : BaseFragment<FragmentContactUsBinding, ContactUsViewModel>() {

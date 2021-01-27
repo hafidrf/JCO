@@ -1,6 +1,5 @@
 package com.jcodonuts.app.ui.main.cart
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.data.local.*

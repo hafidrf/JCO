@@ -1,10 +1,11 @@
 package com.jcodonuts.app.ui.tracking
 
-import android.util.Log
-import android.view.View
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.*
 import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.trackingFooter
+import com.jcodonuts.app.trackingHeader
+import com.jcodonuts.app.trackingProgress
+import com.jcodonuts.app.trackingStatus
 
 class TrackingController(val listener: TrackingControllerListener) : AsyncEpoxyController() {
     private val TAG = "TopupController"

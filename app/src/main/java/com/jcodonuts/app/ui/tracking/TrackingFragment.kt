@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import com.jcodonuts.app.R
-import com.jcodonuts.app.databinding.FragmentPaymentTopupBinding
 import com.jcodonuts.app.databinding.FragmentTrackingBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogJco
