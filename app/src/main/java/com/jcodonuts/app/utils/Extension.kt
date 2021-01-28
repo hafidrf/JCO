@@ -97,19 +97,16 @@ fun AppCompatImageView.bindImgDrawable(drawable: Int){
 }
 
 @BindingAdapter("html")
-fun HtmlTextView.bindText(text: String){
-    this.setHtml(text)
-    this.setOnClickATagListener { widget, spannedText, href ->
-        val i = Intent(Intent.ACTION_VIEW)
-        i.data = Uri.parse(href)
-        context.startActivity(i)
-        true
+fun HtmlTextView.bindText(text: String?){
+    text?.let {
+        this.setHtml(it)
+        this.setOnClickATagListener { widget, spannedText, href ->
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(href)
+            context.startActivity(i)
+            true
+        }
     }
-}
-
-@BindingAdapter("html")
-fun AppCompatTextView.bindText(text: String){
-    this.setText(Html.fromHtml(text))
 }
 
 @BindingAdapter("isMenuItemFavorite")
