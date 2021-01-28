@@ -158,4 +158,5 @@
     <string name="err_email_invalid">Email invalid</string>
     <string name="err_email_empty">Email cannot be empty</string>
     <string name="err_fullname_empty">Full name cannot be empty</string>
+    <string name="account_created">Account created</string>
 </resources>

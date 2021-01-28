@@ -52,13 +52,23 @@ class RegisterFragment @Inject constructor() : BaseFragment<FragmentRegisterBind
         }
 
         binding.btnCreate.setOnClickListener {
-            val dialog = DialogJco(requireContext())
-            dialog.showPopup(getString(R.string.your_account_has_been_created),
-            getString(R.string.please_login_to_place_an_order), getString(R.string.login)
-            ) {
-                dialog.dismissPopup();
-                onBackPress()
-            }
+            binding.edtFullName.error = null
+            binding.edtEmail.error = null
+            binding.edtPassword.error = null
+            binding.edtVerifyPassword.error = null
+
+            viewModel.register(binding.edtFullName.editText?.text.toString(),
+            binding.edtEmail.editText?.text.toString(),
+            binding.edtPhoneNoReg.editText?.text.toString(),
+            binding.edtPassword.editText?.text.toString(),
+            binding.edtVerifyPassword.editText?.text.toString())
+//            val dialog = DialogJco(requireContext())
+//            dialog.showPopup(getString(R.string.your_account_has_been_created),
+//            getString(R.string.please_login_to_place_an_order), getString(R.string.login)
+//            ) {
+//                dialog.dismissPopup();
+//                onBackPress()
+//            }
         }
     }
 
@@ -73,6 +83,30 @@ class RegisterFragment @Inject constructor() : BaseFragment<FragmentRegisterBind
         viewModel.errorPhone.observe(this, {
             it.getContentIfNotHandled()?.let {error->
                 binding.edtPhoneNo.error = error
+            }
+        })
+
+        viewModel.errorFullName.observe(this, {
+            it.getContentIfNotHandled()?.let {error->
+                binding.edtFullName.error = error
+            }
+        })
+
+        viewModel.errorEmail.observe(this, {
+            it.getContentIfNotHandled()?.let {error->
+                binding.edtEmail.error = error
+            }
+        })
+
+        viewModel.errorPassword.observe(this, {
+            it.getContentIfNotHandled()?.let {error->
+                binding.edtPassword.error = error
+            }
+        })
+
+        viewModel.errorConfirmPassword.observe(this, {
+            it.getContentIfNotHandled()?.let {error->
+                binding.edtVerifyPassword.error = error
             }
         })
 

@@ -190,6 +190,7 @@ class RegisterViewModel @Inject constructor(
     }
 
     fun register(fullName:String, email:String, phone:String, password:String, confirmPassword:String){
+        val phoneNumber = phone.replace("-","")
         when {
             fullName.isEmpty() -> {
                 _errorFullName.value = SingleEvents(app.getString(R.string.err_fullname_empty))
@@ -217,7 +218,7 @@ class RegisterViewModel @Inject constructor(
             }
             else -> {
                 _showLoadingOTP.postValue(true)
-                val body = RegisterReq(fullName, email, phone,"", password, confirmPassword, NetworkUtils.getIPAddress(true), "okhttp/4.5.0")
+                val body = RegisterReq(fullName, email, phoneNumber,"", password, confirmPassword, NetworkUtils.getIPAddress(true), "okhttp/4.5.0")
                 lastDisposable = authRepository.register(body)
                     .subscribeOn(schedulers.io())
                     .observeOn(schedulers.ui())
@@ -230,6 +231,7 @@ class RegisterViewModel @Inject constructor(
                         )
                         sharedPreference.save(SharedPreference.FROM_LOGIN, true)
 
+                        _showToast.value = SingleEvents(app.getString(R.string.account_created))
                         _closeRegisterPage.value = SingleEvents("close")
                     }, { e ->
                         _showLoadingOTP.postValue(false)

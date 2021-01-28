@@ -167,7 +167,7 @@
                     android:layout_marginTop="40dp"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/edtFullName"
@@ -209,7 +209,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:inputType="phone"
-                            android:maxLength="12" />
+                            android:text="085645889766"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
