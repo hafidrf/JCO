@@ -11,6 +11,7 @@ import com.jcodonuts.app.data.remote.model.req.HomeReq
 import com.jcodonuts.app.data.remote.model.res.HomeRes
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
+import com.jcodonuts.app.utils.Converter
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
@@ -146,7 +147,15 @@ class HomeViewModel @Inject constructor(
         temp.add(HomeMenuCategories(menus))
 
         model.products.map {
-            temp.add(HomeMenuItem(it.menu_name, it.menu_image, it.menu_price, false, it.is_promo=="1", it.is_freedelivery=="1", it.is_favorite=="1"))
+            temp.add(HomeMenuItem(
+                it.menu_name,
+                it.menu_image,
+                it.menu_price,
+                Converter.rupiah(it.menu_price),
+                false,
+                it.is_promo=="1",
+                it.is_freedelivery=="1",
+                it.is_favorite=="1"))
         }
 
         datas.value=temp

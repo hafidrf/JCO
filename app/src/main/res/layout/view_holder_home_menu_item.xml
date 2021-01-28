@@ -92,7 +92,7 @@
                     android:textColor="@color/c_link"
                     android:textSize="12sp"
                     tools:text="Rp. 60.000"
-                    android:text="@{data.price}"/>
+                    android:text="@{data.priceText}"/>
 
                 <TextView
                     android:layout_width="wrap_content"

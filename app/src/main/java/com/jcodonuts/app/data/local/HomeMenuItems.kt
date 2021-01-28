@@ -8,6 +8,7 @@ data class HomeMenuItem(
     val name: String,
     val imgURL: String,
     val price: String,
+    val priceText: String,
     val isStartFrom: Boolean,
     var isPromo: Boolean,
     var isFreeDelivery: Boolean,
