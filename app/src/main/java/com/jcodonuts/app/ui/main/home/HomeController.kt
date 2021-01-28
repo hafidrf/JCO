@@ -26,6 +26,7 @@ class HomeController(private val listener: HomeControllerListener)
         data.forEachIndexed { index, cellData ->
             when(cellData) {
                 is LoadingPage -> addLoadingPage(cellData)
+                is LoadingProductGrid -> addLoadingProductGrid(cellData)
                 is Divider16 -> addDivider16(cellData)
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
                 is HomeSearchSection -> addHomeSearchSection(listener)
@@ -48,6 +49,12 @@ class HomeController(private val listener: HomeControllerListener)
         lytLoadingShimmer {
             id(cellData.hashCode())
             spanSizeOverride { _, _, _ -> 2 }
+        }
+    }
+
+    private fun addLoadingProductGrid(cellData: LoadingProductGrid){
+        lytLoadingProductGrid {
+            id(cellData.hashCode())
         }
     }
 

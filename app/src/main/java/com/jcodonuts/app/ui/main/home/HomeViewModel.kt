@@ -8,9 +8,12 @@ import com.google.gson.Gson
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.remote.model.req.HomeReq
+import com.jcodonuts.app.data.remote.model.req.ProductByCategoryReq
+import com.jcodonuts.app.data.remote.model.req.ProductFavoriteReq
 import com.jcodonuts.app.data.remote.model.res.HomeRes
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
+import com.jcodonuts.app.ui.base.ItemLoading
 import com.jcodonuts.app.utils.Converter
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
@@ -108,6 +111,48 @@ class HomeViewModel @Inject constructor(
         lastDisposable?.let { compositeDisposable.add(it) }
     }
 
+    private fun getProductByCategory(category:String){
+        datas.value?.let {
+            it.removeAll {data-> data is HomeMenuItem }
+            it.add(LoadingProductGrid())
+            it.add(LoadingProductGrid())
+            it.add(LoadingProductGrid())
+            it.add(LoadingProductGrid())
+            it.add(LoadingProductGrid())
+            it.add(LoadingProductGrid())
+            datas.value=it
+        }
+
+        val body = ProductByCategoryReq( category,"Jakarta Barat")
+        lastDisposable = homeRepository.getProductByCategory(body)
+            .subscribeOn(schedulers.io())
+            .observeOn(schedulers.ui())
+            .subscribe({ model ->
+                val temp = datas.value?.toMutableList() ?: mutableListOf()
+                temp.removeAll { it is LoadingProductGrid }
+
+                model.data.map {
+                    temp.add(HomeMenuItem(
+                        it.menu_name,
+                        it.menu_image,
+                        it.menu_price,
+                        Converter.rupiah(it.menu_price),
+                        false,
+                        it.is_promo=="1",
+                        it.is_freedelivery=="1",
+                        false,
+                        it.menu_code
+                    ))
+                }
+                datas.value=temp
+                Log.d("DATA__", gson.toJson(model))
+            },{
+                handleError(it)
+            })
+
+        lastDisposable?.let { compositeDisposable.add(it) }
+    }
+
     private fun parseFetchHome(model:HomeRes){
         val temp = mutableListOf<BaseCell>()
 
@@ -132,16 +177,15 @@ class HomeViewModel @Inject constructor(
         val menus = mutableListOf<MenuCategory>()
         model.category.map {
             if(it.category_name == "all"){
-                menus.add(0,MenuCategory(it.category_title, it.category_img,
+                menus.add(0,MenuCategory(it.category_name,it.category_title, it.category_img,
                     true
                 ))
                 menuSelected.postValue(it.category_img)
             }else{
-                menus.add(MenuCategory(it.category_title, it.category_img,
+                menus.add(MenuCategory(it.category_name,it.category_title, it.category_img,
                     false
                 ))
             }
-
         }
 
         temp.add(HomeMenuCategories(menus))
@@ -155,7 +199,9 @@ class HomeViewModel @Inject constructor(
                 false,
                 it.is_promo=="1",
                 it.is_freedelivery=="1",
-                it.is_favorite=="1"))
+                it.is_favorite=="1",
+                it.menu_code
+            ))
         }
 
         datas.value=temp
@@ -204,6 +250,7 @@ class HomeViewModel @Inject constructor(
     override fun onMenuCategoryClick(menuCategory: MenuCategory) {
         if(menuCategory.img!=menuSelected.value){
             menuSelected.postValue(menuCategory.img)
+            getProductByCategory(menuCategory.name)
         }
     }
 
@@ -221,9 +268,22 @@ class HomeViewModel @Inject constructor(
         if(isLoggedIn()){
             datas.value?.let {
                 val temp = (it[index] as HomeMenuItem).copy()
-                temp.isFavorite = !temp.isFavorite
-                it[index] = temp
-                datas.postValue(it)
+                val favorite = if(temp.isFavorite) "0" else "1"
+                val body = ProductFavoriteReq(favorite,"1", temp.menuCode)
+                lastDisposable = homeRepository.setProductFavorite(body)
+                    .subscribeOn(schedulers.io())
+                    .observeOn(schedulers.ui())
+                    .subscribe({ model ->
+                        temp.isFavorite = !temp.isFavorite
+                        it[index] = temp
+                        datas.postValue(it)
+                    },{
+                        handleError(it)
+                    })
+
+                lastDisposable?.let { compositeDisposable.add(it) }
+
+
             }
         }else{
             showDlgCannotOrder()

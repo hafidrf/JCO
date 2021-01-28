@@ -5,6 +5,7 @@ data class HomeMenuCategories(
 ):BaseCell()
 
 data class MenuCategory(
+    val name: String,
     val title: String,
     val img: String,
     var isSelected: Boolean,

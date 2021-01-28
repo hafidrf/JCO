@@ -12,5 +12,6 @@ data class HomeMenuItem(
     val isStartFrom: Boolean,
     var isPromo: Boolean,
     var isFreeDelivery: Boolean,
-    var isFavorite: Boolean
+    var isFavorite: Boolean,
+    var menuCode: String
 ):BaseCell()

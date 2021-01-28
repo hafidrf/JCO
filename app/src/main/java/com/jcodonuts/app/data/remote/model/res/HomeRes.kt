@@ -65,3 +65,8 @@ data class User(
     val member_name: String,
     val member_point: String
 )
+
+data class ProductsByCategoryRes(
+    val `data`: List<Product>,
+    val status_code: Int
+)

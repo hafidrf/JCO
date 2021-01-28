@@ -54,7 +54,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
-                            android:text="Good morning"
+                            android:text="@string/hello"
                             android:textColor="@color/c_white"/>
 
                         <androidx.appcompat.widget.AppCompatTextView
@@ -122,7 +122,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="14sp"
-                        android:text="5.248"
+                        android:text="@{data.point}"
                         android:textColor="@color/c_white"/>
 
                 </LinearLayout>
@@ -176,7 +176,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="14sp"
-                            android:text="Rp. 100.000"
+                            tools:text="Rp. 100.000"
+                            android:text="Rp0"
                             android:textColor="@color/c_black"/>
 
                     </LinearLayout>
