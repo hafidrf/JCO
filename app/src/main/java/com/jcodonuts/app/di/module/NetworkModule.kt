@@ -25,9 +25,10 @@ class NetworkModule {
     @Provides
     @ApplicationScope
     fun provideGson(): Gson {
-        val gsonBuilder = GsonBuilder()
-        gsonBuilder.excludeFieldsWithoutExposeAnnotation()
-        return gsonBuilder.create()
+//        val gsonBuilder = GsonBuilder()
+//        gsonBuilder.excludeFieldsWithoutExposeAnnotation()
+//        return gsonBuilder.create()
+        return Gson()
     }
 
     @Provides

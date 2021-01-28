@@ -9,6 +9,7 @@ class SharedPreference(val context: Context) {
         val ACCESS_TOKEN = "ACCESS_TOKEN"
         val REFRESH_TOKEN = "REFRESH_TOKEN"
         val FROM_LOGIN = "FROM_LOGIN"
+        val DATA_HOME = "DATA_HOME"
     }
 
     private val PREFS_NAME = "jcoApp"

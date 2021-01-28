@@ -8,13 +8,19 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:fitsSystemWindows="true">
-        <com.jcodonuts.app.utils.MyEpoxyRecyclerView
-            android:id="@+id/homeRecyclerview"
+        <com.jcodonuts.app.utils.MySwipeRefreshLayout
+            android:id="@+id/refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2"
-            tools:listitem="@layout/item_article"
-            android:fitsSystemWindows="true"/>
+            android:fitsSystemWindows="true">
+            <com.jcodonuts.app.utils.MyEpoxyRecyclerView
+                android:id="@+id/homeRecyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/item_article"
+                android:fitsSystemWindows="true"/>
+        </com.jcodonuts.app.utils.MySwipeRefreshLayout>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

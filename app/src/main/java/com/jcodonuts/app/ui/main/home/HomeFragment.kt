@@ -37,11 +37,16 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         binding.homeRecyclerview.addItemDecoration(HomeSpacingDecoration())
         viewModel.datas.observe(this, Observer {
             controller.data = it
+            binding.refresh.isRefreshing = false
         })
 
         viewModel.menuSelected.observe(this, {
             controller.menuSelected = it
         })
+
+        binding.refresh.setOnRefreshListener {
+            viewModel.fetchHomeFromAPI()
+        }
     }
 
     private fun initObserver(){
