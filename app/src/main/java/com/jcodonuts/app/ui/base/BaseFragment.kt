@@ -108,4 +108,9 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
         Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
                 .navigate(uri)
     }
+
+    open fun navigateTo(uri:Uri){
+        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+            .navigate(uri)
+    }
 }

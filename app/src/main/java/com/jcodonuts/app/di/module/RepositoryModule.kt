@@ -45,8 +45,8 @@ class RepositoryModule {
 
     @Provides
     @ApplicationScope
-    fun provideProductRepository(application: Application): ProductRepository {
-        return ProductRepositoryImpl(application)
+    fun provideProductRepository(service:JcoApi, application: Application): ProductRepository {
+        return ProductRepositoryImpl(service, application)
     }
 
     @Provides

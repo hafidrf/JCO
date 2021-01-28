@@ -282,8 +282,6 @@ class HomeViewModel @Inject constructor(
                     })
 
                 lastDisposable?.let { compositeDisposable.add(it) }
-
-
             }
         }else{
             showDlgCannotOrder()

@@ -4,7 +4,7 @@
     <string name="linkRegister">https://www.jcodonuts.com/register</string>
     <string name="linkLinkaja">https://www.jcodonuts.com/linkaja</string>
     <string name="linkTopup">https://www.jcodonuts.com/topup</string>
-    <string name="linkProductDetail">https://www.jcodonuts.com/product_detail</string>
+    <string name="linkProductDetail">https://www.jcodonuts.com/product_detail/?id={id}</string>
     <string name="linkPickupFragment">https://www.jcodonuts.com/pickup</string>
     <string name="linkDeliveryFragment">https://www.jcodonuts.com/delivery</string>
     <string name="linkMenuSearchFragment">https://www.jcodonuts.com/menu_search</string>

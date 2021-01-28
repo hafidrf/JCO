@@ -9,8 +9,10 @@ import com.jcodonuts.app.data.remote.api.JcoApi
 import com.jcodonuts.app.data.remote.helper.ErrorNetworkHandler
 import com.jcodonuts.app.data.remote.model.req.HomeReq
 import com.jcodonuts.app.data.remote.model.req.ProductByCategoryReq
+import com.jcodonuts.app.data.remote.model.req.ProductDetailReq
 import com.jcodonuts.app.data.remote.model.req.ProductFavoriteReq
 import com.jcodonuts.app.data.remote.model.res.HomeRes
+import com.jcodonuts.app.data.remote.model.res.ProductDetailRes
 import com.jcodonuts.app.data.remote.model.res.ProductsByCategoryRes
 import com.jcodonuts.app.data.remote.model.res.SuccessRes
 import io.reactivex.Single

@@ -7,16 +7,17 @@ data class ProductDetail(
 )
 
 data class ProductDetailContent(
-    val colorType: String,
-    val colorTypeText: String,
-    val desc: String,
-    val maxDesc: String,
-    val price: String,
-    val productName: String,
+    val colorType: String?,
+    val colorTypeText: String?,
+    val desc: String?,
+    val maxDesc: String?,
+    val price: String?,
+    val priceText: String?,
+    val productName: String?,
     var quantity: Int,
     var quantityInPcs: Int,
     var totalPerPack: Int,
-    val type: String
+    val type: String?
 ):BaseCell()
 
 data class ProductDetailDonut(

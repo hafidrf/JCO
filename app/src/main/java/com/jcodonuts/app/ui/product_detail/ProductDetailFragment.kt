@@ -5,9 +5,11 @@ import android.view.View
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
+import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.databinding.FragmentProductDetailBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogJco
+import com.jcodonuts.app.utils.SchedulerProvider
 import javax.inject.Inject
 
 class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProductDetailBinding, ProductDetailViewModel>() {
@@ -33,7 +35,9 @@ class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProduct
         initObserver()
 
         if(!isFragmentFromPaused){
-            viewModel.loadDetail()
+            arguments?.let {
+                it.getString("id")?.let { it1 -> viewModel.loadDetail(it1) }
+            }
         }
     }
 

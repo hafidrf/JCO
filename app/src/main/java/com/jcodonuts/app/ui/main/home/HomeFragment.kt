@@ -1,11 +1,15 @@
 package com.jcodonuts.app.ui.main.home
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.airbnb.epoxy.Carousel
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainHomeBinding
+import com.jcodonuts.app.ui.MainActivity
 import com.jcodonuts.app.ui.base.BaseFragment
+import com.jcodonuts.app.utils.Converter
 import javax.inject.Inject
 
 class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
@@ -75,8 +79,10 @@ class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding,
         })
 
         viewModel.openProductDetail.observe(this, {
-            it.getContentIfNotHandled()?.let {
-                navigateTo(R.string.linkProductDetail)
+            it.getContentIfNotHandled()?.let {data->
+                val url = getString(R.string.linkProductDetail).replace("{id}", data.menuCode)
+                val uri = Uri.parse(url)
+                navigateTo(uri)
             }
         })
 

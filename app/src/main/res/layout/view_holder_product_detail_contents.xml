@@ -67,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     tools:text="Rp. 135,000"
-                    android:text="@{data.price}"
+                    android:text="@{data.priceText}"
                     android:textColor="@color/c_link"
                     android:textSize="18sp"
                     android:layout_marginTop="6dp"/>
@@ -121,12 +121,12 @@
             android:layout_marginTop="10dp"
             android:visibility="@{data.type.equalsIgnoreCase(`Donuts`)?View.VISIBLE:View.GONE}"/>
 
-        <TextView
+        <org.sufficientlysecure.htmltextview.HtmlTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             tools:text="Mix or selected your Donut "
-            android:text="@{data.desc}"
+            html="@{data.desc}"
             android:textColor="@color/c_text_secondary"
             android:layout_marginTop="26dp"/>
 

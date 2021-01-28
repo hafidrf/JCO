@@ -1,11 +1,9 @@
 package com.jcodonuts.app.ui.product_detail
 
 import com.airbnb.epoxy.AsyncEpoxyController
-import com.jcodonuts.app.data.local.BaseCell
-import com.jcodonuts.app.data.local.Divider16
-import com.jcodonuts.app.data.local.ProductDetailContent
-import com.jcodonuts.app.data.local.ProductDetailDonut
+import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.divider16
+import com.jcodonuts.app.lytLoadingShimmer
 import com.jcodonuts.app.productDetailContents
 import com.jcodonuts.app.productDetailDonutItem
 
@@ -25,12 +23,19 @@ class ProductDetailController(private val listener:ProductDetailControllerListen
                 is ProductDetailContent -> addProductDetailContent(cellData, listener, index)
                 is ProductDetailDonut -> addProductDetailDonut(cellData, listener, index)
                 is Divider16 -> addDivider16(cellData)
+                is LoadingPage -> addLoadingPage(cellData)
             }
         }
     }
 
     private fun addDivider16(cellData: Divider16){
         divider16 {
+            id(cellData.hashCode())
+        }
+    }
+
+    private fun addLoadingPage(cellData: LoadingPage){
+        lytLoadingShimmer {
             id(cellData.hashCode())
         }
     }

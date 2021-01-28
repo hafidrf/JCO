@@ -10,3 +10,10 @@ data class ProductByCategoryReq(
     val category: String,
     val city: String
 )
+
+data class ProductDetailReq(
+    val brand: String,
+    val city: String,
+    val member_id: String,
+    val menu_id: String
+)

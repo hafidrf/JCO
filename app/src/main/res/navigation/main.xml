@@ -81,6 +81,9 @@
         <deepLink
             android:id="@+id/linkProductDetail"
             app:uri="@string/linkProductDetail" />
+
+        <argument android:name="id" app:argType="string"/>
+
         <action
             android:id="@+id/action_from_product_to_mainFragment"
             app:destination="@id/mainFragment"/>

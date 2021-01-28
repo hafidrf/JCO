@@ -2,8 +2,10 @@ package com.jcodonuts.app.data.remote.api
 
 import com.jcodonuts.app.data.remote.model.req.HomeReq
 import com.jcodonuts.app.data.remote.model.req.ProductByCategoryReq
+import com.jcodonuts.app.data.remote.model.req.ProductDetailReq
 import com.jcodonuts.app.data.remote.model.req.ProductFavoriteReq
 import com.jcodonuts.app.data.remote.model.res.HomeRes
+import com.jcodonuts.app.data.remote.model.res.ProductDetailRes
 import com.jcodonuts.app.data.remote.model.res.ProductsByCategoryRes
 import com.jcodonuts.app.data.remote.model.res.SuccessRes
 import io.reactivex.Single
@@ -26,4 +28,9 @@ interface JcoApi {
     fun setProductFavorite(
         @Body body:ProductFavoriteReq
     ): Single<SuccessRes>
+
+    @POST("product/fetch/detail")
+    fun getProductDetail(
+        @Body body:ProductDetailReq
+    ): Single<ProductDetailRes>
 }

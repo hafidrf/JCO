@@ -1,14 +1,20 @@
 package com.jcodonuts.app.utils
 
+import android.content.Intent
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Color
+import android.net.Uri
+import android.text.Html
+import android.view.View
 import android.webkit.WebView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatImageView
+import androidx.appcompat.widget.AppCompatTextView
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.startActivity
 import androidx.core.widget.ImageViewCompat
 import androidx.databinding.BindingAdapter
 import co.lujun.androidtagview.TagContainerLayout
@@ -18,11 +24,14 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.google.android.material.card.MaterialCardView
 import com.jcodonuts.app.R
 import com.jcodonuts.app.ui.main.cart.CartControllerListener
+import org.sufficientlysecure.htmltextview.HtmlTextView
+import org.sufficientlysecure.htmltextview.OnClickATagListener
+
 
 private const val TAG = "Extension"
 
 @BindingAdapter(value = ["imgUrl", "roundCorner", "imgPlaceholder"], requireAll = false)
-fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0, imgPlaceholder:Int=0){
+fun AppCompatImageView.setImgUrl(imgUrl: String?, roundCorner: Int = 0, imgPlaceholder: Int = 0){
 
     var placeholder = R.drawable.img_placeholder_donut
     if(imgPlaceholder!=0){
@@ -87,12 +96,34 @@ fun AppCompatImageView.bindImgDrawable(drawable: Int){
     this.setImageResource(drawable)
 }
 
+@BindingAdapter("html")
+fun HtmlTextView.bindText(text: String){
+    this.setHtml(text)
+    this.setOnClickATagListener { widget, spannedText, href ->
+        val i = Intent(Intent.ACTION_VIEW)
+        i.data = Uri.parse(href)
+        context.startActivity(i)
+        true
+    }
+}
+
+@BindingAdapter("html")
+fun AppCompatTextView.bindText(text: String){
+    this.setText(Html.fromHtml(text))
+}
+
 @BindingAdapter("isMenuItemFavorite")
 fun AppCompatImageView.bindFavorite(isFavorite: Boolean){
     if(isFavorite){
-        this.setColorFilter(ContextCompat.getColor(context, R.color.c_favorite_true), android.graphics.PorterDuff.Mode.SRC_IN)
+        this.setColorFilter(
+            ContextCompat.getColor(context, R.color.c_favorite_true),
+            android.graphics.PorterDuff.Mode.SRC_IN
+        )
     }else{
-        this.setColorFilter(ContextCompat.getColor(context, R.color.c_favorite_false), android.graphics.PorterDuff.Mode.SRC_IN)
+        this.setColorFilter(
+            ContextCompat.getColor(context, R.color.c_favorite_false),
+            android.graphics.PorterDuff.Mode.SRC_IN
+        )
     }
 
 }
@@ -118,7 +149,7 @@ fun WebView.loadWeb(url: String){
 }
 
 @BindingAdapter("onCartChangeListener")
-fun SwitchCompatEx.onCartChangeListener(listener:CartControllerListener){
+fun SwitchCompatEx.onCartChangeListener(listener: CartControllerListener){
     this.setOnCheckedChangeListener { _, isChecked ->
         listener.onSwitchChange(isChecked)
     }
