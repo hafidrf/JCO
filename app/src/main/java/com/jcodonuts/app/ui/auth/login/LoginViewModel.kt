@@ -1,7 +1,6 @@
 package com.jcodonuts.app.ui.auth.login
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
@@ -11,7 +10,6 @@ import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
-import retrofit2.HttpException
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(

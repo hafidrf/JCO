@@ -7,12 +7,14 @@ import com.jcodonuts.app.data.remote.model.req.LoginReq
 import com.jcodonuts.app.data.remote.model.req.RegisterReq
 import com.jcodonuts.app.data.remote.model.res.LoginRes
 import com.jcodonuts.app.data.remote.model.res.RegisterRes
+import com.jcodonuts.app.data.remote.model.res.SuccessRes
 import io.reactivex.Single
 import javax.inject.Inject
 
 interface AuthRepository {
     fun login(body:LoginReq): Single<LoginRes>
     fun register(body:RegisterReq): Single<RegisterRes>
+    fun logout(): Single<SuccessRes>
 }
 
 class AuthRepositoryImpl @Inject constructor(
@@ -27,5 +29,10 @@ class AuthRepositoryImpl @Inject constructor(
     override fun register(body: RegisterReq): Single<RegisterRes> {
         return composeSingle { service.register(body) }
             .compose(ErrorNetworkHandler())
+    }
+
+    override fun logout(): Single<SuccessRes> {
+        return composeSingle { service.logout() }
+                .compose(ErrorNetworkHandler())
     }
 }

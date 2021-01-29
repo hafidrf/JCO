@@ -8,7 +8,6 @@ import androidx.lifecycle.MutableLiveData
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.jcodonuts.app.R
-import com.jcodonuts.app.data.remote.model.req.LoginReq
 import com.jcodonuts.app.data.remote.model.req.RegisterReq
 import com.jcodonuts.app.data.repository.AuthRepository
 import com.jcodonuts.app.ui.base.BaseViewModel

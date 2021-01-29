@@ -13,7 +13,6 @@ import com.jcodonuts.app.data.remote.model.req.ProductFavoriteReq
 import com.jcodonuts.app.data.remote.model.res.HomeRes
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
-import com.jcodonuts.app.ui.base.ItemLoading
 import com.jcodonuts.app.utils.Converter
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
@@ -123,7 +122,7 @@ class HomeViewModel @Inject constructor(
             datas.value=it
         }
 
-        val body = ProductByCategoryReq( category,"Jakarta Barat")
+        val body = ProductByCategoryReq( category,"Jakarta Barat", "1")
         lastDisposable = homeRepository.getProductByCategory(body)
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
@@ -248,10 +247,19 @@ class HomeViewModel @Inject constructor(
     }
 
     override fun onMenuCategoryClick(menuCategory: MenuCategory) {
-        if(menuCategory.img!=menuSelected.value){
-            menuSelected.postValue(menuCategory.img)
-            getProductByCategory(menuCategory.name)
+        if(isLoggedIn()){
+            if(menuCategory.img!=menuSelected.value){
+                menuSelected.postValue(menuCategory.img)
+                if(menuCategory.name != "all"){
+                    getProductByCategory(menuCategory.name)
+                }else{
+                    getProductByCategory("")
+                }
+            }
+        }else{
+            showDlgCannotOrder()
         }
+
     }
 
     override fun onMenuItemClick(index: Int) {

@@ -167,7 +167,7 @@
                     android:layout_marginTop="40dp"
                     android:orientation="vertical"
                     android:padding="16dp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/edtFullName"

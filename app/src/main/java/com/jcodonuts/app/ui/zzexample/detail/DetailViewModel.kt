@@ -63,7 +63,6 @@ class DetailViewModel @Inject constructor(): BaseViewModel() {
             ) {
                 Log.d(TAG, ": onReceivedError "+ error.toString());
                 super.onReceivedError(view, request, error)
-                forceOffline()
                 networkState(NetworkState.FAILED)
             }
         }

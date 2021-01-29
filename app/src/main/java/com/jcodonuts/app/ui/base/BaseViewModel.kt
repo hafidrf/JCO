@@ -72,15 +72,10 @@ abstract class BaseViewModel : ViewModel() {
         } else {
             "There is unknown error"
         }
-
     }
 
     fun networkState(state: NetworkState){
         _networkState.postValue(state)
-    }
-
-    fun forceOffline(){
-        _networkState.value = NetworkState.FAILED
     }
 
     /**

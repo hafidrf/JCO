@@ -1,14 +1,23 @@
 package com.jcodonuts.app.ui.main.profile
 
+import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
+import com.jcodonuts.app.data.repository.AuthRepository
 import com.jcodonuts.app.ui.base.BaseViewModel
+import com.jcodonuts.app.utils.SchedulerProvider
+import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
 import javax.inject.Inject
 
-class ProfileViewModel @Inject constructor(): ProfileControllerListener, BaseViewModel() {
+class ProfileViewModel @Inject constructor(
+        private val authRepository: AuthRepository,
+        private val schedulers: SchedulerProvider,
+        private val sharedPreference: SharedPreference,
+        private val app: Application
+): ProfileControllerListener, BaseViewModel() {
 
     val datas = MutableLiveData<MutableList<BaseCell>>()
 
@@ -56,7 +65,20 @@ class ProfileViewModel @Inject constructor(): ProfileControllerListener, BaseVie
     }
 
     override fun onSignOut() {
-        
+        lastDisposable = authRepository.logout()
+                .subscribeOn(schedulers.io())
+                .observeOn(schedulers.ui())
+                .subscribe({ model ->
+                    sharedPreference.removeValue(SharedPreference.ACCESS_TOKEN)
+                    sharedPreference.removeValue(SharedPreference.REFRESH_TOKEN)
+                    sharedPreference.removeValue(SharedPreference.DATA_HOME)
+                    sharedPreference.save(SharedPreference.FROM_LOGIN, true)
+                    _signOut.value = SingleEvents("logout")
+                }, { e ->
+                    handleError(e)
+                })
+
+        lastDisposable?.let { compositeDisposable.add(it) }
     }
 
     override fun onEditProfile() {

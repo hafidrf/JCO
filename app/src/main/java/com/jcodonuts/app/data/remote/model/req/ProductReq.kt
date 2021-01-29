@@ -8,7 +8,8 @@ data class ProductFavoriteReq(
 
 data class ProductByCategoryReq(
     val category: String,
-    val city: String
+    val city: String,
+    val member_id: String
 )
 
 data class ProductDetailReq(

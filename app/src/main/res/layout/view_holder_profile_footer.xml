@@ -6,6 +6,10 @@
             name="data"
             type="com.jcodonuts.app.data.local.ProfileFooter" />
 
+        <variable
+            name="listener"
+            type="com.jcodonuts.app.ui.main.profile.ProfileControllerListener" />
+
     </data>
 
     <LinearLayout
@@ -17,7 +21,8 @@
 
         <com.google.android.material.button.MaterialButton
             android:text="@string/sign_out"
-            style="@style/MyButton"/>
+            style="@style/MyButton"
+            android:onClick="@{()->listener.onSignOut()}"/>
 
     </LinearLayout>
 
