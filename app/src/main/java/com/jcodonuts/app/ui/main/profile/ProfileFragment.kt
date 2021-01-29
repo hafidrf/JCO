@@ -2,12 +2,15 @@ package com.jcodonuts.app.ui.main.profile
 
 import android.os.Bundle
 import androidx.lifecycle.observe
+import androidx.navigation.NavOptions
+import androidx.navigation.Navigation
 import com.jcodonuts.app.R
 import com.jcodonuts.app.databinding.FragmentMainProfileBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.ui.base.InjectingNavHostFragment
 import com.jcodonuts.app.ui.main.base.MainFragment
 import javax.inject.Inject
+
 
 class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBinding, ProfileViewModel>() {
     private val TAG = "ProfileFragment"
@@ -36,40 +39,40 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
     private fun initRecyclerview(){
         val controller = ProfileController(viewModel)
         binding.recyclerview.setController(controller)
-        viewModel.datas.observe(this,  {
+        viewModel.datas.observe(this, {
             controller.setData(it)
         })
     }
 
     private fun initObserver(){
-        viewModel.showEditProfile.observe(this,{
+        viewModel.showEditProfile.observe(this, {
             it.getContentIfNotHandled()?.let {
                 navigateTo(R.string.linkEditProfileFragment)
             }
         })
 
         viewModel.showMenuDetail.observe(this, {
-            it.getContentIfNotHandled()?.let{index->
+            it.getContentIfNotHandled()?.let { index ->
                 when (index) {
                     ProfileViewModel.CHANGE_PASSWORD -> {
                         navigateTo(R.string.linkChangePasswordFragment)
                     }
-                    ProfileViewModel.ORDER ->{
+                    ProfileViewModel.ORDER -> {
                         navigateTo(R.string.linkOrderFragment)
                     }
-                    ProfileViewModel.LANGUAGE ->{
+                    ProfileViewModel.LANGUAGE -> {
                         navigateTo(R.string.linkLanguageFragment)
                     }
-                    ProfileViewModel.CONTACT_US ->{
+                    ProfileViewModel.CONTACT_US -> {
                         navigateTo(R.string.linkContactUsFragment)
                     }
                 }
             }
         })
 
-        viewModel.signOut.observe(this,{
+        viewModel.signOut.observe(this, {
             it.getContentIfNotHandled()?.let {
-                navigateTo(R.string.linkLogin)
+                navigatePopupInclusiveTo(R.id.mainFragment, R.string.linkLogin)
             }
         })
     }

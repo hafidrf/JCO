@@ -57,7 +57,7 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
 
         viewModel.closeLoginPage.observe(this, {
             it.getContentIfNotHandled()?.let {
-                onBackPress()
+                navigatePopupInclusiveTo(R.id.loginFragment, R.string.linkMainFragment)
             }
         })
 

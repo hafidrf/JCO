@@ -12,6 +12,7 @@ import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavOptions
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
@@ -112,5 +113,18 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
     open fun navigateTo(uri:Uri){
         Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
             .navigate(uri)
+    }
+
+    open fun navigateTo(link:Int, navOptions: NavOptions){
+        val uri = Uri.parse(getString(link))
+        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                .navigate(uri, navOptions)
+    }
+
+    open fun navigatePopupInclusiveTo(redIdFrom:Int, linkTo:Int){
+        val navOptions = NavOptions.Builder().setPopUpTo(redIdFrom, true).build()
+        val uri = Uri.parse(getString(linkTo))
+        Navigation.findNavController((activity as MainActivity), R.id.nav_host_fragment)
+                .navigate(uri, navOptions)
     }
 }
