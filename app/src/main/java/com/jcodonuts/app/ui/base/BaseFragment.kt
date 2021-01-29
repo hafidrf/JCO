@@ -73,7 +73,6 @@ abstract class BaseFragment<B : ViewDataBinding, V : ViewModel> : Fragment() {
                 onBackPress()
             }
         })
-
     }
 
     open fun onBackPress(){

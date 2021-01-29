@@ -25,7 +25,7 @@ class ProfileController(
                 is ProfileHeader -> addProfileHeader(cellData, listener)
                 is ProfileMenuHeader -> addProfileMenuHeader(cellData)
                 is ProfileMenu -> addProfileMenu(cellData, index, listener)
-                is ProfileFooter -> addProfileFooter(listener)
+                is ProfileFooter -> addProfileFooter(cellData, listener)
             }
         }
     }
@@ -54,9 +54,10 @@ class ProfileController(
         }
     }
 
-    private fun addProfileFooter(listener:ProfileControllerListener){
+    private fun addProfileFooter(cellData:ProfileFooter, listener:ProfileControllerListener){
         profileFooter {
             id("profile_footer")
+            data(cellData)
             listener(listener)
         }
     }

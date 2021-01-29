@@ -52,7 +52,7 @@ class ProfileViewModel @Inject constructor(
             it.add(ProfileMenuHeader("General"))
             it.add(ProfileMenu(R.drawable.ic_term, "Terms & Conditions", TERM_CONDITION))
             it.add(ProfileMenu(R.drawable.ic_privacy, "Privacy Policy", PRIVACY_POLICY))
-            it.add(ProfileFooter(""))
+            it.add(ProfileFooter())
             datas.postValue(it)
         }
     }
@@ -65,6 +65,8 @@ class ProfileViewModel @Inject constructor(
     }
 
     override fun onSignOut() {
+        showLoadingLogout(true)
+
         lastDisposable = authRepository.logout()
                 .subscribeOn(schedulers.io())
                 .observeOn(schedulers.ui())
@@ -75,10 +77,20 @@ class ProfileViewModel @Inject constructor(
                     sharedPreference.save(SharedPreference.FROM_LOGIN, true)
                     _signOut.value = SingleEvents("logout")
                 }, { e ->
+                    showLoadingLogout(false)
                     handleError(e)
                 })
 
         lastDisposable?.let { compositeDisposable.add(it) }
+    }
+
+    private fun showLoadingLogout(show:Boolean){
+        datas.value?.let {
+            val data = (it[it.size-1] as ProfileFooter).copy()
+            data.showLoading = show
+            it[it.size-1] = data
+            datas.postValue(it)
+        }
     }
 
     override fun onEditProfile() {

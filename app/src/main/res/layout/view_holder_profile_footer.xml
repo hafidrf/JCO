@@ -2,6 +2,8 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="android.view.View"/>
+
         <variable
             name="data"
             type="com.jcodonuts.app.data.local.ProfileFooter" />
@@ -12,18 +14,24 @@
 
     </data>
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="16dp"
         android:layout_marginTop="60dp">
 
         <com.google.android.material.button.MaterialButton
             android:text="@string/sign_out"
             style="@style/MyButton"
-            android:onClick="@{()->listener.onSignOut()}"/>
+            android:onClick="@{()->listener.onSignOut()}"
+            android:visibility="@{data.showLoading?View.INVISIBLE:View.VISIBLE}"/>
 
-    </LinearLayout>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="@{data.showLoading?View.VISIBLE:View.GONE}"/>
+
+    </FrameLayout>
 
 </layout>

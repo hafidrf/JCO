@@ -8,6 +8,6 @@ data class ProfileMenu(val icon:Int, val title:String, val type:Int):BaseCell()
 
 data class SocmedMenu(val icon:Int, val title:String, val type:Int):BaseCell()
 
-data class ProfileFooter(val temp:String=""):BaseCell()
+data class ProfileFooter(var showLoading:Boolean=false):BaseCell()
 
 data class ProfileData(val img:String, val name:String):BaseCell()
