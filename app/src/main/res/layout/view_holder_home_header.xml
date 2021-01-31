@@ -19,7 +19,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="60dp"
+            android:layout_marginBottom="42dp"
             android:paddingTop="30dp"
             android:background="#F25A17">
 
@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp"
-                android:layout_marginBottom="50dp">
+                android:layout_marginBottom="30dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -139,98 +139,120 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="88dp"
+                android:layout_height="52dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:weightSum="2">
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:onClick="@{()->onClickListener.onLinkajaClick()}">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/img_linkaja"
-                        android:layout_marginRight="16dp"/>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:text="@string/saldo"
-                            android:textColor="@color/c_black"/>
-
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            tools:text="Rp. 100.000"
-                            android:text="Rp0"
-                            android:textColor="@color/c_black"/>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
+                android:padding="16dp"
+                android:background="?attr/selectableItemBackground"
+                android:onClick="@{()->onClickListener.onSearchClick()}">
                 <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_search"
+                    android:layout_marginRight="18dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/img_header_line"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp"
-                    android:background="?attr/selectableItemBackground"
-                    android:onClick="@{()->onClickListener.onQrCodeClick()}">
+                    android:text="@string/food_drink_or_anything"
+                    android:textSize="12sp"
+                    android:textColor="@color/c_text_secondary"/>
+            </LinearLayout>
 
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:src="@drawable/img_qrcode"
-                        android:layout_marginRight="16dp"/>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="88dp"-->
+<!--                android:orientation="horizontal"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:weightSum="2">-->
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:background="?attr/selectableItemBackground"-->
+<!--                    android:onClick="@{()->onClickListener.onLinkajaClick()}">-->
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="12sp"
-                            android:text="@string/barcode"
-                            android:textColor="@color/c_black"/>
+<!--                    <ImageView-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:src="@drawable/img_linkaja"-->
+<!--                        android:layout_marginRight="16dp"/>-->
 
-                        <androidx.appcompat.widget.AppCompatTextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:text="@string/qr_code"
-                            android:textColor="@color/c_black"/>
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
 
-                    </LinearLayout>
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textSize="12sp"-->
+<!--                            android:text="@string/saldo"-->
+<!--                            android:textColor="@color/c_black"/>-->
 
-                </LinearLayout>
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textSize="14sp"-->
+<!--                            tools:text="Rp. 100.000"-->
+<!--                            android:text="Rp0"-->
+<!--                            android:textColor="@color/c_black"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:adjustViewBounds="true"-->
+<!--                    android:src="@drawable/img_header_line"/>-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="0dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:padding="16dp"-->
+<!--                    android:background="?attr/selectableItemBackground"-->
+<!--                    android:onClick="@{()->onClickListener.onQrCodeClick()}">-->
+
+<!--                    <ImageView-->
+<!--                        android:layout_width="40dp"-->
+<!--                        android:layout_height="40dp"-->
+<!--                        android:src="@drawable/img_qrcode"-->
+<!--                        android:layout_marginRight="16dp"/>-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textSize="12sp"-->
+<!--                            android:text="@string/barcode"-->
+<!--                            android:textColor="@color/c_black"/>-->
+
+<!--                        <androidx.appcompat.widget.AppCompatTextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:textSize="14sp"-->
+<!--                            android:text="@string/qr_code"-->
+<!--                            android:textColor="@color/c_black"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
                 
 
-            </LinearLayout>
+<!--            </LinearLayout>-->
 
         </com.google.android.material.card.MaterialCardView>
 

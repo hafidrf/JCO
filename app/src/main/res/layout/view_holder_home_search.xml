@@ -2,6 +2,10 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+        <import type="android.view.View"/>
+        <variable
+            name="data"
+            type="com.jcodonuts.app.data.local.HomeSearchSection" />
         <variable
             name="listener"
             type="com.jcodonuts.app.ui.main.home.HomeControllerListener" />
@@ -16,38 +20,51 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:onClick="@{()->listener.onPickupClick()}"
-            android:background="?attr/selectableItemBackground">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/pick_up_from"
-                android:textSize="12sp"
-                android:textColor="@color/c_text_secondary"/>
+            android:orientation="horizontal"
+            android:gravity="bottom">
 
-            <androidx.appcompat.widget.AppCompatTextView
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="J.co Cihampelas Walk"
-                android:textSize="16sp"
-                android:textColor="@color/c_black"
-                android:layout_marginTop="8dp"/>
+                android:src="@drawable/ic_location"
+                android:layout_marginRight="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:onClick="@{()->listener.onPickupClick()}"
+                android:background="?attr/selectableItemBackground">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pick_up_from"
+                    android:textSize="12sp"
+                    android:textColor="@color/c_text_secondary"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="J.co Cihampelas Walk"
+                    android:textSize="16sp"
+                    android:textColor="@color/c_black"
+                    android:layout_marginTop="8dp"/>
+            </LinearLayout>
         </LinearLayout>
-
-
+        
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:background="?attr/selectableItemBackground"
-            android:onClick="@{()->listener.onSearchClick()}">
+            android:onClick="@{()->listener.onSearchClick()}"
+            android:visibility="@{data.showSearch?View.VISIBLE:View.GONE}">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:padding="16dp"
                 android:background="@drawable/bg_search_round"
-                android:layout_marginTop="16dp"
                 android:gravity="center_vertical">
 
                 <ImageView

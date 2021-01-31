@@ -29,7 +29,7 @@ class HomeController(private val listener: HomeControllerListener)
                 is LoadingProductGrid -> addLoadingProductGrid(cellData)
                 is Divider16 -> addDivider16(cellData)
                 is HomeHeadSection -> addHomeHeadSection(cellData, listener)
-                is HomeSearchSection -> addHomeSearchSection(listener)
+                is HomeSearchSection -> addHomeSearchSection(cellData, listener)
                 is HomePromoHeader -> addHomePromoHeader(listener)
                 is HomePromos -> addHomePromos(cellData)
                 is HomeMenuHeader -> addHomeMenuHeader()
@@ -67,9 +67,10 @@ class HomeController(private val listener: HomeControllerListener)
         }
     }
 
-    private fun addHomeSearchSection(listener: HomeControllerListener){
+    private fun addHomeSearchSection(cellData:HomeSearchSection, listener: HomeControllerListener){
         homeSearch {
             id("search")
+            data(cellData)
             spanSizeOverride { _, _, _ -> 2 }
             listener(listener)
         }

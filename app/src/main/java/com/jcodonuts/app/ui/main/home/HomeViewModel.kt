@@ -163,7 +163,7 @@ class HomeViewModel @Inject constructor(
             temp.add(Divider16())
         }
 
-        temp.add(HomeSearchSection("test"))
+        temp.add(HomeSearchSection("test", sharedPreference.getValueString(SharedPreference.ACCESS_TOKEN)==null))
         temp.add(HomePromoHeader("test"))
         val promos = mutableListOf<PromoBanner>()
         model.promos.map {
@@ -176,7 +176,7 @@ class HomeViewModel @Inject constructor(
         val menus = mutableListOf<MenuCategory>()
         model.category.map {
             if(it.category_name == "all"){
-                menus.add(0,MenuCategory(it.category_name,it.category_title, it.category_img,
+                menus.add(MenuCategory(it.category_name,it.category_title, it.category_img,
                     true
                 ))
                 menuSelected.postValue(it.category_img)
