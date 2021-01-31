@@ -15,3 +15,9 @@ data class RegisterReq(
     val member_ip: String,
     val member_useragent: String
 )
+
+data class ChangePsswordReq(
+    val member_loginkey: String,
+    val member_newpassword: String,
+    val member_confpassword: String
+)

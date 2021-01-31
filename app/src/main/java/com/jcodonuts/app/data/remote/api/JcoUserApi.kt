@@ -1,5 +1,6 @@
 package com.jcodonuts.app.data.remote.api
 
+import com.jcodonuts.app.data.remote.model.req.ChangePsswordReq
 import com.jcodonuts.app.data.remote.model.req.LoginReq
 import com.jcodonuts.app.data.remote.model.req.RegisterReq
 import com.jcodonuts.app.data.remote.model.res.LoginRes
@@ -9,6 +10,7 @@ import io.reactivex.Single
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 interface JcoUserApi {
 
@@ -24,4 +26,7 @@ interface JcoUserApi {
 
     @GET("member/logout")
     fun logout(): Single<SuccessRes>
+
+    @PUT("member/password/reset")
+    fun changePassword( @Body body:ChangePsswordReq): Single<SuccessRes>
 }
