@@ -6,10 +6,12 @@ import androidx.lifecycle.MutableLiveData
 import com.jcodonuts.app.R
 import com.jcodonuts.app.data.local.*
 import com.jcodonuts.app.data.repository.AuthRepository
+import com.jcodonuts.app.ui.base.BaseActivity
 import com.jcodonuts.app.ui.base.BaseViewModel
 import com.jcodonuts.app.utils.SchedulerProvider
 import com.jcodonuts.app.utils.SharedPreference
 import com.jcodonuts.app.utils.SingleEvents
+import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 
 class ProfileViewModel @Inject constructor(
@@ -32,10 +34,6 @@ class ProfileViewModel @Inject constructor(
     private val _showLinkAja = MutableLiveData<SingleEvents<String>>()
     val showLinkAja : LiveData<SingleEvents<String>>
         get() = _showLinkAja
-
-    private val _signOut = MutableLiveData<SingleEvents<String>>()
-    val signOut : LiveData<SingleEvents<String>>
-        get() = _signOut
 
     init {
         datas.value = mutableListOf()
@@ -71,11 +69,7 @@ class ProfileViewModel @Inject constructor(
                 .subscribeOn(schedulers.io())
                 .observeOn(schedulers.ui())
                 .subscribe({ model ->
-                    sharedPreference.removeValue(SharedPreference.ACCESS_TOKEN)
-                    sharedPreference.removeValue(SharedPreference.REFRESH_TOKEN)
-                    sharedPreference.removeValue(SharedPreference.DATA_HOME)
-                    sharedPreference.save(SharedPreference.FROM_LOGIN, true)
-                    _signOut.value = SingleEvents("logout")
+                    EventBus.getDefault().post(LogoutEvent())
                 }, { e ->
                     showLoadingLogout(false)
                     handleError(e)

@@ -41,9 +41,9 @@ class ForgotPasswordFragment @Inject constructor() : BaseFragment<FragmentForgot
         binding.btnResetPassword.setOnClickListener {
             val dlg = DialogJco(requireContext())
             dlg.showPopup(
-                "Your password has been reset successfully",
-                "please create a new password, to enter your account.",
-                "Create",
+                getString(R.string.dlg_password_reset_title),
+                getString(R.string.dlg_password_reset_desc),
+                getString(R.string.create),
                 View.OnClickListener{
                     dlg.dismissPopup()
                     binding.lytOTP.visibility = View.GONE
@@ -54,9 +54,9 @@ class ForgotPasswordFragment @Inject constructor() : BaseFragment<FragmentForgot
         binding.btnSavePassword.setOnClickListener {
             val dlg = DialogJco(requireContext())
             dlg.showPopup(
-                "Your new password has been saved",
-                "Please login to place an order",
-                "Login",
+                getString(R.string.dlg_password_save_title),
+                getString(R.string.dlg_password_save_desc),
+                getString(R.string.login),
                 View.OnClickListener{
                     dlg.dismissPopup()
                     onBackPress()

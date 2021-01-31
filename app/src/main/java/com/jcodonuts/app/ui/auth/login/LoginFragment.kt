@@ -43,6 +43,10 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
         initObserver()
     }
 
+    override fun onBackPress() {
+        goToMainPage()
+    }
+
     private fun initObserver(){
         viewModel.errorPhone.observe(this, {
             it.getContentIfNotHandled()?.let {error->
@@ -57,8 +61,7 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
 
         viewModel.closeLoginPage.observe(this, {
             it.getContentIfNotHandled()?.let {
-                KeyboardUtil.hideKeyboard(requireActivity())
-                navigatePopupInclusiveTo(R.id.loginFragment, R.string.linkMainFragment)
+                goToMainPage()
             }
         })
 
@@ -72,5 +75,10 @@ class LoginFragment @Inject constructor() : BaseFragment<FragmentLoginBinding, L
                     })
             }
         })
+    }
+
+    private fun goToMainPage(){
+        KeyboardUtil.hideKeyboard(requireActivity())
+        navigatePopupInclusiveTo(R.id.loginFragment, R.string.linkMainFragment)
     }
 }

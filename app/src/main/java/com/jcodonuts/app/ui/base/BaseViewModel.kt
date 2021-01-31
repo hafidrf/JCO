@@ -2,15 +2,21 @@ package com.jcodonuts.app.ui.base
 
 import android.util.Log
 import androidx.lifecycle.*
+import com.jcodonuts.app.data.local.LogoutEvent
 import com.jcodonuts.app.data.remote.helper.Failure
 import com.jcodonuts.app.data.remote.helper.NetworkState
 import com.jcodonuts.app.data.remote.helper.StatusCode
 import com.jcodonuts.app.utils.EspressoIdlingResource
+import com.jcodonuts.app.utils.SingleEvents
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import org.greenrobot.eventbus.EventBus
+
+
+
 
 
 abstract class BaseViewModel : ViewModel() {
@@ -23,6 +29,10 @@ abstract class BaseViewModel : ViewModel() {
     val networkState: LiveData<NetworkState> get() = _networkState
 
     val compositeDisposable = CompositeDisposable()
+
+    private val _onRequestFailure = MutableLiveData<SingleEvents<String>>()
+    val onRequestFailure : LiveData<SingleEvents<String>>
+        get() = _onRequestFailure
 
     protected fun <T> composeObservable(task: () -> Observable<T>): Observable<T> = task()
         .doOnSubscribe { EspressoIdlingResource.increment() } // App is busy until further notice
@@ -58,10 +68,14 @@ abstract class BaseViewModel : ViewModel() {
      * @param throwable wrapp with failure
      */
     fun handleError(throwable: Throwable?) {
-        val error = if(throwable is Failure){
-            NetworkState.error(throwable)
+        lateinit var error:NetworkState
+        if(throwable is Failure){
+            error = NetworkState.error(throwable)
+            if(throwable.code == 520){
+                EventBus.getDefault().post(LogoutEvent("Session Expired"))
+            }
         } else {
-            NetworkState.error(Failure(StatusCode.UNKNOWN_ERROR,"There is unknown error"))
+            error = NetworkState.error(Failure(StatusCode.UNKNOWN_ERROR, "There is unknown error"))
         }
         _networkState.postValue(error)
     }

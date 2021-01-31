@@ -5,11 +5,13 @@ import android.view.View
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import com.jcodonuts.app.R
+import com.jcodonuts.app.data.local.LogoutEvent
 import com.jcodonuts.app.data.repository.HomeRepository
 import com.jcodonuts.app.databinding.FragmentProductDetailBinding
 import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.DialogJco
 import com.jcodonuts.app.utils.SchedulerProvider
+import org.greenrobot.eventbus.EventBus
 import javax.inject.Inject
 
 class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProductDetailBinding, ProductDetailViewModel>() {
@@ -61,19 +63,20 @@ class ProductDetailFragment @Inject constructor() : BaseFragment<FragmentProduct
     private fun initObserver(){
         viewModel.addToCart.observe(this, {
             it.getContentIfNotHandled()?.let { _ ->
-                val dlg = DialogJco(requireContext())
-                dlg.showPopup(
-                        "Product added successfully",
-                        "Golden Nastar already in into the cart and ready to take home",
-                        "My order",
-                        View.OnClickListener{
-                            dlg.dismissPopup()
-                            val action = ProductDetailFragmentDirections.actionFromProductToMainFragment("cart")
-                            findNavController()
-                                    .navigate(action,
-                                            FragmentNavigator.Extras.Builder()
-                                                    .build())
-                        })
+                EventBus.getDefault().post(LogoutEvent())
+//                val dlg = DialogJco(requireContext())
+//                dlg.showPopup(
+//                        "Product added successfully",
+//                        "Golden Nastar already in into the cart and ready to take home",
+//                        "My order",
+//                        View.OnClickListener{
+//                            dlg.dismissPopup()
+//                            val action = ProductDetailFragmentDirections.actionFromProductToMainFragment("cart")
+//                            findNavController()
+//                                    .navigate(action,
+//                                            FragmentNavigator.Extras.Builder()
+//                                                    .build())
+//                        })
 
             }
         })

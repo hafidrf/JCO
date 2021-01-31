@@ -69,12 +69,6 @@ class ProfileFragment @Inject constructor() : BaseFragment<FragmentMainProfileBi
                 }
             }
         })
-
-        viewModel.signOut.observe(this, {
-            it.getContentIfNotHandled()?.let {
-                navigatePopupInclusiveTo(R.id.mainFragment, R.string.linkLogin)
-            }
-        })
     }
 
     override fun onBackPress() {
