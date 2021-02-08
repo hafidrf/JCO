@@ -93,7 +93,7 @@ class HomeViewModel @Inject constructor(
     }
 
     fun fetchHomeFromAPI(){
-        val body = HomeReq( "Jakarta Barat", "20")
+        val body = HomeReq( 1,"Jakarta Barat", "20","-6.20073720","106.74090380","")
         lastDisposable = homeRepository.fetchHome(body)
             .subscribeOn(schedulers.io())
             .observeOn(schedulers.ui())
