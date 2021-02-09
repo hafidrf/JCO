@@ -12,7 +12,8 @@ import com.jcodonuts.app.ui.base.BaseFragment
 import com.jcodonuts.app.utils.Converter
 import javax.inject.Inject
 
-class HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
+class
+HomeFragment @Inject constructor() : BaseFragment<FragmentMainHomeBinding, HomeViewModel>() {
     private val TAG = "HomeFragment"
 
     override fun getViewModelClass(): Class<HomeViewModel> {
